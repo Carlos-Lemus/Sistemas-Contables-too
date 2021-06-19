@@ -18,9 +18,77 @@ namespace SistemasContables.DataBase
             lista = new List<Cuenta>();
         }
 
+        public bool agregarCuenta(Cuenta cuenta)
+        {
+            try
+            {
+                conn = Conexion.Conn;
+                conn.Open();
+
+                using (SQLiteCommand command = new SQLiteCommand())
+                {
+                    string sql = $"INSERT INTO {TABLE_CUENTA} ({ID_CUENTA}, {CODIGO}, {NIVEL}, {NOMBRE_CUENTA}, {TIPO_SALDO}) ";
+                    sql += $"VALUES(NULL, @{CODIGO}, @{NIVEL}, @{NOMBRE_CUENTA}, @{TIPO_SALDO});";
+
+                    command.CommandText = sql;
+                    command.Connection = Conexion.Conn;
+                    command.Parameters.AddWithValue($"@{CODIGO}", cuenta.Codigo);
+                    command.Parameters.AddWithValue($"@{NIVEL}", cuenta.Nivel);
+                    command.Parameters.AddWithValue($"@{NOMBRE_CUENTA}", cuenta.Nombre);
+                    command.Parameters.AddWithValue($"@{TIPO_SALDO}", cuenta.TipoSaldo);
+                    command.ExecuteNonQuery();
+
+                    conn.Close();
+
+                    return true;
+                }
+
+            }
+            catch(Exception excepcion)
+            {
+                MessageBox.Show(excepcion.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                return false;
+            }
+        }
+
+        public bool agregarListaDeCuentas(List<Cuenta> listCuentas)
+        {
+            try
+            {
+                conn = Conexion.Conn;
+                conn.Open();
+
+                foreach(Cuenta cuenta in listCuentas)
+                {
+                    using (SQLiteCommand command = new SQLiteCommand())
+                    {
+                        string sql = $"INSERT INTO {TABLE_CUENTA} ({ID_CUENTA}, {CODIGO}, {NIVEL}, {NOMBRE_CUENTA}, {TIPO_SALDO}) ";
+                        sql += $"VALUES(NULL, @{CODIGO}, @{NIVEL}, @{NOMBRE_CUENTA}, @{TIPO_SALDO});";
+
+                        command.CommandText = sql;
+                        command.Connection = Conexion.Conn;
+                        command.Parameters.AddWithValue($"@{CODIGO}", cuenta.Codigo);
+                        command.Parameters.AddWithValue($"@{NIVEL}", cuenta.Nivel);
+                        command.Parameters.AddWithValue($"@{NOMBRE_CUENTA}", cuenta.Nombre);
+                        command.Parameters.AddWithValue($"@{TIPO_SALDO}", cuenta.TipoSaldo);
+                        command.ExecuteNonQuery();
+                    }
+                }
+
+                conn.Close();
+
+                return true;
+
+            }catch(Exception exception)
+            {
+                MessageBox.Show(exception.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+        }
+
         public List<Cuenta> getList()
         {
-
             try
             {
                 conn = Conexion.Conn;
@@ -29,7 +97,8 @@ namespace SistemasContables.DataBase
 
                 using (SQLiteCommand command = new SQLiteCommand())
                 {
-                    string sql = $"SELECT * FROM {TABLE_CUENTA} ORDER BY {NOMBRE_CUENTA}";
+                    string sql = $"SELECT * FROM {TABLE_CUENTA}";
+
                     command.CommandText = sql;
                     command.Connection = Conexion.Conn;
 
@@ -59,17 +128,13 @@ namespace SistemasContables.DataBase
                     }
 
                 }
-
                 conn.Close();
-
 
             } catch(Exception exception)
             {
                 MessageBox.Show(exception.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
             return lista;
-
         }
 
     }

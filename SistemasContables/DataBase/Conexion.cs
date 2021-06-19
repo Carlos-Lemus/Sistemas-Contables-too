@@ -114,6 +114,7 @@ namespace SistemasContables.DataBase
         {
             string cuentas = "";
 
+            /*
             cuentas += "INSERT INTO cuenta VALUES";
             cuentas += "(1, 1, 1, 'ACTIVO', 'Deudor'),";
             cuentas += "(2, 11, 2, 'ACTIVO CORRIENTE', 'Deudor'),";
@@ -425,6 +426,7 @@ namespace SistemasContables.DataBase
             cuentas += "(308, 71, 2, 'CUENTAS DE ORDEN DEUDORAS', 'Acreedor'),";
             cuentas += "(309, 7101, 3, 'CUENTAS DE ORDEN DEUDORAS', 'Acreedor'),";
             cuentas += "(310, 7102, 3, 'CUENTAS DE ORDEN POR CONTRA', 'Acreedor');";
+            */
 
             return cuentas;
         }
