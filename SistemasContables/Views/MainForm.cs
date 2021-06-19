@@ -174,6 +174,14 @@ namespace SistemasContables
             openFormInPane(new BalanceGeneralForm(libroDiario));
         }
 
+        //abre el form del catalogo de cuentas en el panel de contenido
+        private void btnCatalogo_Click(object sender, EventArgs e)
+        {
+            currentNameForm = "catalogo_de_cuentas";
+            activaButton(this.btnCatalogo);
+            openFormInPane(new CatalogoDeCuentasForm());
+        }
+
         // el metodo elimina el libro diario
         private void btnDeleteLibroDiario_Click(object sender, EventArgs e)
         {
@@ -388,6 +396,5 @@ namespace SistemasContables
             // inverto el orden de la lista
             listaYears.Reverse();
         }
-
     }
 }
