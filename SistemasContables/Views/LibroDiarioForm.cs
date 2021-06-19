@@ -75,14 +75,15 @@ namespace SistemasContables.Views
 
         }
 
-        private void btnModificar_Click(object sender, EventArgs e)
+        private void tableLibroDiario_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            int indexFila = tableLibroDiario.CurrentRow.Index;
-
-            string celdaPartida = tableLibroDiario.Rows[indexFila].Cells["ColumnDetalle"].Value.ToString();
-
-            if (celdaPartida.Contains("Partida"))
+            if (tableLibroDiario.Columns[e.ColumnIndex].Name == "ColumnEdit" && !String.IsNullOrEmpty(tableLibroDiario.Rows[e.RowIndex].Cells["ColumnFecha"].Value.ToString()))
             {
+
+                int indexFila = e.RowIndex;
+
+                string celdaPartida = tableLibroDiario.Rows[indexFila].Cells["ColumnDetalle"].Value.ToString();
+
                 string[] partidaString = celdaPartida.Split(' ');
                 int numeroPartida = Convert.ToInt32(partidaString[2]);
 
@@ -97,41 +98,36 @@ namespace SistemasContables.Views
                     llenarTabla();
                     Totales();
                 }
+            }
 
-            }
-            else
-            {
-                MessageBox.Show("Para editar una partida Selecciona la fila que corresponda\n a la partidano, no seleccione una fila de cuenta o detalle", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
         }
 
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            int indexFila = tableLibroDiario.CurrentRow.Index;
 
-            string celdaPartida = tableLibroDiario.Rows[indexFila].Cells["ColumnDetalle"].Value.ToString();
+            List<DataGridViewRow> rows = tableLibroDiario.Rows.Cast<DataGridViewRow>().Where(p => Convert.ToBoolean(p.Cells["ColumnSelect"].Value) == true).ToList();
 
-            if (celdaPartida.Contains("Partida"))
+            if (rows.Count > 0)
             {
+                DialogResult dialogQuestion = MessageBox.Show("¿Estas seguro de que quieres eliminar las partidas?", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-                DialogResult res = MessageBox.Show("¿Desea eliminar la partida seleccionada?", "Mensaje", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-                if (res == DialogResult.OK)
+                if (dialogQuestion == DialogResult.Yes)
                 {
-                    string[] partidaString = celdaPartida.Split(' ');
-                    int numeroPartida = Convert.ToInt32(partidaString[2]);
+                    for (int i = 0; i < rows.Count; i++)
+                    {
+                        DataGridViewRow row = rows[i];
 
-                    partidasController.delete(numeroPartida, idLibroDiario);
+                        string[] partidaString = row.Cells[2].Value.ToString().Split(' ');
+                        int numeroPartida = Convert.ToInt32(partidaString[2]);
 
+                        partidasController.delete(numeroPartida, idLibroDiario);
+                    }
+
+                    partidasController.reorderPartidas(idLibroDiario);
                     llenarTabla();
                     Totales();
-
                 }
-
-            }
-            else
-            {
-                MessageBox.Show("Para eliminar una partida Selecciona la fila que corresponda\n a la partida, no seleccione una fila de cuenta o detalle", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
 
         }
@@ -150,6 +146,26 @@ namespace SistemasContables.Views
             }
             
 
+        }
+
+        // verifico que si la fila es una cuenta o una partida y oculto los botones de seleccionar y editar si es una cuenta
+        private void tableLibroDiario_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+        {
+            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+            {
+                if (tableLibroDiario.Columns[e.ColumnIndex].Name == "ColumnSelect" && String.IsNullOrEmpty(tableLibroDiario.Rows[e.RowIndex].Cells["ColumnFecha"].Value.ToString()))
+                {
+                    tableLibroDiario.Rows[e.RowIndex].Cells["ColumnSelect"].ReadOnly = true;
+                    e.PaintBackground(e.ClipBounds, true);
+                    e.Handled = true;
+                }
+
+                if (tableLibroDiario.Columns[e.ColumnIndex].Name == "ColumnEdit" && String.IsNullOrEmpty(tableLibroDiario.Rows[e.RowIndex].Cells["ColumnFecha"].Value.ToString()))
+                {
+                    e.PaintBackground(e.ClipBounds, true);
+                    e.Handled = true;
+                }
+            }
         }
 
         // el metodo exporta el balance general en un documento pdf
@@ -243,13 +259,11 @@ namespace SistemasContables.Views
 
             if(lista.Count > 0)
             {
-                btnModificar.Visible = true;
                 btnEliminar.Visible = true;
                 btnAjusteIva.Visible = true;
                 btnExportar.Visible = true;
             } else
             {
-                btnModificar.Visible = false;
                 btnEliminar.Visible = false;
                 btnAjusteIva.Visible = false;
                 btnExportar.Visible = false;
@@ -331,14 +345,12 @@ namespace SistemasContables.Views
             if(idLibroDiario == -1)
             {
                 btnAgregar.Visible = false;
-                btnModificar.Visible = false;
                 btnEliminar.Visible = false;
                 btnAjusteIva.Visible = false;
                 btnExportar.Visible = false;
             }
             else if(tableLibroDiario.Rows.Count < 1)
             {
-                btnModificar.Visible = false;
                 btnEliminar.Visible = false;
                 btnAjusteIva.Visible = false;
                 btnExportar.Visible = false;
@@ -461,6 +473,6 @@ namespace SistemasContables.Views
                 MessageBox.Show("No se encontraron cuentas de Debito Fiscal IVA o Credito Fiscal IVA\nen las partidas del libro actual", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
-
+       
     }
 }

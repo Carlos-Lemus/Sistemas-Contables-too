@@ -52,5 +52,10 @@ namespace SistemasContables.controller
             return partidasDAO.VerificarAjusteIVA(idLibro);
         }
 
+        public void reorderPartidas(int idLibroDiario)
+        {
+            partidasDAO.reorderPartidas(idLibroDiario);
+        }
+
     }
 }

@@ -190,9 +190,6 @@ namespace SistemasContables.DataBase
                     command.Connection = Conexion.Conn;
                     command.Parameters.AddWithValue("@idPartida", idPartida);
                     command.ExecuteNonQuery();
-
-                    reorderPartidas(n_partida);
-
                 }
 
                 conn.Close();
@@ -510,17 +507,43 @@ namespace SistemasContables.DataBase
             return id;
         }
 
-        private void reorderPartidas(int n_partida)
+        public void reorderPartidas(int idLibroDiario)
         {
-            using (SQLiteCommand command = new SQLiteCommand())
+
+            try
             {
-                string sql = $"UPDATE {TABLE_PARTIDA} SET {N_PARTIDA} = {N_PARTIDA} - 1  WHERE {N_PARTIDA} > @n_partida;";
+                conn = Conexion.Conn;
 
-                command.CommandText = sql;
-                command.Connection = Conexion.Conn;
-                command.Parameters.AddWithValue("@n_partida", n_partida);
-                command.ExecuteNonQuery();
+                conn.Open();
 
+                using (SQLiteCommand command = new SQLiteCommand())
+                {
+                    string sql = $"";
+
+                    sql += $"drop table if exists temp.tmp; ";
+
+                    sql += $"create temporary table tmp as select {N_PARTIDA}, row_number() over(order by {N_PARTIDA}) rn from {TABLE_PARTIDA} WHERE {TABLE_PARTIDA}.{ID_LIBRO_DIARIO} = @idLibroDiario; ";
+
+                    sql += $"update {TABLE_PARTIDA} set {N_PARTIDA} = (select rn from temp.tmp where temp.tmp.{N_PARTIDA} = {TABLE_PARTIDA}.{N_PARTIDA} ) WHERE {ID_LIBRO_DIARIO} = @idLibroDiario; ";
+
+                    sql += $"drop table temp.tmp; ";
+
+                    command.CommandText = sql;
+                    command.Connection = Conexion.Conn;
+                    command.Parameters.AddWithValue("@idLibroDiario", idLibroDiario);
+                    command.ExecuteNonQuery();
+
+                    
+
+                }
+
+                conn.Close();
+
+
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
