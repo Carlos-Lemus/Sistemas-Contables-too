@@ -14,6 +14,20 @@ namespace SistemasContables.Models
         private int nivel;
         private string tipoSaldo;
 
+        public Cuenta()
+        {
+
+        }
+
+        public Cuenta(int idCuenta, string nombre, string codigo, int nivel, string tipoSaldo)
+        {
+            this.idCuenta = idCuenta;
+            this.nombre = nombre;
+            this.codigo = codigo;
+            this.nivel = nivel;
+            this.tipoSaldo = tipoSaldo;
+        }
+
         public int IdCuenta
         {
             get

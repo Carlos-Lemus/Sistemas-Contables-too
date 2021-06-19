@@ -41,6 +41,9 @@
     <Reference Include="BouncyCastle.Crypto, Version=1.8.6.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
       <HintPath>..\packages\BouncyCastle.1.8.6.1\lib\BouncyCastle.Crypto.dll</HintPath>
     </Reference>
+    <Reference Include="DocumentFormat.OpenXml, Version=2.11.3.0, Culture=neutral, PublicKeyToken=8fb06cb64d019a17, processorArchitecture=MSIL">
+      <HintPath>..\packages\DocumentFormat.OpenXml.2.11.3\lib\net46\DocumentFormat.OpenXml.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -57,6 +60,9 @@
       <HintPath>..\packages\iTextSharp.5.5.13.2\lib\itextsharp.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="SpreadsheetLight, Version=3.5.0.0, Culture=neutral, PublicKeyToken=32fbb46dc1730c57, processorArchitecture=MSIL">
+      <HintPath>..\packages\SpreadsheetLight.3.5.0\lib\netstandard2.0\SpreadsheetLight.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -70,6 +76,17 @@
       <HintPath>..\packages\System.Data.SQLite.Linq.1.0.113.0\lib\net46\System.Data.SQLite.Linq.dll</HintPath>
     </Reference>
     <Reference Include="System.Design" />
+    <Reference Include="System.Drawing.Common, Version=4.0.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Drawing.Common.5.0.0\lib\net461\System.Drawing.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.FileSystem.Primitives, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.FileSystem.Primitives.4.3.0\lib\net46\System.IO.FileSystem.Primitives.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.IO.Packaging, Version=4.0.5.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.Packaging.4.7.0\lib\net46\System.IO.Packaging.dll</HintPath>
+    </Reference>
     <Reference Include="System.Management" />
     <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
@@ -81,6 +98,7 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="controller\BalanceComprobacionController.cs" />
@@ -105,6 +123,7 @@
     <Compile Include="Models\CuentaPartida.cs" />
     <Compile Include="Models\LibroDiario.cs" />
     <Compile Include="Models\Partida.cs" />
+    <Compile Include="openFileDialogCatalogo\ShowDialog.cs" />
     <Compile Include="Views\AgregarLibroDiarioForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -128,6 +147,12 @@
     </Compile>
     <Compile Include="Views\BalanceGeneralForm.Designer.cs">
       <DependentUpon>BalanceGeneralForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CatalogoDeCuentasForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\CatalogoDeCuentasForm.Designer.cs">
+      <DependentUpon>CatalogoDeCuentasForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\EstadoDeResultadosForm.cs">
       <SubType>Form</SubType>
@@ -172,6 +197,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\BalanceGeneralForm.resx">
       <DependentUpon>BalanceGeneralForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\CatalogoDeCuentasForm.resx">
+      <DependentUpon>CatalogoDeCuentasForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\EstadoDeResultadosForm.resx">
       <DependentUpon>EstadoDeResultadosForm.cs</DependentUpon>
