@@ -242,5 +242,71 @@ namespace SistemasContables.DataBase
             return lista;
         }
 
+        public bool update(Cuenta cuenta)
+        {
+            try
+            {
+                conn = Conexion.Conn;
+                conn.Open();
+
+                using (SQLiteCommand command = new SQLiteCommand())
+                {
+                    string sql = $"UPDATE {TABLE_CUENTA} SET {CODIGO}=@{CODIGO}, {NIVEL}=@{NIVEL}, {NOMBRE_CUENTA}=@{NOMBRE_CUENTA}, {TIPO_SALDO}=@{TIPO_SALDO} ";
+                    sql += $"WHERE {ID_CUENTA} = @{ID_CUENTA};";
+
+                    command.CommandText = sql;
+                    command.Connection = Conexion.Conn;
+                    command.Parameters.AddWithValue($"@{ID_CUENTA}", cuenta.IdCuenta);
+                    command.Parameters.AddWithValue($"@{CODIGO}", cuenta.Codigo);
+                    command.Parameters.AddWithValue($"@{NIVEL}", cuenta.Nivel);
+                    command.Parameters.AddWithValue($"@{NOMBRE_CUENTA}", cuenta.Nombre);
+                    command.Parameters.AddWithValue($"@{TIPO_SALDO}", cuenta.TipoSaldo);
+                    command.ExecuteNonQuery();
+
+                    conn.Close();
+
+                    return true;
+                }
+
+            }
+            catch (Exception excepcion)
+            {
+                MessageBox.Show(excepcion.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                return false;
+            }
+        }
+
+        public bool delete(int idCuenta)
+        {
+            try
+            {
+                conn = Conexion.Conn;
+                conn.Open();
+
+                using (SQLiteCommand command = new SQLiteCommand())
+                {
+                    string sql = $"DELETE FROM {TABLE_CUENTA_PARTIDA} WHERE {ID_CUENTA} = @{ID_CUENTA}; ";
+                    sql += $"DELETE FROM {TABLE_CUENTA} WHERE {ID_CUENTA} = @{ID_CUENTA}; ";
+
+                    command.CommandText = sql;
+                    command.Connection = Conexion.Conn;
+                    command.Parameters.AddWithValue($"@{ID_CUENTA}", idCuenta);
+                    command.ExecuteNonQuery();
+
+                    conn.Close();
+
+                    return true;
+                }
+
+            }
+            catch (Exception excepcion)
+            {
+                MessageBox.Show(excepcion.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                return false;
+            }
+        }
+
     }
 }

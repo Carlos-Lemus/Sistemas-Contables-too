@@ -21,6 +21,9 @@ namespace SistemasContables.Views
 
         private List<Cuenta> listaCuentasAdd = new List<Cuenta>();
 
+        private int idCuentaSelect = -1;
+        private bool isEdit = false;
+
         //Variables auxiliares para establecer nivel y tipo de cuenta
         int nivelAux = 0;
         string tipoCuentaAux = "";
@@ -46,34 +49,49 @@ namespace SistemasContables.Views
 
         private void btnAgregarCuenta_Click(object sender, EventArgs e)
         {
-            bool isValidCodigo = isValidInput(textCodigoCuenta.Text.ToString(), "Codigo de Cuenta");
-            bool isValidCuenta = isValidInput(textNombreCuenta.Text.ToString(), "Nombre de Cuenta");
-            bool isValidTipo = isValidInput(cbTipoCuenta.SelectedIndex.ToString(), "Tipo de Cuenta");
+            string codigoCuenta = textCodigoCuenta.Text;
+            string nombreCuenta = textNombreCuenta.Text;
+            string tipo = cbTipoCuenta.SelectedItem.ToString();
+
+            bool isValidCodigo = isValidInput(codigoCuenta, "Codigo de Cuenta");
+            bool isValidCuenta = isValidInput(nombreCuenta.ToString(), "Nombre de Cuenta");
+            bool isValidTipo = isValidInput(tipo, "Tipo de Cuenta");
 
             if (isValidCodigo && isValidCuenta && isValidTipo)
             {
                 //int codigoCuenta = Convert.ToInt32(textCodigoCuenta.Text.ToString());
-                string codigoCuenta = textCodigoCuenta.Text;
-                string nombreCuenta = textNombreCuenta.Text;
-
+            
                 int nivel = establecerNivel(Convert.ToInt32(codigoCuenta));
-                string tipo = cbTipoCuenta.SelectedItem.ToString();
 
-                bool add = cuentaController.agregarCuenta(new Cuenta(0, nombreCuenta, codigoCuenta, nivel, tipo));
-                if (add)
+                if(nivel == 0)
                 {
-                    MessageBox.Show(null, "Se agrego la cuenta con exito", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show(null, "El codigo de la cuenta solo puede ser de 1, 2, 3 y 5 cifras", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
-                    textCodigoCuenta.Text = "";
-                    textNombreCuenta.Text = "";
+                    return;
+                }
+
+                bool success = false;
+
+                if(!isEdit)
+                {
+                    success = cuentaController.agregarCuenta(new Cuenta(0, nombreCuenta, codigoCuenta, nivel, tipo));
                 }
                 else
                 {
-                    MessageBox.Show(null, "No se pudo agregar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                   success = cuentaController.update(new Cuenta(idCuentaSelect, nombreCuenta, codigoCuenta, nivel, tipo));
                 }
+
+                if (success)
+                {
+                    MessageBox.Show(null, "Se guardo la cuenta con exito", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    restorerButtonTextBox();
+                    cargarTablaCatalogo();
+                }
+
             }
 
-            cargarTablaCatalogo();
+            
         }
 
         private void btnCargarCatalogo_Click(object sender, EventArgs e)
@@ -88,65 +106,61 @@ namespace SistemasContables.Views
             }
         }
 
-        private void cargarTablaCatalogo()
+        private void btnEliminar_Click(object sender, EventArgs e)
         {
-            if(tableCatalogoDeCuentas.RowCount > 0)
-            {
-                tableCatalogoDeCuentas.Rows.Clear();
-                listaCuentas.Clear();
-            }
+            List<DataGridViewRow> rows = tableCatalogoDeCuentas.Rows.Cast<DataGridViewRow>().Where(p => Convert.ToBoolean(p.Cells["ColumnSelect"].Value) == true).ToList();
 
-            listaCuentas = cuentaController.getList();
-            //listaCuentas = cuentaController.listaNivelTipo(3, "PATRIMONIO");
-            //listaCuentas = cuentaController.listaNivel(2);
-
-            foreach (Cuenta cuenta in listaCuentas)
+            if (rows.Count > 0)
             {
-                tableCatalogoDeCuentas.Rows.Add(cuenta.Codigo, cuenta.Nombre, cuenta.Nivel, cuenta.TipoSaldo);
+                DialogResult dialogQuestion = MessageBox.Show("¿Estas seguro de que quieres eliminar los registros?", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (dialogQuestion == DialogResult.Yes)
+                {
+
+                    for (int i = 0; i < rows.Count; i++)
+                    {
+                        DataGridViewRow row = rows[i];
+
+                        cuentaController.delete(Convert.ToInt32(row.Cells[0].Value));
+
+                        restorerButtonTextBox();
+
+                        cargarTablaCatalogo();
+                    }
+
+                }
             }
         }
 
-        private void cargarExel()
+        private void textCodigoCuenta_KeyPress(object sender, KeyPressEventArgs e)
         {
-            try
+            if (!char.IsDigit(e.KeyChar) && (e.KeyChar != (char)Keys.Back))
             {
-                SLDocument sl = new SLDocument(textSeleccionarArchivo.Text.ToString());
-                string[] info = new string[5];
-
-                int valor = 1;
-                int codigoAux;
-                string tipoAux = "";
-
-                if(listaCuentasAdd != null)
-                {
-                    listaCuentasAdd.Clear();
-                }
-
-                while (!string.IsNullOrEmpty(sl.GetCellValueAsString(valor, 1)))
-                {
-                    codigoAux = Int32.Parse(sl.GetCellValueAsString(valor, 1));
-                    tipoAux = establecerTipo(codigoAux, sl.GetCellValueAsString(valor, 2));
-
-                    listaCuentasAdd.Add(new Cuenta(0, sl.GetCellValueAsString(valor, 2), sl.GetCellValueAsString(valor, 1), establecerNivel(codigoAux), tipoAux));
-
-                    valor++;
-                }
-
-                bool add = cuentaController.agregarListaDeCuentas(listaCuentasAdd);
-                if (add)
-                {
-                    MessageBox.Show(null, "Se cargo el catalogo con exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                    textSeleccionarArchivo.Text = "";
-                }
-
+                e.Handled = true;
             }
-            catch(Exception exception)
+        }
+
+        private void tableCatalogoDeCuentas_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (tableCatalogoDeCuentas.Columns[e.ColumnIndex].Name == "ColumnEdit")
             {
-                MessageBox.Show(null, exception.Message, "Error al cargar archivo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
 
-            cargarTablaCatalogo();
+                int indexFila = e.RowIndex;
+
+                idCuentaSelect = Convert.ToInt32(tableCatalogoDeCuentas.Rows[indexFila].Cells[0].Value.ToString());
+                textCodigoCuenta.Text = tableCatalogoDeCuentas.Rows[indexFila].Cells[1].Value.ToString();
+                textNombreCuenta.Text = tableCatalogoDeCuentas.Rows[indexFila].Cells[2].Value.ToString();
+
+                int indexComboBox = cbTipoCuenta.FindString(tableCatalogoDeCuentas.Rows[indexFila].Cells[4].Value.ToString());
+                cbTipoCuenta.SelectedIndex = indexComboBox;
+
+                btnAgregarCuenta.BackColor = Color.FromArgb(243, 156, 18);
+                btnAgregarCuenta.Text = "Editar Cuenta";
+                btnAgregarCuenta.IconChar = FontAwesome.Sharp.IconChar.Edit;
+
+
+                isEdit = true;
+            }
         }
 
         private void btnSeleccionarArchivo_Click(object sender, EventArgs e)
@@ -176,9 +190,70 @@ namespace SistemasContables.Views
             }
         }
 
+        private void cargarTablaCatalogo()
+        {
+            if (tableCatalogoDeCuentas.RowCount > 0)
+            {
+                tableCatalogoDeCuentas.Rows.Clear();
+                listaCuentas.Clear();
+            }
+
+            listaCuentas = cuentaController.getList();
+            //listaCuentas = cuentaController.listaNivelTipo(3, "PATRIMONIO");
+            //listaCuentas = cuentaController.listaNivel(2);
+
+            foreach (Cuenta cuenta in listaCuentas)
+            {
+                tableCatalogoDeCuentas.Rows.Add(cuenta.IdCuenta, cuenta.Codigo, cuenta.Nombre, cuenta.Nivel, cuenta.TipoSaldo);
+            }
+        }
+
+        private void cargarExel()
+        {
+            try
+            {
+                SLDocument sl = new SLDocument(textSeleccionarArchivo.Text.ToString());
+                string[] info = new string[5];
+
+                int valor = 1;
+                int codigoAux;
+                string tipoAux = "";
+
+                if (listaCuentasAdd != null)
+                {
+                    listaCuentasAdd.Clear();
+                }
+
+                while (!string.IsNullOrEmpty(sl.GetCellValueAsString(valor, 1)))
+                {
+                    codigoAux = Int32.Parse(sl.GetCellValueAsString(valor, 1));
+                    tipoAux = establecerTipo(codigoAux, sl.GetCellValueAsString(valor, 2));
+
+                    listaCuentasAdd.Add(new Cuenta(0, sl.GetCellValueAsString(valor, 2), sl.GetCellValueAsString(valor, 1), establecerNivel(codigoAux), tipoAux));
+
+                    valor++;
+                }
+
+                bool add = cuentaController.agregarListaDeCuentas(listaCuentasAdd);
+                if (add)
+                {
+                    MessageBox.Show(null, "Se cargo el catalogo con exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    textSeleccionarArchivo.Text = "";
+                }
+
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(null, exception.Message, "Error al cargar archivo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            cargarTablaCatalogo();
+        }
+
         private bool isValidInput(String txtInput, string campo)
         {
-            if (String.IsNullOrEmpty(txtInput) || txtInput == "0")
+            if (String.IsNullOrEmpty(txtInput) || txtInput == "0" || txtInput == "Tipo de Saldo")
             {
                 MessageBox.Show(null,"Ingrese un " + campo, "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
@@ -201,9 +276,20 @@ namespace SistemasContables.Views
             {
                 return 3;
             }
-            else
+
+            else if(codigo < 10000 )
             {
                 return 4;
+            }
+
+            else if (codigo < 100000)
+            {
+                return 5;
+            }
+
+            else
+            {
+                return 0;
             }
         }
 
@@ -219,12 +305,17 @@ namespace SistemasContables.Views
             return tipoCuentaAux;
         }
 
-        private void textCodigoCuenta_KeyPress(object sender, KeyPressEventArgs e)
+        public void restorerButtonTextBox()
         {
-            if (!char.IsDigit(e.KeyChar) && (e.KeyChar != (char)Keys.Back))
-            {
-                e.Handled = true;
-            }
+            btnAgregarCuenta.BackColor = Color.FromArgb(39, 174, 96);
+            btnAgregarCuenta.Text = "Agregar Cuenta";
+            btnAgregarCuenta.IconChar = FontAwesome.Sharp.IconChar.PlusCircle;
+
+            isEdit = false;
+
+            textCodigoCuenta.Text = "";
+            textNombreCuenta.Text = "";
         }
+
     }
 }

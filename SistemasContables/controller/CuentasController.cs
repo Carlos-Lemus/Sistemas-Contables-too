@@ -51,5 +51,16 @@ namespace SistemasContables
 
             return this.lista;
         }
+
+        public bool update(Cuenta cuenta)
+        {
+            return this.cuentasDAO.update(cuenta);
+        }
+
+        public bool delete(int idCuenta)
+        {
+            return this.cuentasDAO.delete(idCuenta);
+        }
+
     }
 }
