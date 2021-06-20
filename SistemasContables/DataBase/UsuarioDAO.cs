@@ -46,9 +46,9 @@ namespace SistemasContables.DataBase
                             {
                                 Usuario user = new Usuario();
 
-                                user.IdUsuario = Convert.ToInt32(result[ID_USUARIO].ToString());
-                                user.NombreUsuario = result[NOMBRE_USUARIO].ToString();
-                                user.Rol = result[ROL_USUARIO].ToString();                                
+                                user.idUsuario = Convert.ToInt32(result[ID_USUARIO].ToString());
+                                user.nombreUsuario = result[NOMBRE_USUARIO].ToString();
+                                user.rol = result[ROL_USUARIO].ToString();                                
 
                                 listaUsers.Add(user);
                             }
@@ -68,6 +68,48 @@ namespace SistemasContables.DataBase
             return listaUsers;
         }
 
+        public Usuario searchUser(int idUsuario)
+        {
+            Usuario user = new Usuario();
+            try
+            {
+                conn = Conexion.Conn;
+
+                conn.Open();
+
+                using (SQLiteCommand command = new SQLiteCommand())
+                {
+                    string sql = $"SELECT * FROM {TABLE_USUARIOS} WHERE {ID_USUARIO} = {idUsuario}";
+                    command.CommandText = sql;
+                    command.Connection = Conexion.Conn;
+
+                    using (SQLiteDataReader result = command.ExecuteReader())
+                    {
+                        if (result.HasRows)
+                        {
+                            while (result.Read())
+                            {
+                                user.idUsuario = Convert.ToInt32(result[ID_USUARIO].ToString());
+                                user.nombreUsuario = result[NOMBRE_USUARIO].ToString();
+                                user.rol = result[ROL_USUARIO].ToString();
+                                user.password = result[PASSWORD_USUARIO].ToString();
+                            }
+                        }
+                    }
+
+                }
+
+                conn.Close();
+
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            return user;
+        }
+
         public bool insert(Usuario user)
         {
             try
@@ -82,9 +124,9 @@ namespace SistemasContables.DataBase
 
                     command.CommandText = sql;
                     command.Connection = Conexion.Conn;
-                    command.Parameters.AddWithValue($"@{NOMBRE_USUARIO}", user.NombreUsuario);
-                    command.Parameters.AddWithValue($"@{ROL_USUARIO}", user.Rol);                    
-                    command.Parameters.AddWithValue($"@{PASSWORD_USUARIO}", user.Password);                    
+                    command.Parameters.AddWithValue($"@{NOMBRE_USUARIO}", user.nombreUsuario);
+                    command.Parameters.AddWithValue($"@{ROL_USUARIO}", user.rol);                    
+                    command.Parameters.AddWithValue($"@{PASSWORD_USUARIO}", user.password);                    
                     command.ExecuteNonQuery();
 
                     conn.Close();
@@ -115,10 +157,10 @@ namespace SistemasContables.DataBase
                     //, 
                     command.CommandText = sql;
                     command.Connection = Conexion.Conn;
-                    command.Parameters.AddWithValue($"@{NOMBRE_USUARIO}", user.NombreUsuario);
-                    command.Parameters.AddWithValue($"@{ROL_USUARIO}", user.Rol);
-                    command.Parameters.AddWithValue($"@{PASSWORD_USUARIO}", user.Password);
-                    command.Parameters.AddWithValue($"@{ID_USUARIO}", user.IdUsuario);                   
+                    command.Parameters.AddWithValue($"@{NOMBRE_USUARIO}", user.nombreUsuario);
+                    command.Parameters.AddWithValue($"@{ROL_USUARIO}", user.rol);
+                    command.Parameters.AddWithValue($"@{PASSWORD_USUARIO}", user.password);
+                    command.Parameters.AddWithValue($"@{ID_USUARIO}", user.idUsuario);                   
                     command.ExecuteNonQuery();
 
                     conn.Close();
@@ -192,9 +234,9 @@ namespace SistemasContables.DataBase
                             {
                                 user = new Usuario();
 
-                                user.IdUsuario = Convert.ToInt32(result[ID_USUARIO].ToString());
-                                user.NombreUsuario = result[NOMBRE_USUARIO].ToString();
-                                user.Rol = result[ROL_USUARIO].ToString();
+                                user.idUsuario = Convert.ToInt32(result[ID_USUARIO].ToString());
+                                user.nombreUsuario = result[NOMBRE_USUARIO].ToString();
+                                user.rol = result[ROL_USUARIO].ToString();
 
                      
                             }
