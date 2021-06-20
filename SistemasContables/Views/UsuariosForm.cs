@@ -37,7 +37,7 @@ namespace SistemasContables.Views
 
             foreach (Usuario user in listaUsers)
             {
-                dvgUsuarios.Rows.Add(user.IdUsuario, user.NombreUsuario, user.Rol);
+                dvgUsuarios.Rows.Add(user.idUsuario, user.nombreUsuario, user.rol);
             }
         }      
 

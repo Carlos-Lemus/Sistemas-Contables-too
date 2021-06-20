@@ -55,7 +55,7 @@ namespace SistemasContables.Views
                 if(user  != null)
                 {
                     this.Visible = false;
-                    using (MainForm mainForm = new MainForm(user.Rol))
+                    using (MainForm mainForm = new MainForm(user.rol))
                     {
                         mainForm.ShowDialog();
                     }
