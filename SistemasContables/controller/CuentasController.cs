@@ -37,5 +37,19 @@ namespace SistemasContables
             this.estado = this.cuentasDAO.agregarListaDeCuentas(listCuentas);
             return this.estado;
         }
+
+        public List<Cuenta> listaNivelTipo(int nivel, string tipo)
+        {
+            this.lista = this.cuentasDAO.listaNivelTipo(nivel, tipo);
+
+            return this.lista;
+        }
+
+        public List<Cuenta> listaNivel(int nivel)
+        {
+            this.lista = this.cuentasDAO.listaNivel(nivel);
+
+            return this.lista;
+        }
     }
 }

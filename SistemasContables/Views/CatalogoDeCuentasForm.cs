@@ -36,11 +36,10 @@ namespace SistemasContables.Views
         private void textCodigoCuenta_Enter(object sender, EventArgs e)
         {
             /*
-            GunaTextBox textb = (GunaTextBox)sender;
-            if (textb.Text == textb.Tag.ToString())
+            if(textCodigoCuenta.Text == "Codigo")
             {
-                textb.Text = string.Empty;
-                textb.ForeColor = Color.Black;
+                textCodigoCuenta.Text = "";
+                textCodigoCuenta.ForeColor = Color.LightGray;
             }
             */
         }
@@ -98,8 +97,10 @@ namespace SistemasContables.Views
             }
 
             listaCuentas = cuentaController.getList();
-            
-            foreach(Cuenta cuenta in listaCuentas)
+            //listaCuentas = cuentaController.listaNivelTipo(3, "PATRIMONIO");
+            //listaCuentas = cuentaController.listaNivel(2);
+
+            foreach (Cuenta cuenta in listaCuentas)
             {
                 tableCatalogoDeCuentas.Rows.Add(cuenta.Codigo, cuenta.Nombre, cuenta.Nivel, cuenta.TipoSaldo);
             }
