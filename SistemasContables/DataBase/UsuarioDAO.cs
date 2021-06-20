@@ -46,9 +46,9 @@ namespace SistemasContables.DataBase
                             {
                                 Usuario user = new Usuario();
 
-                                user.idUsuario = Convert.ToInt32(result[ID_USUARIO].ToString());
-                                user.nombreUsuario = result[NOMBRE_CUENTA].ToString();
-                                user.rol = result[ROL_USUARIO].ToString();                                
+                                user.IdUsuario = Convert.ToInt32(result[ID_USUARIO].ToString());
+                                user.NombreUsuario = result[NOMBRE_USUARIO].ToString();
+                                user.Rol = result[ROL_USUARIO].ToString();                                
 
                                 listaUsers.Add(user);
                             }

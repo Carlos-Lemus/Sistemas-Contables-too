@@ -34,12 +34,11 @@ namespace SistemasContables.Views
             listaUsers = userDao.getList();
             //MessageBox.Show(null, listaUsers.Count.ToString(), MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-
             //lblUsers.Text = "Numeros de propietarios: " + listaUsers.Count;
 
             foreach (Usuario user in listaUsers)
             {
-                dvgUsuarios.Rows.Add(user.idUsuario, user.nombreUsuario, user.rol);
+                dvgUsuarios.Rows.Add(user.IdUsuario, user.NombreUsuario, user.Rol);
             }
         }
     }

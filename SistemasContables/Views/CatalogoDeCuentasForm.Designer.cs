@@ -203,7 +203,7 @@ namespace SistemasContables.Views
             this.textNombreCuenta.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(151)))), ((int)(((byte)(230)))));
             this.textNombreCuenta.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.textNombreCuenta.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.textNombreCuenta.Location = new System.Drawing.Point(251, 184);
+            this.textNombreCuenta.Location = new System.Drawing.Point(251, 185);
             this.textNombreCuenta.Margin = new System.Windows.Forms.Padding(2);
             this.textNombreCuenta.Name = "textNombreCuenta";
             this.textNombreCuenta.PasswordChar = '\0';
@@ -228,7 +228,7 @@ namespace SistemasContables.Views
             "Activo",
             "Pasivo",
             "Patrimonio"});
-            this.cbTipoCuenta.Location = new System.Drawing.Point(529, 184);
+            this.cbTipoCuenta.Location = new System.Drawing.Point(526, 185);
             this.cbTipoCuenta.Margin = new System.Windows.Forms.Padding(2);
             this.cbTipoCuenta.Name = "cbTipoCuenta";
             this.cbTipoCuenta.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(151)))), ((int)(((byte)(230)))));
@@ -312,8 +312,7 @@ namespace SistemasContables.Views
             // 
             // btnAgregarCuenta
             // 
-            this.btnAgregarCuenta.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAgregarCuenta.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAgregarCuenta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
             this.btnAgregarCuenta.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAgregarCuenta.FlatAppearance.BorderSize = 0;
@@ -341,8 +340,7 @@ namespace SistemasContables.Views
             // 
             // btnCargarCatalogo
             // 
-            this.btnCargarCatalogo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCargarCatalogo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCargarCatalogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
             this.btnCargarCatalogo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCargarCatalogo.FlatAppearance.BorderSize = 0;

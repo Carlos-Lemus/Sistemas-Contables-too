@@ -34,7 +34,6 @@ namespace SistemasContables.Views
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblTitulo = new System.Windows.Forms.Label();
-            this.btnAgregar = new FontAwesome.Sharp.IconButton();
             this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
             this.lblUsers = new Guna.UI.WinForms.GunaLabel();
             this.dvgUsuarios = new Guna.UI.WinForms.GunaDataGridView();
@@ -43,6 +42,7 @@ namespace SistemasContables.Views
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.editarColumna = new System.Windows.Forms.DataGridViewImageColumn();
             this.ColumnSelect = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.btnAgregar = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)(this.dvgUsuarios)).BeginInit();
             this.SuspendLayout();
             // 
@@ -51,55 +51,31 @@ namespace SistemasContables.Views
             this.lblTitulo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold);
-            this.lblTitulo.Location = new System.Drawing.Point(234, 67);
-            this.lblTitulo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTitulo.Location = new System.Drawing.Point(176, 54);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(793, 41);
+            this.lblTitulo.Size = new System.Drawing.Size(595, 33);
             this.lblTitulo.TabIndex = 16;
             this.lblTitulo.Text = "Manejo de usuarios";
             this.lblTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // btnAgregar
-            // 
-            this.btnAgregar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAgregar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
-            this.btnAgregar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAgregar.FlatAppearance.BorderSize = 0;
-            this.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregar.ForeColor = System.Drawing.Color.White;
-            this.btnAgregar.IconChar = FontAwesome.Sharp.IconChar.PlusCircle;
-            this.btnAgregar.IconColor = System.Drawing.Color.White;
-            this.btnAgregar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnAgregar.IconSize = 40;
-            this.btnAgregar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAgregar.Location = new System.Drawing.Point(98, 253);
-            this.btnAgregar.Margin = new System.Windows.Forms.Padding(4);
-            this.btnAgregar.MinimumSize = new System.Drawing.Size(187, 62);
-            this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(187, 62);
-            this.btnAgregar.TabIndex = 17;
-            this.btnAgregar.Text = "Agregar";
-            this.btnAgregar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnAgregar.UseVisualStyleBackColor = false;
             // 
             // gunaLabel1
             // 
             this.gunaLabel1.AutoSize = true;
             this.gunaLabel1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.gunaLabel1.Location = new System.Drawing.Point(303, 173);
+            this.gunaLabel1.Location = new System.Drawing.Point(227, 141);
+            this.gunaLabel1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.gunaLabel1.Name = "gunaLabel1";
-            this.gunaLabel1.Size = new System.Drawing.Size(0, 20);
+            this.gunaLabel1.Size = new System.Drawing.Size(0, 15);
             this.gunaLabel1.TabIndex = 38;
             // 
             // lblUsers
             // 
             this.lblUsers.AutoSize = true;
             this.lblUsers.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.lblUsers.Location = new System.Drawing.Point(236, 193);
+            this.lblUsers.Location = new System.Drawing.Point(177, 157);
+            this.lblUsers.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblUsers.Name = "lblUsers";
-            this.lblUsers.Size = new System.Drawing.Size(86, 20);
+            this.lblUsers.Size = new System.Drawing.Size(68, 15);
             this.lblUsers.TabIndex = 39;
             this.lblUsers.Text = "gunaLabel2";
             // 
@@ -142,8 +118,7 @@ namespace SistemasContables.Views
             this.dvgUsuarios.DefaultCellStyle = dataGridViewCellStyle3;
             this.dvgUsuarios.EnableHeadersVisualStyles = false;
             this.dvgUsuarios.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(152)))), ((int)(((byte)(194)))), ((int)(((byte)(189)))));
-            this.dvgUsuarios.Location = new System.Drawing.Point(98, 344);
-            this.dvgUsuarios.Margin = new System.Windows.Forms.Padding(4);
+            this.dvgUsuarios.Location = new System.Drawing.Point(74, 280);
             this.dvgUsuarios.Name = "dvgUsuarios";
             this.dvgUsuarios.RowHeadersVisible = false;
             this.dvgUsuarios.RowHeadersWidth = 51;
@@ -151,7 +126,7 @@ namespace SistemasContables.Views
             this.dvgUsuarios.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dvgUsuarios.RowTemplate.Height = 40;
             this.dvgUsuarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dvgUsuarios.Size = new System.Drawing.Size(1094, 281);
+            this.dvgUsuarios.Size = new System.Drawing.Size(820, 228);
             this.dvgUsuarios.TabIndex = 40;
             this.dvgUsuarios.Theme = Guna.UI.WinForms.GunaDataGridViewPresetThemes.Guna;
             this.dvgUsuarios.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
@@ -203,6 +178,7 @@ namespace SistemasContables.Views
             // 
             this.editarColumna.FillWeight = 25F;
             this.editarColumna.HeaderText = "";
+            this.editarColumna.Image = global::SistemasContables.Properties.Resources.edit;
             this.editarColumna.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
             this.editarColumna.MinimumWidth = 6;
             this.editarColumna.Name = "editarColumna";
@@ -215,19 +191,40 @@ namespace SistemasContables.Views
             this.ColumnSelect.MinimumWidth = 6;
             this.ColumnSelect.Name = "ColumnSelect";
             // 
+            // btnAgregar
+            // 
+            this.btnAgregar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
+            this.btnAgregar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAgregar.FlatAppearance.BorderSize = 0;
+            this.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregar.ForeColor = System.Drawing.Color.White;
+            this.btnAgregar.IconChar = FontAwesome.Sharp.IconChar.PlusCircle;
+            this.btnAgregar.IconColor = System.Drawing.Color.White;
+            this.btnAgregar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnAgregar.IconSize = 30;
+            this.btnAgregar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAgregar.Location = new System.Drawing.Point(74, 221);
+            this.btnAgregar.MinimumSize = new System.Drawing.Size(115, 35);
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.Size = new System.Drawing.Size(125, 35);
+            this.btnAgregar.TabIndex = 41;
+            this.btnAgregar.Text = "Agregar";
+            this.btnAgregar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnAgregar.UseVisualStyleBackColor = false;
+            // 
             // UsuariosForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.ClientSize = new System.Drawing.Size(1264, 874);
+            this.ClientSize = new System.Drawing.Size(948, 710);
+            this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.dvgUsuarios);
             this.Controls.Add(this.lblUsers);
             this.Controls.Add(this.gunaLabel1);
-            this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.lblTitulo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "UsuariosForm";
             this.Text = "UsuariosForm";
             ((System.ComponentModel.ISupportInitialize)(this.dvgUsuarios)).EndInit();
@@ -239,7 +236,6 @@ namespace SistemasContables.Views
         #endregion
 
         private System.Windows.Forms.Label lblTitulo;
-        private FontAwesome.Sharp.IconButton btnAgregar;
         private Guna.UI.WinForms.GunaLabel gunaLabel1;
         private Guna.UI.WinForms.GunaLabel lblUsers;
         private Guna.UI.WinForms.GunaDataGridView dvgUsuarios;
@@ -248,5 +244,6 @@ namespace SistemasContables.Views
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewImageColumn editarColumna;
         private System.Windows.Forms.DataGridViewCheckBoxColumn ColumnSelect;
+        private FontAwesome.Sharp.IconButton btnAgregar;
     }
 }
