@@ -61,7 +61,7 @@ namespace SistemasContables
             activaButton(this.btnInicio);
             openFormInPane(new InicioForm(libroDiarioController, listaLibroDiario, listaYears));
 
-            if(rol != "Admin")
+            if(rol != "Administrador")
             {
                 btnCatalogo.Visible = false;
                 btnUsuarios.Visible = false;
@@ -72,7 +72,7 @@ namespace SistemasContables
         // cierra el programa
         private void btnExit_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            this.Close();
         }
 
         // maximiza la ventana
@@ -194,6 +194,11 @@ namespace SistemasContables
             currentNameForm = "usuarios";
             activaButton(this.btnUsuarios);
             openFormInPane(new UsuariosForm());
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
 
         // el metodo elimina el libro diario

@@ -23,6 +23,9 @@ namespace SistemasContables.Views
 
             usuarioDAO = new UsuarioDAO();
 
+            txtNombre.Text = "Lemus";
+            txtPassword.Text = "123";
+
         }
 
         // cierra el programa
@@ -54,13 +57,18 @@ namespace SistemasContables.Views
 
                 if(user  != null)
                 {
+                    txtNombre.Text = "";
+                    txtPassword.Text = "";
+
                     this.Visible = false;
-                    using (MainForm mainForm = new MainForm(user.rol))
+                    using (MainForm mainForm = new MainForm(user.Rol))
                     {
                         mainForm.ShowDialog();
                     }
 
                     lblErrorLogin.Visible = false;
+
+                    this.Visible = true;
                 } else
                 {
                     lblErrorLogin.Visible = true;

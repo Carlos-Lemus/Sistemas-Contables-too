@@ -1,4 +1,5 @@
 ﻿using SistemasContables.Models;
+using SistemasContables.Utilitys;
 using System;
 using System.Collections.Generic;
 using System.Data.SQLite;
@@ -46,9 +47,10 @@ namespace SistemasContables.DataBase
                             {
                                 Usuario user = new Usuario();
 
-                                user.idUsuario = Convert.ToInt32(result[ID_USUARIO].ToString());
-                                user.nombreUsuario = result[NOMBRE_USUARIO].ToString();
-                                user.rol = result[ROL_USUARIO].ToString();                                
+                                user.IdUsuario = Convert.ToInt32(result[ID_USUARIO].ToString());
+                                user.NombreUsuario = result[NOMBRE_USUARIO].ToString();
+                                user.Rol = result[ROL_USUARIO].ToString();
+                                user. Password = result[PASSWORD_USUARIO].ToString();
 
                                 listaUsers.Add(user);
                             }
@@ -89,10 +91,10 @@ namespace SistemasContables.DataBase
                         {
                             while (result.Read())
                             {
-                                user.idUsuario = Convert.ToInt32(result[ID_USUARIO].ToString());
-                                user.nombreUsuario = result[NOMBRE_USUARIO].ToString();
-                                user.rol = result[ROL_USUARIO].ToString();
-                                user.password = result[PASSWORD_USUARIO].ToString();
+                                user.IdUsuario = Convert.ToInt32(result[ID_USUARIO].ToString());
+                                user.NombreUsuario = result[NOMBRE_USUARIO].ToString();
+                                user.Rol = result[ROL_USUARIO].ToString();
+                                user.Password = result[PASSWORD_USUARIO].ToString();
                             }
                         }
                     }
@@ -124,9 +126,9 @@ namespace SistemasContables.DataBase
 
                     command.CommandText = sql;
                     command.Connection = Conexion.Conn;
-                    command.Parameters.AddWithValue($"@{NOMBRE_USUARIO}", user.nombreUsuario);
-                    command.Parameters.AddWithValue($"@{ROL_USUARIO}", user.rol);                    
-                    command.Parameters.AddWithValue($"@{PASSWORD_USUARIO}", user.password);                    
+                    command.Parameters.AddWithValue($"@{NOMBRE_USUARIO}", user.NombreUsuario);
+                    command.Parameters.AddWithValue($"@{ROL_USUARIO}", user.Rol);                    
+                    command.Parameters.AddWithValue($"@{PASSWORD_USUARIO}", Encrypt.GetSHA256(user.Password));                    
                     command.ExecuteNonQuery();
 
                     conn.Close();
@@ -153,14 +155,27 @@ namespace SistemasContables.DataBase
 
                 using (SQLiteCommand command = new SQLiteCommand())
                 {
-                    string sql = $"UPDATE {TABLE_USUARIOS} SET {NOMBRE_USUARIO} = @{NOMBRE_USUARIO}, {ROL_USUARIO} = @{ROL_USUARIO}, {PASSWORD_USUARIO} = @{PASSWORD_USUARIO} WHERE {ID_USUARIO} = @{ID_USUARIO};";                    
-                    //, 
-                    command.CommandText = sql;
+                    string sql = $"UPDATE {TABLE_USUARIOS} SET {NOMBRE_USUARIO} = @{NOMBRE_USUARIO}, {ROL_USUARIO} = @{ROL_USUARIO} WHERE {ID_USUARIO} = @{ID_USUARIO};";
+
+                    string ePassword = "";
+
                     command.Connection = Conexion.Conn;
-                    command.Parameters.AddWithValue($"@{NOMBRE_USUARIO}", user.nombreUsuario);
-                    command.Parameters.AddWithValue($"@{ROL_USUARIO}", user.rol);
-                    command.Parameters.AddWithValue($"@{PASSWORD_USUARIO}", user.password);
-                    command.Parameters.AddWithValue($"@{ID_USUARIO}", user.idUsuario);                   
+                    command.CommandText = sql;
+
+                    if (!String.IsNullOrEmpty(user.Password))
+                    {
+                        ePassword = Encrypt.GetSHA256(user.Password);
+
+                        sql = $"UPDATE {TABLE_USUARIOS} SET {NOMBRE_USUARIO} = @{NOMBRE_USUARIO}, {ROL_USUARIO} = @{ROL_USUARIO}, {PASSWORD_USUARIO} = @{PASSWORD_USUARIO} WHERE {ID_USUARIO} = @{ID_USUARIO};";
+                        
+                        command.CommandText = sql;
+                        command.Parameters.AddWithValue($"@{PASSWORD_USUARIO}", ePassword);
+                    }
+                
+                    command.Parameters.AddWithValue($"@{NOMBRE_USUARIO}", user.NombreUsuario);
+                    command.Parameters.AddWithValue($"@{ROL_USUARIO}", user.Rol);
+                    command.Parameters.AddWithValue($"@{ID_USUARIO}", user.IdUsuario);                   
+                    
                     command.ExecuteNonQuery();
 
                     conn.Close();
@@ -190,7 +205,7 @@ namespace SistemasContables.DataBase
                     string sql = $"DELETE FROM {TABLE_USUARIOS} WHERE {ID_USUARIO} = @{ID_USUARIO};";
 
                     command.CommandText = sql;
-                    command.Parameters.AddWithValue($"@{NOMBRE_USUARIO}", idUsuario);
+                    command.Parameters.AddWithValue($"@{ID_USUARIO}", idUsuario);
                     command.Connection = Conexion.Conn;                    
                     command.ExecuteNonQuery();
 
@@ -234,9 +249,9 @@ namespace SistemasContables.DataBase
                             {
                                 user = new Usuario();
 
-                                user.idUsuario = Convert.ToInt32(result[ID_USUARIO].ToString());
-                                user.nombreUsuario = result[NOMBRE_USUARIO].ToString();
-                                user.rol = result[ROL_USUARIO].ToString();
+                                user.IdUsuario = Convert.ToInt32(result[ID_USUARIO].ToString());
+                                user.NombreUsuario= result[NOMBRE_USUARIO].ToString();
+                                user.Rol  = result[ROL_USUARIO].ToString();
 
                      
                             }

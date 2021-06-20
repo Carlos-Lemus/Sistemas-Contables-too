@@ -21,60 +21,40 @@ namespace SistemasContables.Views
             InitializeComponent();
             userDao = new UsuarioDAO();
             cargarDatos();
-        }
-
-        private void cargarDatos()
-        {
-            if (dvgUsuarios.RowCount > 0)
-            {
-                dvgUsuarios.Rows.Clear();
-                listaUsers.Clear();
-            }
-
-            listaUsers = userDao.getList();           
-
-            lblUsers.Text = "Numero de usuarios registrados: " + listaUsers.Count;
-
-            foreach (Usuario user in listaUsers)
-            {
-                dvgUsuarios.Rows.Add(user.idUsuario, user.nombreUsuario, user.rol);
-            }
-        }      
-
-        private void txtBuscarPaciente_TextChanged(object sender, EventArgs e)
-        {
-
-        }
+        }     
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
+            this.Parent.Parent.Parent.Visible = false;
+            
             using (AgregarUsuario form = new AgregarUsuario(false))
             {
                 form.ShowDialog();
             }
+
+            this.Parent.Parent.Parent.Visible = true;
 
             cargarDatos();
         }
 
         private void dvgUsuarios_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            try
+
+            if (dvgUsuarios.Columns[e.ColumnIndex].Name == "editarColumna")
             {
-                if (dvgUsuarios.Columns[e.ColumnIndex].Name == "editarColumna")
+                this.Parent.Parent.Parent.Visible = false;
+            
+                string id = dvgUsuarios.Rows[e.RowIndex].Cells[0].Value.ToString();
+                using (AgregarUsuario form = new AgregarUsuario(true, Int32.Parse(id)))
                 {
-                    string id = dvgUsuarios.Rows[e.RowIndex].Cells[0].Value.ToString();
-                    using (AgregarUsuario form = new AgregarUsuario(true, Int32.Parse(id)))
-                    {
-                        form.ShowDialog();
-                    }
-
-                    cargarDatos();
+                    form.ShowDialog();
                 }
+            
+                cargarDatos();
+            
+                this.Parent.Parent.Parent.Visible = true;
             }
-            catch (Exception exception)
-            {
 
-            }
         }
 
         private void iconButton1_Click(object sender, EventArgs e)
@@ -98,6 +78,44 @@ namespace SistemasContables.Views
                     }
 
                 }
+            }
+        }
+
+        private void txtSearch_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            var listaSearch = listaUsers.Where(user=> user.NombreUsuario.ToLower().Contains(txtSearch.Text.ToLower()));
+
+            cargarDatosSearch(listaSearch.ToList());
+        }
+
+        private void cargarDatos()
+        {
+            if (dvgUsuarios.RowCount > 0)
+            {
+                dvgUsuarios.Rows.Clear();
+                listaUsers.Clear();
+            }
+
+            listaUsers = userDao.getList();
+
+            lblUsers.Text = "Numero de usuarios registrados: " + listaUsers.Count;
+
+            foreach (Usuario user in listaUsers)
+            {
+                dvgUsuarios.Rows.Add(user.IdUsuario, user.NombreUsuario, user.Rol, user. Password);
+            }
+        }
+
+        private void cargarDatosSearch(List<Usuario> lista)
+        {
+            if (dvgUsuarios.RowCount > 0)
+            {
+                dvgUsuarios.Rows.Clear();
+            }
+
+            foreach (Usuario user in lista)
+            {
+                dvgUsuarios.Rows.Add(user.IdUsuario, user.NombreUsuario, user.Rol, user.Password);
             }
         }
     }

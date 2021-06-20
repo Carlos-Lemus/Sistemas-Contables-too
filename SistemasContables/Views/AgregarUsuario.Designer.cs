@@ -80,7 +80,7 @@ namespace SistemasContables.Views
             this.btnMinimizar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnMinimizar.IconSize = 35;
             this.btnMinimizar.Location = new System.Drawing.Point(412, 0);
-            this.btnMinimizar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnMinimizar.Margin = new System.Windows.Forms.Padding(2);
             this.btnMinimizar.Name = "btnMinimizar";
             this.btnMinimizar.Size = new System.Drawing.Size(51, 40);
             this.btnMinimizar.TabIndex = 4;
@@ -100,7 +100,7 @@ namespace SistemasContables.Views
             this.btnExit.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnExit.IconSize = 35;
             this.btnExit.Location = new System.Drawing.Point(463, 0);
-            this.btnExit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnExit.Margin = new System.Windows.Forms.Padding(2);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(51, 40);
             this.btnExit.TabIndex = 1;
@@ -164,7 +164,7 @@ namespace SistemasContables.Views
             "Administrador",
             "Contador"});
             this.comboTipo.Location = new System.Drawing.Point(96, 377);
-            this.comboTipo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboTipo.Margin = new System.Windows.Forms.Padding(2);
             this.comboTipo.Name = "comboTipo";
             this.comboTipo.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(132)))), ((int)(((byte)(227)))));
             this.comboTipo.OnHoverItemForeColor = System.Drawing.Color.White;
@@ -190,7 +190,7 @@ namespace SistemasContables.Views
             this.btnGuardarUser.Image = null;
             this.btnGuardarUser.ImageSize = new System.Drawing.Size(20, 20);
             this.btnGuardarUser.Location = new System.Drawing.Point(96, 431);
-            this.btnGuardarUser.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnGuardarUser.Margin = new System.Windows.Forms.Padding(2);
             this.btnGuardarUser.Name = "btnGuardarUser";
             this.btnGuardarUser.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(204)))), ((int)(((byte)(113)))));
             this.btnGuardarUser.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -230,7 +230,7 @@ namespace SistemasContables.Views
             this.btnEditarUser.Image = null;
             this.btnEditarUser.ImageSize = new System.Drawing.Size(20, 20);
             this.btnEditarUser.Location = new System.Drawing.Point(96, 431);
-            this.btnEditarUser.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnEditarUser.Margin = new System.Windows.Forms.Padding(2);
             this.btnEditarUser.Name = "btnEditarUser";
             this.btnEditarUser.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(196)))), ((int)(((byte)(15)))));
             this.btnEditarUser.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -291,8 +291,9 @@ namespace SistemasContables.Views
             this.Controls.Add(this.comboTipo);
             this.Controls.Add(this.panelTop);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "AgregarUsuario";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AgregarUsuario";
             this.panelTop.ResumeLayout(false);
             this.ResumeLayout(false);
