@@ -95,7 +95,8 @@ namespace SistemasContables.Views
             this.tableCatalogoDeCuentas.DefaultCellStyle = dataGridViewCellStyle3;
             this.tableCatalogoDeCuentas.EnableHeadersVisualStyles = false;
             this.tableCatalogoDeCuentas.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.tableCatalogoDeCuentas.Location = new System.Drawing.Point(76, 310);
+            this.tableCatalogoDeCuentas.Location = new System.Drawing.Point(101, 382);
+            this.tableCatalogoDeCuentas.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tableCatalogoDeCuentas.Name = "tableCatalogoDeCuentas";
             this.tableCatalogoDeCuentas.ReadOnly = true;
             this.tableCatalogoDeCuentas.RowHeadersVisible = false;
@@ -103,7 +104,7 @@ namespace SistemasContables.Views
             this.tableCatalogoDeCuentas.RowTemplate.Height = 40;
             this.tableCatalogoDeCuentas.RowTemplate.ReadOnly = true;
             this.tableCatalogoDeCuentas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.tableCatalogoDeCuentas.Size = new System.Drawing.Size(800, 354);
+            this.tableCatalogoDeCuentas.Size = new System.Drawing.Size(1067, 436);
             this.tableCatalogoDeCuentas.TabIndex = 36;
             this.tableCatalogoDeCuentas.Theme = Guna.UI.WinForms.GunaDataGridViewPresetThemes.Guna;
             this.tableCatalogoDeCuentas.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
@@ -164,9 +165,10 @@ namespace SistemasContables.Views
             this.lblTitulo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold);
-            this.lblTitulo.Location = new System.Drawing.Point(324, 37);
+            this.lblTitulo.Location = new System.Drawing.Point(432, 46);
+            this.lblTitulo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(300, 33);
+            this.lblTitulo.Size = new System.Drawing.Size(400, 41);
             this.lblTitulo.TabIndex = 37;
             this.lblTitulo.Text = "Catalogo de Cuentas";
             this.lblTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -181,12 +183,12 @@ namespace SistemasContables.Views
             this.textCodigoCuenta.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(151)))), ((int)(((byte)(230)))));
             this.textCodigoCuenta.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.textCodigoCuenta.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.textCodigoCuenta.Location = new System.Drawing.Point(71, 185);
-            this.textCodigoCuenta.Margin = new System.Windows.Forms.Padding(2);
+            this.textCodigoCuenta.Location = new System.Drawing.Point(95, 228);
+            this.textCodigoCuenta.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textCodigoCuenta.Name = "textCodigoCuenta";
             this.textCodigoCuenta.PasswordChar = '\0';
             this.textCodigoCuenta.Radius = 5;
-            this.textCodigoCuenta.Size = new System.Drawing.Size(164, 34);
+            this.textCodigoCuenta.Size = new System.Drawing.Size(219, 46);
             this.textCodigoCuenta.TabIndex = 0;
             this.textCodigoCuenta.Enter += new System.EventHandler(this.textCodigoCuenta_Enter);
             this.textCodigoCuenta.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textCodigoCuenta_KeyPress);
@@ -203,12 +205,12 @@ namespace SistemasContables.Views
             this.textNombreCuenta.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(151)))), ((int)(((byte)(230)))));
             this.textNombreCuenta.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.textNombreCuenta.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.textNombreCuenta.Location = new System.Drawing.Point(251, 185);
-            this.textNombreCuenta.Margin = new System.Windows.Forms.Padding(2);
+            this.textNombreCuenta.Location = new System.Drawing.Point(335, 228);
+            this.textNombreCuenta.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textNombreCuenta.Name = "textNombreCuenta";
             this.textNombreCuenta.PasswordChar = '\0';
             this.textNombreCuenta.Radius = 5;
-            this.textNombreCuenta.Size = new System.Drawing.Size(262, 34);
+            this.textNombreCuenta.Size = new System.Drawing.Size(349, 46);
             this.textNombreCuenta.TabIndex = 1;
             // 
             // cbTipoCuenta
@@ -228,12 +230,12 @@ namespace SistemasContables.Views
             "Activo",
             "Pasivo",
             "Patrimonio"});
-            this.cbTipoCuenta.Location = new System.Drawing.Point(526, 185);
-            this.cbTipoCuenta.Margin = new System.Windows.Forms.Padding(2);
+            this.cbTipoCuenta.Location = new System.Drawing.Point(701, 228);
+            this.cbTipoCuenta.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbTipoCuenta.Name = "cbTipoCuenta";
             this.cbTipoCuenta.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(151)))), ((int)(((byte)(230)))));
             this.cbTipoCuenta.OnHoverItemForeColor = System.Drawing.Color.White;
-            this.cbTipoCuenta.Size = new System.Drawing.Size(146, 33);
+            this.cbTipoCuenta.Size = new System.Drawing.Size(193, 40);
             this.cbTipoCuenta.StartIndex = 0;
             this.cbTipoCuenta.TabIndex = 3;
             // 
@@ -249,12 +251,12 @@ namespace SistemasContables.Views
             this.textSeleccionarArchivo.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(151)))), ((int)(((byte)(230)))));
             this.textSeleccionarArchivo.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.textSeleccionarArchivo.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.textSeleccionarArchivo.Location = new System.Drawing.Point(71, 257);
-            this.textSeleccionarArchivo.Margin = new System.Windows.Forms.Padding(2);
+            this.textSeleccionarArchivo.Location = new System.Drawing.Point(95, 316);
+            this.textSeleccionarArchivo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textSeleccionarArchivo.Name = "textSeleccionarArchivo";
             this.textSeleccionarArchivo.PasswordChar = '\0';
             this.textSeleccionarArchivo.Radius = 5;
-            this.textSeleccionarArchivo.Size = new System.Drawing.Size(469, 34);
+            this.textSeleccionarArchivo.Size = new System.Drawing.Size(625, 46);
             this.textSeleccionarArchivo.TabIndex = 0;
             // 
             // label1
@@ -262,9 +264,10 @@ namespace SistemasContables.Views
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(69, 230);
+            this.label1.Location = new System.Drawing.Point(92, 283);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(471, 25);
+            this.label1.Size = new System.Drawing.Size(628, 31);
             this.label1.TabIndex = 40;
             this.label1.Text = "Cargar catalogo desde un archivo";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -274,9 +277,10 @@ namespace SistemasContables.Views
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.label2.Location = new System.Drawing.Point(67, 113);
+            this.label2.Location = new System.Drawing.Point(89, 139);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(249, 34);
+            this.label2.Size = new System.Drawing.Size(332, 42);
             this.label2.TabIndex = 41;
             this.label2.Text = "Agregar Cuenta";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -296,8 +300,8 @@ namespace SistemasContables.Views
             this.btnSeleccionarArchivo.ForeColor = System.Drawing.Color.White;
             this.btnSeleccionarArchivo.Image = global::SistemasContables.Properties.Resources.excel;
             this.btnSeleccionarArchivo.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnSeleccionarArchivo.Location = new System.Drawing.Point(557, 257);
-            this.btnSeleccionarArchivo.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSeleccionarArchivo.Location = new System.Drawing.Point(743, 316);
+            this.btnSeleccionarArchivo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSeleccionarArchivo.Name = "btnSeleccionarArchivo";
             this.btnSeleccionarArchivo.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
             this.btnSeleccionarArchivo.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -305,7 +309,7 @@ namespace SistemasContables.Views
             this.btnSeleccionarArchivo.OnHoverImage = null;
             this.btnSeleccionarArchivo.OnPressedColor = System.Drawing.Color.Black;
             this.btnSeleccionarArchivo.Radius = 5;
-            this.btnSeleccionarArchivo.Size = new System.Drawing.Size(125, 35);
+            this.btnSeleccionarArchivo.Size = new System.Drawing.Size(167, 43);
             this.btnSeleccionarArchivo.TabIndex = 2;
             this.btnSeleccionarArchivo.Text = "Explorar";
             this.btnSeleccionarArchivo.Click += new System.EventHandler(this.btnSeleccionarArchivo_Click);
@@ -324,10 +328,11 @@ namespace SistemasContables.Views
             this.btnAgregarCuenta.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnAgregarCuenta.IconSize = 30;
             this.btnAgregarCuenta.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAgregarCuenta.Location = new System.Drawing.Point(692, 185);
-            this.btnAgregarCuenta.MinimumSize = new System.Drawing.Size(115, 35);
+            this.btnAgregarCuenta.Location = new System.Drawing.Point(923, 228);
+            this.btnAgregarCuenta.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAgregarCuenta.MinimumSize = new System.Drawing.Size(153, 43);
             this.btnAgregarCuenta.Name = "btnAgregarCuenta";
-            this.btnAgregarCuenta.Size = new System.Drawing.Size(177, 35);
+            this.btnAgregarCuenta.Size = new System.Drawing.Size(236, 43);
             this.btnAgregarCuenta.TabIndex = 42;
             this.btnAgregarCuenta.Text = "Agregar cuenta";
             this.btnAgregarCuenta.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -352,10 +357,11 @@ namespace SistemasContables.Views
             this.btnCargarCatalogo.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnCargarCatalogo.IconSize = 30;
             this.btnCargarCatalogo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCargarCatalogo.Location = new System.Drawing.Point(699, 257);
-            this.btnCargarCatalogo.MinimumSize = new System.Drawing.Size(115, 35);
+            this.btnCargarCatalogo.Location = new System.Drawing.Point(932, 316);
+            this.btnCargarCatalogo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCargarCatalogo.MinimumSize = new System.Drawing.Size(153, 43);
             this.btnCargarCatalogo.Name = "btnCargarCatalogo";
-            this.btnCargarCatalogo.Size = new System.Drawing.Size(177, 35);
+            this.btnCargarCatalogo.Size = new System.Drawing.Size(236, 43);
             this.btnCargarCatalogo.TabIndex = 43;
             this.btnCargarCatalogo.Text = "Cargar catalago";
             this.btnCargarCatalogo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -377,9 +383,10 @@ namespace SistemasContables.Views
             this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label3.Location = new System.Drawing.Point(67, 147);
+            this.label3.Location = new System.Drawing.Point(89, 181);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(168, 34);
+            this.label3.Size = new System.Drawing.Size(224, 42);
             this.label3.TabIndex = 44;
             this.label3.Text = "Codigo de la cuenta";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -389,19 +396,20 @@ namespace SistemasContables.Views
             this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label4.Location = new System.Drawing.Point(247, 147);
+            this.label4.Location = new System.Drawing.Point(329, 181);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(168, 34);
+            this.label4.Size = new System.Drawing.Size(224, 42);
             this.label4.TabIndex = 45;
             this.label4.Text = "Nombre de la cuenta";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // CatalogoDeCuentasForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(948, 710);
+            this.ClientSize = new System.Drawing.Size(1264, 874);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btnCargarCatalogo);
@@ -416,7 +424,7 @@ namespace SistemasContables.Views
             this.Controls.Add(this.lblTitulo);
             this.Controls.Add(this.tableCatalogoDeCuentas);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "CatalogoDeCuentasForm";
             this.Text = "CatalogoDeCuentas";
             ((System.ComponentModel.ISupportInitialize)(this.tableCatalogoDeCuentas)).EndInit();

@@ -37,5 +37,6 @@ namespace SistemasContables.DataBase
         protected const string ID_USUARIO = "idUsuario";
         protected const string NOMBRE_USUARIO = "nombre";
         protected const string ROL_USUARIO = "rol";
+        protected const string PASSWORD_USUARIO = "Password";
     }
 }

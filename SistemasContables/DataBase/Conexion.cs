@@ -90,7 +90,7 @@ namespace SistemasContables.DataBase
                     sql += "ON DELETE CASCADE ON UPDATE CASCADE";
                     sql += ");";
 
-                    sql += "CREATE TABLE Usuarios (idUsuario INTEGER PRIMARY KEY AUTOINCREMENT, nombre VARCHAR(100), rol VARCHAR(50));";
+                    sql += "CREATE TABLE Usuarios (idUsuario INTEGER PRIMARY KEY AUTOINCREMENT, nombre VARCHAR(100), rol VARCHAR(50), Password VARCHAR(255));";
 
                     sql += cuentasInsert();
 
