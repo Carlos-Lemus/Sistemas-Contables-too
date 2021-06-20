@@ -29,70 +29,73 @@ namespace SistemasContables.Views
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CatalogoDeCuentasForm));
+            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tableCatalogoDeCuentas = new Guna.UI.WinForms.GunaDataGridView();
             this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cuenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nivel = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblTitulo = new System.Windows.Forms.Label();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.textCodigoCuenta = new Guna.UI.WinForms.GunaTextBox();
             this.textNombreCuenta = new Guna.UI.WinForms.GunaTextBox();
-            this.btnAgregarCuenta = new Guna.UI.WinForms.GunaButton();
-            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
+            this.cbTipoCuenta = new Guna.UI.WinForms.GunaComboBox();
             this.textSeleccionarArchivo = new Guna.UI.WinForms.GunaTextBox();
-            this.btnSeleccionarArchivo = new Guna.UI.WinForms.GunaButton();
-            this.btnCargarCatalogo = new Guna.UI.WinForms.GunaButton();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.cbTipoCuenta = new Guna.UI.WinForms.GunaComboBox();
+            this.btnSeleccionarArchivo = new Guna.UI.WinForms.GunaButton();
+            this.btnAgregarCuenta = new FontAwesome.Sharp.IconButton();
+            this.gunaElipse1 = new Guna.UI.WinForms.GunaElipse(this.components);
+            this.btnCargarCatalogo = new FontAwesome.Sharp.IconButton();
+            this.gunaElipse2 = new Guna.UI.WinForms.GunaElipse(this.components);
+            this.gunaImageReplaceColor1 = new Guna.UI.WinForms.GunaImageReplaceColor(this.components);
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.tableCatalogoDeCuentas)).BeginInit();
-            this.flowLayoutPanel1.SuspendLayout();
-            this.flowLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableCatalogoDeCuentas
             // 
             this.tableCatalogoDeCuentas.AllowUserToAddRows = false;
             this.tableCatalogoDeCuentas.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
-            this.tableCatalogoDeCuentas.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.tableCatalogoDeCuentas.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.tableCatalogoDeCuentas.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tableCatalogoDeCuentas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.tableCatalogoDeCuentas.BackgroundColor = System.Drawing.SystemColors.Control;
             this.tableCatalogoDeCuentas.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tableCatalogoDeCuentas.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.tableCatalogoDeCuentas.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableWithoutHeaderText;
             this.tableCatalogoDeCuentas.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(95)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(113)))), ((int)(((byte)(88)))), ((int)(((byte)(226)))));
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.tableCatalogoDeCuentas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(95)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(113)))), ((int)(((byte)(88)))), ((int)(((byte)(226)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.tableCatalogoDeCuentas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.tableCatalogoDeCuentas.ColumnHeadersHeight = 40;
             this.tableCatalogoDeCuentas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Codigo,
             this.Cuenta,
             this.Nivel,
             this.Tipo});
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.tableCatalogoDeCuentas.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.tableCatalogoDeCuentas.DefaultCellStyle = dataGridViewCellStyle3;
             this.tableCatalogoDeCuentas.EnableHeadersVisualStyles = false;
             this.tableCatalogoDeCuentas.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.tableCatalogoDeCuentas.Location = new System.Drawing.Point(101, 351);
-            this.tableCatalogoDeCuentas.Margin = new System.Windows.Forms.Padding(4);
+            this.tableCatalogoDeCuentas.Location = new System.Drawing.Point(76, 310);
             this.tableCatalogoDeCuentas.Name = "tableCatalogoDeCuentas";
             this.tableCatalogoDeCuentas.ReadOnly = true;
             this.tableCatalogoDeCuentas.RowHeadersVisible = false;
@@ -100,7 +103,7 @@ namespace SistemasContables.Views
             this.tableCatalogoDeCuentas.RowTemplate.Height = 40;
             this.tableCatalogoDeCuentas.RowTemplate.ReadOnly = true;
             this.tableCatalogoDeCuentas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.tableCatalogoDeCuentas.Size = new System.Drawing.Size(1067, 400);
+            this.tableCatalogoDeCuentas.Size = new System.Drawing.Size(800, 354);
             this.tableCatalogoDeCuentas.TabIndex = 36;
             this.tableCatalogoDeCuentas.Theme = Guna.UI.WinForms.GunaDataGridViewPresetThemes.Guna;
             this.tableCatalogoDeCuentas.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
@@ -161,24 +164,12 @@ namespace SistemasContables.Views
             this.lblTitulo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold);
-            this.lblTitulo.Location = new System.Drawing.Point(432, 46);
-            this.lblTitulo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTitulo.Location = new System.Drawing.Point(324, 37);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(400, 41);
+            this.lblTitulo.Size = new System.Drawing.Size(300, 33);
             this.lblTitulo.TabIndex = 37;
             this.lblTitulo.Text = "Catalogo de Cuentas";
             this.lblTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.Controls.Add(this.textCodigoCuenta);
-            this.flowLayoutPanel1.Controls.Add(this.textNombreCuenta);
-            this.flowLayoutPanel1.Controls.Add(this.cbTipoCuenta);
-            this.flowLayoutPanel1.Controls.Add(this.btnAgregarCuenta);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(101, 181);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(1067, 48);
-            this.flowLayoutPanel1.TabIndex = 38;
             // 
             // textCodigoCuenta
             // 
@@ -187,149 +178,93 @@ namespace SistemasContables.Views
             this.textCodigoCuenta.BorderColor = System.Drawing.Color.Silver;
             this.textCodigoCuenta.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.textCodigoCuenta.FocusedBaseColor = System.Drawing.Color.White;
-            this.textCodigoCuenta.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.textCodigoCuenta.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(151)))), ((int)(((byte)(230)))));
             this.textCodigoCuenta.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.textCodigoCuenta.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.textCodigoCuenta.Location = new System.Drawing.Point(3, 3);
+            this.textCodigoCuenta.Location = new System.Drawing.Point(71, 185);
+            this.textCodigoCuenta.Margin = new System.Windows.Forms.Padding(2);
             this.textCodigoCuenta.Name = "textCodigoCuenta";
             this.textCodigoCuenta.PasswordChar = '\0';
             this.textCodigoCuenta.Radius = 5;
-            this.textCodigoCuenta.Size = new System.Drawing.Size(250, 42);
+            this.textCodigoCuenta.Size = new System.Drawing.Size(164, 34);
             this.textCodigoCuenta.TabIndex = 0;
             this.textCodigoCuenta.Enter += new System.EventHandler(this.textCodigoCuenta_Enter);
             this.textCodigoCuenta.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textCodigoCuenta_KeyPress);
             // 
             // textNombreCuenta
             // 
+            this.textNombreCuenta.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.textNombreCuenta.BackColor = System.Drawing.Color.Transparent;
             this.textNombreCuenta.BaseColor = System.Drawing.Color.White;
             this.textNombreCuenta.BorderColor = System.Drawing.Color.Silver;
             this.textNombreCuenta.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.textNombreCuenta.FocusedBaseColor = System.Drawing.Color.White;
-            this.textNombreCuenta.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.textNombreCuenta.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(151)))), ((int)(((byte)(230)))));
             this.textNombreCuenta.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.textNombreCuenta.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.textNombreCuenta.Location = new System.Drawing.Point(259, 3);
+            this.textNombreCuenta.Location = new System.Drawing.Point(251, 184);
+            this.textNombreCuenta.Margin = new System.Windows.Forms.Padding(2);
             this.textNombreCuenta.Name = "textNombreCuenta";
             this.textNombreCuenta.PasswordChar = '\0';
             this.textNombreCuenta.Radius = 5;
-            this.textNombreCuenta.Size = new System.Drawing.Size(350, 42);
+            this.textNombreCuenta.Size = new System.Drawing.Size(262, 34);
             this.textNombreCuenta.TabIndex = 1;
             // 
-            // btnAgregarCuenta
+            // cbTipoCuenta
             // 
-            this.btnAgregarCuenta.AnimationHoverSpeed = 0.07F;
-            this.btnAgregarCuenta.AnimationSpeed = 0.03F;
-            this.btnAgregarCuenta.BackColor = System.Drawing.Color.Transparent;
-            this.btnAgregarCuenta.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.btnAgregarCuenta.BorderColor = System.Drawing.Color.Black;
-            this.btnAgregarCuenta.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnAgregarCuenta.FocusedColor = System.Drawing.Color.Empty;
-            this.btnAgregarCuenta.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.btnAgregarCuenta.ForeColor = System.Drawing.Color.White;
-            this.btnAgregarCuenta.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregarCuenta.Image")));
-            this.btnAgregarCuenta.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnAgregarCuenta.Location = new System.Drawing.Point(856, 3);
-            this.btnAgregarCuenta.Name = "btnAgregarCuenta";
-            this.btnAgregarCuenta.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
-            this.btnAgregarCuenta.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.btnAgregarCuenta.OnHoverForeColor = System.Drawing.Color.White;
-            this.btnAgregarCuenta.OnHoverImage = null;
-            this.btnAgregarCuenta.OnPressedColor = System.Drawing.Color.Black;
-            this.btnAgregarCuenta.Radius = 5;
-            this.btnAgregarCuenta.Size = new System.Drawing.Size(205, 42);
-            this.btnAgregarCuenta.TabIndex = 2;
-            this.btnAgregarCuenta.Text = "Agregar Cuenta";
-            this.btnAgregarCuenta.Click += new System.EventHandler(this.btnAgregarCuenta_Click);
-            // 
-            // flowLayoutPanel2
-            // 
-            this.flowLayoutPanel2.Controls.Add(this.textSeleccionarArchivo);
-            this.flowLayoutPanel2.Controls.Add(this.btnSeleccionarArchivo);
-            this.flowLayoutPanel2.Controls.Add(this.btnCargarCatalogo);
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(101, 286);
-            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(986, 48);
-            this.flowLayoutPanel2.TabIndex = 39;
+            this.cbTipoCuenta.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbTipoCuenta.BackColor = System.Drawing.Color.Transparent;
+            this.cbTipoCuenta.BaseColor = System.Drawing.Color.White;
+            this.cbTipoCuenta.BorderColor = System.Drawing.Color.Silver;
+            this.cbTipoCuenta.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbTipoCuenta.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbTipoCuenta.FocusedColor = System.Drawing.Color.Empty;
+            this.cbTipoCuenta.Font = new System.Drawing.Font("Segoe UI", 14F);
+            this.cbTipoCuenta.ForeColor = System.Drawing.Color.Black;
+            this.cbTipoCuenta.FormattingEnabled = true;
+            this.cbTipoCuenta.Items.AddRange(new object[] {
+            "Tipo de Saldo",
+            "Activo",
+            "Pasivo",
+            "Patrimonio"});
+            this.cbTipoCuenta.Location = new System.Drawing.Point(529, 184);
+            this.cbTipoCuenta.Margin = new System.Windows.Forms.Padding(2);
+            this.cbTipoCuenta.Name = "cbTipoCuenta";
+            this.cbTipoCuenta.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(151)))), ((int)(((byte)(230)))));
+            this.cbTipoCuenta.OnHoverItemForeColor = System.Drawing.Color.White;
+            this.cbTipoCuenta.Size = new System.Drawing.Size(146, 33);
+            this.cbTipoCuenta.StartIndex = 0;
+            this.cbTipoCuenta.TabIndex = 3;
             // 
             // textSeleccionarArchivo
             // 
+            this.textSeleccionarArchivo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.textSeleccionarArchivo.BackColor = System.Drawing.Color.Transparent;
             this.textSeleccionarArchivo.BaseColor = System.Drawing.Color.White;
             this.textSeleccionarArchivo.BorderColor = System.Drawing.Color.Silver;
             this.textSeleccionarArchivo.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.textSeleccionarArchivo.FocusedBaseColor = System.Drawing.Color.White;
-            this.textSeleccionarArchivo.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.textSeleccionarArchivo.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(151)))), ((int)(((byte)(230)))));
             this.textSeleccionarArchivo.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.textSeleccionarArchivo.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.textSeleccionarArchivo.Location = new System.Drawing.Point(3, 3);
+            this.textSeleccionarArchivo.Location = new System.Drawing.Point(71, 257);
+            this.textSeleccionarArchivo.Margin = new System.Windows.Forms.Padding(2);
             this.textSeleccionarArchivo.Name = "textSeleccionarArchivo";
             this.textSeleccionarArchivo.PasswordChar = '\0';
             this.textSeleccionarArchivo.Radius = 5;
-            this.textSeleccionarArchivo.Size = new System.Drawing.Size(606, 42);
+            this.textSeleccionarArchivo.Size = new System.Drawing.Size(469, 34);
             this.textSeleccionarArchivo.TabIndex = 0;
-            // 
-            // btnSeleccionarArchivo
-            // 
-            this.btnSeleccionarArchivo.AnimationHoverSpeed = 0.07F;
-            this.btnSeleccionarArchivo.AnimationSpeed = 0.03F;
-            this.btnSeleccionarArchivo.BackColor = System.Drawing.Color.Transparent;
-            this.btnSeleccionarArchivo.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.btnSeleccionarArchivo.BorderColor = System.Drawing.Color.Black;
-            this.btnSeleccionarArchivo.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnSeleccionarArchivo.FocusedColor = System.Drawing.Color.Empty;
-            this.btnSeleccionarArchivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.btnSeleccionarArchivo.ForeColor = System.Drawing.Color.White;
-            this.btnSeleccionarArchivo.Image = ((System.Drawing.Image)(resources.GetObject("btnSeleccionarArchivo.Image")));
-            this.btnSeleccionarArchivo.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnSeleccionarArchivo.Location = new System.Drawing.Point(615, 3);
-            this.btnSeleccionarArchivo.Name = "btnSeleccionarArchivo";
-            this.btnSeleccionarArchivo.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
-            this.btnSeleccionarArchivo.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.btnSeleccionarArchivo.OnHoverForeColor = System.Drawing.Color.White;
-            this.btnSeleccionarArchivo.OnHoverImage = null;
-            this.btnSeleccionarArchivo.OnPressedColor = System.Drawing.Color.Black;
-            this.btnSeleccionarArchivo.Radius = 5;
-            this.btnSeleccionarArchivo.Size = new System.Drawing.Size(150, 42);
-            this.btnSeleccionarArchivo.TabIndex = 2;
-            this.btnSeleccionarArchivo.Text = "Explorar";
-            this.btnSeleccionarArchivo.Click += new System.EventHandler(this.btnSeleccionarArchivo_Click);
-            // 
-            // btnCargarCatalogo
-            // 
-            this.btnCargarCatalogo.AnimationHoverSpeed = 0.07F;
-            this.btnCargarCatalogo.AnimationSpeed = 0.03F;
-            this.btnCargarCatalogo.BackColor = System.Drawing.Color.Transparent;
-            this.btnCargarCatalogo.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.btnCargarCatalogo.BorderColor = System.Drawing.Color.Black;
-            this.btnCargarCatalogo.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnCargarCatalogo.FocusedColor = System.Drawing.Color.Empty;
-            this.btnCargarCatalogo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.btnCargarCatalogo.ForeColor = System.Drawing.Color.White;
-            this.btnCargarCatalogo.Image = ((System.Drawing.Image)(resources.GetObject("btnCargarCatalogo.Image")));
-            this.btnCargarCatalogo.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnCargarCatalogo.Location = new System.Drawing.Point(771, 3);
-            this.btnCargarCatalogo.Name = "btnCargarCatalogo";
-            this.btnCargarCatalogo.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
-            this.btnCargarCatalogo.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.btnCargarCatalogo.OnHoverForeColor = System.Drawing.Color.White;
-            this.btnCargarCatalogo.OnHoverImage = null;
-            this.btnCargarCatalogo.OnPressedColor = System.Drawing.Color.Black;
-            this.btnCargarCatalogo.Radius = 5;
-            this.btnCargarCatalogo.Size = new System.Drawing.Size(210, 42);
-            this.btnCargarCatalogo.TabIndex = 3;
-            this.btnCargarCatalogo.Text = "Cargar Calatogo";
-            this.btnCargarCatalogo.Click += new System.EventHandler(this.btnCargarCatalogo_Click);
             // 
             // label1
             // 
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label1.Location = new System.Drawing.Point(99, 241);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.label1.Location = new System.Drawing.Point(69, 230);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(332, 42);
+            this.label1.Size = new System.Drawing.Size(471, 25);
             this.label1.TabIndex = 40;
             this.label1.Text = "Cargar catalogo desde un archivo";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -338,57 +273,155 @@ namespace SistemasContables.Views
             // 
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label2.Location = new System.Drawing.Point(99, 136);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.label2.Location = new System.Drawing.Point(67, 113);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(332, 42);
+            this.label2.Size = new System.Drawing.Size(249, 34);
             this.label2.TabIndex = 41;
             this.label2.Text = "Agregar Cuenta";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // cbTipoCuenta
+            // btnSeleccionarArchivo
             // 
-            this.cbTipoCuenta.BackColor = System.Drawing.Color.Transparent;
-            this.cbTipoCuenta.BaseColor = System.Drawing.Color.White;
-            this.cbTipoCuenta.BorderColor = System.Drawing.Color.Silver;
-            this.cbTipoCuenta.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cbTipoCuenta.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbTipoCuenta.FocusedColor = System.Drawing.Color.Empty;
-            this.cbTipoCuenta.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.cbTipoCuenta.ForeColor = System.Drawing.Color.Black;
-            this.cbTipoCuenta.FormattingEnabled = true;
-            this.cbTipoCuenta.Items.AddRange(new object[] {
-            "Tipo de Saldo",
-            "Activo",
-            "Pasivo",
-            "Patrimonio"});
-            this.cbTipoCuenta.Location = new System.Drawing.Point(615, 3);
-            this.cbTipoCuenta.Name = "cbTipoCuenta";
-            this.cbTipoCuenta.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.cbTipoCuenta.OnHoverItemForeColor = System.Drawing.Color.White;
-            this.cbTipoCuenta.Size = new System.Drawing.Size(235, 35);
-            this.cbTipoCuenta.StartIndex = 0;
-            this.cbTipoCuenta.TabIndex = 3;
+            this.btnSeleccionarArchivo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSeleccionarArchivo.AnimationHoverSpeed = 0.07F;
+            this.btnSeleccionarArchivo.AnimationSpeed = 0.03F;
+            this.btnSeleccionarArchivo.BackColor = System.Drawing.Color.Transparent;
+            this.btnSeleccionarArchivo.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
+            this.btnSeleccionarArchivo.BorderColor = System.Drawing.Color.Black;
+            this.btnSeleccionarArchivo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSeleccionarArchivo.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnSeleccionarArchivo.FocusedColor = System.Drawing.Color.Empty;
+            this.btnSeleccionarArchivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.btnSeleccionarArchivo.ForeColor = System.Drawing.Color.White;
+            this.btnSeleccionarArchivo.Image = global::SistemasContables.Properties.Resources.excel;
+            this.btnSeleccionarArchivo.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnSeleccionarArchivo.Location = new System.Drawing.Point(557, 257);
+            this.btnSeleccionarArchivo.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSeleccionarArchivo.Name = "btnSeleccionarArchivo";
+            this.btnSeleccionarArchivo.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
+            this.btnSeleccionarArchivo.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnSeleccionarArchivo.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnSeleccionarArchivo.OnHoverImage = null;
+            this.btnSeleccionarArchivo.OnPressedColor = System.Drawing.Color.Black;
+            this.btnSeleccionarArchivo.Radius = 5;
+            this.btnSeleccionarArchivo.Size = new System.Drawing.Size(125, 35);
+            this.btnSeleccionarArchivo.TabIndex = 2;
+            this.btnSeleccionarArchivo.Text = "Explorar";
+            this.btnSeleccionarArchivo.Click += new System.EventHandler(this.btnSeleccionarArchivo_Click);
+            // 
+            // btnAgregarCuenta
+            // 
+            this.btnAgregarCuenta.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAgregarCuenta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
+            this.btnAgregarCuenta.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAgregarCuenta.FlatAppearance.BorderSize = 0;
+            this.btnAgregarCuenta.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAgregarCuenta.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregarCuenta.ForeColor = System.Drawing.Color.White;
+            this.btnAgregarCuenta.IconChar = FontAwesome.Sharp.IconChar.PlusCircle;
+            this.btnAgregarCuenta.IconColor = System.Drawing.Color.White;
+            this.btnAgregarCuenta.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnAgregarCuenta.IconSize = 30;
+            this.btnAgregarCuenta.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAgregarCuenta.Location = new System.Drawing.Point(692, 185);
+            this.btnAgregarCuenta.MinimumSize = new System.Drawing.Size(115, 35);
+            this.btnAgregarCuenta.Name = "btnAgregarCuenta";
+            this.btnAgregarCuenta.Size = new System.Drawing.Size(177, 35);
+            this.btnAgregarCuenta.TabIndex = 42;
+            this.btnAgregarCuenta.Text = "Agregar cuenta";
+            this.btnAgregarCuenta.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnAgregarCuenta.UseVisualStyleBackColor = false;
+            this.btnAgregarCuenta.Click += new System.EventHandler(this.btnAgregarCuenta_Click);
+            // 
+            // gunaElipse1
+            // 
+            this.gunaElipse1.TargetControl = this.btnAgregarCuenta;
+            // 
+            // btnCargarCatalogo
+            // 
+            this.btnCargarCatalogo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCargarCatalogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
+            this.btnCargarCatalogo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCargarCatalogo.FlatAppearance.BorderSize = 0;
+            this.btnCargarCatalogo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCargarCatalogo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCargarCatalogo.ForeColor = System.Drawing.Color.White;
+            this.btnCargarCatalogo.IconChar = FontAwesome.Sharp.IconChar.ClipboardCheck;
+            this.btnCargarCatalogo.IconColor = System.Drawing.Color.White;
+            this.btnCargarCatalogo.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnCargarCatalogo.IconSize = 30;
+            this.btnCargarCatalogo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCargarCatalogo.Location = new System.Drawing.Point(699, 257);
+            this.btnCargarCatalogo.MinimumSize = new System.Drawing.Size(115, 35);
+            this.btnCargarCatalogo.Name = "btnCargarCatalogo";
+            this.btnCargarCatalogo.Size = new System.Drawing.Size(177, 35);
+            this.btnCargarCatalogo.TabIndex = 43;
+            this.btnCargarCatalogo.Text = "Cargar catalago";
+            this.btnCargarCatalogo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnCargarCatalogo.UseVisualStyleBackColor = false;
+            this.btnCargarCatalogo.Click += new System.EventHandler(this.btnCargarCatalogo_Click);
+            // 
+            // gunaElipse2
+            // 
+            this.gunaElipse2.TargetControl = this.btnCargarCatalogo;
+            // 
+            // gunaImageReplaceColor1
+            // 
+            this.gunaImageReplaceColor1.Image = null;
+            this.gunaImageReplaceColor1.NewColor = System.Drawing.Color.Empty;
+            this.gunaImageReplaceColor1.OldColor = System.Drawing.Color.White;
+            // 
+            // label3
+            // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label3.Location = new System.Drawing.Point(67, 147);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(168, 34);
+            this.label3.TabIndex = 44;
+            this.label3.Text = "Codigo de la cuenta";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label4
+            // 
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label4.Location = new System.Drawing.Point(247, 147);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(168, 34);
+            this.label4.TabIndex = 45;
+            this.label4.Text = "Nombre de la cuenta";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // CatalogoDeCuentasForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1264, 874);
+            this.ClientSize = new System.Drawing.Size(948, 710);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.btnCargarCatalogo);
+            this.Controls.Add(this.btnAgregarCuenta);
+            this.Controls.Add(this.btnSeleccionarArchivo);
+            this.Controls.Add(this.textSeleccionarArchivo);
+            this.Controls.Add(this.cbTipoCuenta);
+            this.Controls.Add(this.textNombreCuenta);
+            this.Controls.Add(this.textCodigoCuenta);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.flowLayoutPanel2);
-            this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.lblTitulo);
             this.Controls.Add(this.tableCatalogoDeCuentas);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "CatalogoDeCuentasForm";
             this.Text = "CatalogoDeCuentas";
             ((System.ComponentModel.ISupportInitialize)(this.tableCatalogoDeCuentas)).EndInit();
-            this.flowLayoutPanel1.ResumeLayout(false);
-            this.flowLayoutPanel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -401,16 +434,19 @@ namespace SistemasContables.Views
         private System.Windows.Forms.DataGridViewTextBoxColumn Cuenta;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nivel;
         private System.Windows.Forms.DataGridViewTextBoxColumn Tipo;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private Guna.UI.WinForms.GunaTextBox textCodigoCuenta;
         private Guna.UI.WinForms.GunaTextBox textNombreCuenta;
-        private Guna.UI.WinForms.GunaButton btnAgregarCuenta;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
         private Guna.UI.WinForms.GunaTextBox textSeleccionarArchivo;
         private Guna.UI.WinForms.GunaButton btnSeleccionarArchivo;
-        private Guna.UI.WinForms.GunaButton btnCargarCatalogo;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private Guna.UI.WinForms.GunaComboBox cbTipoCuenta;
+        private FontAwesome.Sharp.IconButton btnAgregarCuenta;
+        private Guna.UI.WinForms.GunaElipse gunaElipse1;
+        private FontAwesome.Sharp.IconButton btnCargarCatalogo;
+        private Guna.UI.WinForms.GunaElipse gunaElipse2;
+        private Guna.UI.WinForms.GunaImageReplaceColor gunaImageReplaceColor1;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
     }
 }

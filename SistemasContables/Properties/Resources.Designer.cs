@@ -103,9 +103,9 @@ namespace SistemasContables.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap finanzas {
+        internal static System.Drawing.Bitmap excel {
             get {
-                object obj = ResourceManager.GetObject("finanzas", resourceCulture);
+                object obj = ResourceManager.GetObject("excel", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

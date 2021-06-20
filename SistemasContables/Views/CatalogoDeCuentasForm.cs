@@ -63,14 +63,14 @@ namespace SistemasContables.Views
                 bool add = cuentasDao.agregarCuenta(new Cuenta(0, nombreCuenta, codigoCuenta, nivel, tipo));
                 if (add)
                 {
-                    MessageBox.Show(null, "Se agrego la cuenta con exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show(null, "Se agrego la cuenta con exito", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     textCodigoCuenta.Text = "";
                     textNombreCuenta.Text = "";
                 }
                 else
                 {
-                    MessageBox.Show(null, "No se pudo agregar", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(null, "No se pudo agregar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
 
@@ -142,7 +142,7 @@ namespace SistemasContables.Views
             }
             catch(Exception exception)
             {
-                MessageBox.Show(exception.Message, "Error al cargar archivo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(null, exception.Message, "Error al cargar archivo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             cargarTablaCatalogo();
@@ -179,7 +179,7 @@ namespace SistemasContables.Views
         {
             if (String.IsNullOrEmpty(txtInput) || txtInput == "0")
             {
-                MessageBox.Show(null, "Ingrese un " + campo, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show(null,"Ingrese un " + campo, "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
                 return false;
             }

@@ -185,7 +185,7 @@ namespace SistemasContables
         private void btnUsuarios_Click(object sender, EventArgs e)
         {
             currentNameForm = "usuarios";
-            activaButton(this.btnCatalogo);
+            activaButton(this.btnUsuarios);
             openFormInPane(new UsuariosForm());
         }
 

@@ -75,13 +75,13 @@
             this.btnExportar.IconChar = FontAwesome.Sharp.IconChar.FilePdf;
             this.btnExportar.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(69)))), ((int)(((byte)(96)))));
             this.btnExportar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnExportar.IconSize = 40;
+            this.btnExportar.IconSize = 30;
             this.btnExportar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExportar.Location = new System.Drawing.Point(73, 143);
+            this.btnExportar.Location = new System.Drawing.Point(73, 168);
             this.btnExportar.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
-            this.btnExportar.MinimumSize = new System.Drawing.Size(140, 50);
+            this.btnExportar.MinimumSize = new System.Drawing.Size(125, 35);
             this.btnExportar.Name = "btnExportar";
-            this.btnExportar.Size = new System.Drawing.Size(140, 50);
+            this.btnExportar.Size = new System.Drawing.Size(125, 35);
             this.btnExportar.TabIndex = 7;
             this.btnExportar.Text = "Exportar";
             this.btnExportar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -128,7 +128,6 @@
             // 
             // gunaElipse1
             // 
-            this.gunaElipse1.Radius = 10;
             this.gunaElipse1.TargetControl = this.btnExportar;
             // 
             // splitContainer
@@ -365,7 +364,7 @@
             this.lblPasivosCapital.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(189)))), ((int)(((byte)(50)))));
             this.lblPasivosCapital.Location = new System.Drawing.Point(159, 0);
             this.lblPasivosCapital.Name = "lblPasivosCapital";
-            this.lblPasivosCapital.Size = new System.Drawing.Size(185, 64);
+            this.lblPasivosCapital.Size = new System.Drawing.Size(149, 64);
             this.lblPasivosCapital.TabIndex = 40;
             this.lblPasivosCapital.Text = "total pasivos + capital";
             this.lblPasivosCapital.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
