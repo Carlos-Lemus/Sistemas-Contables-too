@@ -16,7 +16,7 @@ namespace SistemasContables.Views
 {
     public partial class CatalogoDeCuentasForm : Form
     {
-        private CuentasDAO cuentasDao;
+        private CuentasController cuentaController;
         private List<Cuenta> listaCuentas;
 
         private List<Cuenta> listaCuentasAdd = new List<Cuenta>();
@@ -29,7 +29,7 @@ namespace SistemasContables.Views
         {
             InitializeComponent();
 
-            cuentasDao = new CuentasDAO();
+            cuentaController = new CuentasController();
             cargarTablaCatalogo();
         }
 
@@ -60,7 +60,7 @@ namespace SistemasContables.Views
                 int nivel = establecerNivel(Convert.ToInt32(codigoCuenta));
                 string tipo = cbTipoCuenta.SelectedItem.ToString();
 
-                bool add = cuentasDao.agregarCuenta(new Cuenta(0, nombreCuenta, codigoCuenta, nivel, tipo));
+                bool add = cuentaController.agregarCuenta(new Cuenta(0, nombreCuenta, codigoCuenta, nivel, tipo));
                 if (add)
                 {
                     MessageBox.Show(null, "Se agrego la cuenta con exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -97,7 +97,7 @@ namespace SistemasContables.Views
                 listaCuentas.Clear();
             }
 
-            listaCuentas = cuentasDao.getList();
+            listaCuentas = cuentaController.getList();
             
             foreach(Cuenta cuenta in listaCuentas)
             {
@@ -131,7 +131,7 @@ namespace SistemasContables.Views
                     valor++;
                 }
 
-                bool add = cuentasDao.agregarListaDeCuentas(listaCuentasAdd);
+                bool add = cuentaController.agregarListaDeCuentas(listaCuentasAdd);
                 if (add)
                 {
                     MessageBox.Show(null, "Se cargo el catalogo con exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
