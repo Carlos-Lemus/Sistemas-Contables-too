@@ -38,7 +38,6 @@ namespace SistemasContables.Views
             this.txtNombreUSer = new Guna.UI.WinForms.GunaTextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.comboTipo = new Guna.UI.WinForms.GunaComboBox();
-            this.gunaResize1 = new Guna.UI.WinForms.GunaResize(this.components);
             this.gunaDragControl1 = new Guna.UI.WinForms.GunaDragControl(this.components);
             this.btnGuardarUser = new Guna.UI.WinForms.GunaButton();
             this.label2 = new System.Windows.Forms.Label();
@@ -56,9 +55,8 @@ namespace SistemasContables.Views
             this.panelTop.Controls.Add(this.btnExit);
             this.panelTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTop.Location = new System.Drawing.Point(0, 0);
-            this.panelTop.Margin = new System.Windows.Forms.Padding(4);
             this.panelTop.Name = "panelTop";
-            this.panelTop.Size = new System.Drawing.Size(685, 49);
+            this.panelTop.Size = new System.Drawing.Size(514, 40);
             this.panelTop.TabIndex = 116;
             // 
             // lblTitulo
@@ -67,9 +65,8 @@ namespace SistemasContables.Views
             this.lblTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold);
             this.lblTitulo.ForeColor = System.Drawing.Color.White;
             this.lblTitulo.Location = new System.Drawing.Point(0, 0);
-            this.lblTitulo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(209, 49);
+            this.lblTitulo.Size = new System.Drawing.Size(157, 40);
             this.lblTitulo.TabIndex = 15;
             this.lblTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -82,10 +79,10 @@ namespace SistemasContables.Views
             this.btnMinimizar.IconColor = System.Drawing.Color.White;
             this.btnMinimizar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnMinimizar.IconSize = 35;
-            this.btnMinimizar.Location = new System.Drawing.Point(549, 0);
-            this.btnMinimizar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnMinimizar.Location = new System.Drawing.Point(412, 0);
+            this.btnMinimizar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnMinimizar.Name = "btnMinimizar";
-            this.btnMinimizar.Size = new System.Drawing.Size(68, 49);
+            this.btnMinimizar.Size = new System.Drawing.Size(51, 40);
             this.btnMinimizar.TabIndex = 4;
             this.btnMinimizar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnMinimizar.UseVisualStyleBackColor = true;
@@ -102,10 +99,10 @@ namespace SistemasContables.Views
             this.btnExit.IconColor = System.Drawing.Color.White;
             this.btnExit.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnExit.IconSize = 35;
-            this.btnExit.Location = new System.Drawing.Point(617, 0);
-            this.btnExit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnExit.Location = new System.Drawing.Point(463, 0);
+            this.btnExit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(68, 49);
+            this.btnExit.Size = new System.Drawing.Size(51, 40);
             this.btnExit.TabIndex = 1;
             this.btnExit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnExit.UseVisualStyleBackColor = true;
@@ -115,10 +112,9 @@ namespace SistemasContables.Views
             // 
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(123, 187);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(92, 152);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(232, 28);
+            this.label1.Size = new System.Drawing.Size(174, 23);
             this.label1.TabIndex = 120;
             this.label1.Text = "Nombre de usuario";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -135,22 +131,20 @@ namespace SistemasContables.Views
             this.txtNombreUSer.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(151)))), ((int)(((byte)(230)))));
             this.txtNombreUSer.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.txtNombreUSer.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.txtNombreUSer.Location = new System.Drawing.Point(128, 229);
-            this.txtNombreUSer.Margin = new System.Windows.Forms.Padding(4);
+            this.txtNombreUSer.Location = new System.Drawing.Point(96, 186);
             this.txtNombreUSer.Name = "txtNombreUSer";
             this.txtNombreUSer.PasswordChar = '\0';
             this.txtNombreUSer.Radius = 5;
-            this.txtNombreUSer.Size = new System.Drawing.Size(425, 46);
+            this.txtNombreUSer.Size = new System.Drawing.Size(319, 37);
             this.txtNombreUSer.TabIndex = 127;
             // 
             // label14
             // 
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.ForeColor = System.Drawing.Color.Black;
-            this.label14.Location = new System.Drawing.Point(123, 418);
-            this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label14.Location = new System.Drawing.Point(92, 340);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(195, 28);
+            this.label14.Size = new System.Drawing.Size(146, 23);
             this.label14.TabIndex = 119;
             this.label14.Text = "Tipo de usuario";
             this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -163,23 +157,20 @@ namespace SistemasContables.Views
             this.comboTipo.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.comboTipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboTipo.FocusedColor = System.Drawing.Color.Empty;
-            this.comboTipo.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.comboTipo.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.comboTipo.ForeColor = System.Drawing.Color.Black;
             this.comboTipo.FormattingEnabled = true;
             this.comboTipo.Items.AddRange(new object[] {
             "Administrador",
             "Contador"});
-            this.comboTipo.Location = new System.Drawing.Point(128, 464);
+            this.comboTipo.Location = new System.Drawing.Point(96, 377);
+            this.comboTipo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.comboTipo.Name = "comboTipo";
-            this.comboTipo.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.comboTipo.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(132)))), ((int)(((byte)(227)))));
             this.comboTipo.OnHoverItemForeColor = System.Drawing.Color.White;
-            this.comboTipo.Size = new System.Drawing.Size(425, 31);
+            this.comboTipo.Size = new System.Drawing.Size(320, 30);
             this.comboTipo.TabIndex = 117;
             this.comboTipo.SelectedIndexChanged += new System.EventHandler(this.comboTipo_SelectedIndexChanged);
-            // 
-            // gunaResize1
-            // 
-            this.gunaResize1.TargetForm = this;
             // 
             // gunaDragControl1
             // 
@@ -189,6 +180,7 @@ namespace SistemasContables.Views
             // 
             this.btnGuardarUser.AnimationHoverSpeed = 0.07F;
             this.btnGuardarUser.AnimationSpeed = 0.03F;
+            this.btnGuardarUser.BackColor = System.Drawing.Color.Transparent;
             this.btnGuardarUser.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
             this.btnGuardarUser.BorderColor = System.Drawing.Color.Black;
             this.btnGuardarUser.DialogResult = System.Windows.Forms.DialogResult.None;
@@ -197,14 +189,16 @@ namespace SistemasContables.Views
             this.btnGuardarUser.ForeColor = System.Drawing.Color.White;
             this.btnGuardarUser.Image = null;
             this.btnGuardarUser.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnGuardarUser.Location = new System.Drawing.Point(128, 530);
+            this.btnGuardarUser.Location = new System.Drawing.Point(96, 431);
+            this.btnGuardarUser.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnGuardarUser.Name = "btnGuardarUser";
-            this.btnGuardarUser.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.btnGuardarUser.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(204)))), ((int)(((byte)(113)))));
             this.btnGuardarUser.OnHoverBorderColor = System.Drawing.Color.Black;
             this.btnGuardarUser.OnHoverForeColor = System.Drawing.Color.White;
             this.btnGuardarUser.OnHoverImage = null;
             this.btnGuardarUser.OnPressedColor = System.Drawing.Color.Black;
-            this.btnGuardarUser.Size = new System.Drawing.Size(425, 42);
+            this.btnGuardarUser.Radius = 4;
+            this.btnGuardarUser.Size = new System.Drawing.Size(319, 34);
             this.btnGuardarUser.TabIndex = 128;
             this.btnGuardarUser.Text = "Agregar";
             this.btnGuardarUser.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -215,10 +209,9 @@ namespace SistemasContables.Views
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 19F, System.Drawing.FontStyle.Bold);
-            this.label2.Location = new System.Drawing.Point(79, 100);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(59, 81);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(519, 41);
+            this.label2.Size = new System.Drawing.Size(389, 33);
             this.label2.TabIndex = 129;
             this.label2.Text = "Agregar nuevo usuario";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -227,7 +220,8 @@ namespace SistemasContables.Views
             // 
             this.btnEditarUser.AnimationHoverSpeed = 0.07F;
             this.btnEditarUser.AnimationSpeed = 0.03F;
-            this.btnEditarUser.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnEditarUser.BackColor = System.Drawing.Color.Transparent;
+            this.btnEditarUser.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(156)))), ((int)(((byte)(18)))));
             this.btnEditarUser.BorderColor = System.Drawing.Color.Black;
             this.btnEditarUser.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnEditarUser.FocusedColor = System.Drawing.Color.Empty;
@@ -235,14 +229,16 @@ namespace SistemasContables.Views
             this.btnEditarUser.ForeColor = System.Drawing.Color.White;
             this.btnEditarUser.Image = null;
             this.btnEditarUser.ImageSize = new System.Drawing.Size(20, 20);
-            this.btnEditarUser.Location = new System.Drawing.Point(128, 530);
+            this.btnEditarUser.Location = new System.Drawing.Point(96, 431);
+            this.btnEditarUser.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnEditarUser.Name = "btnEditarUser";
-            this.btnEditarUser.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.btnEditarUser.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(196)))), ((int)(((byte)(15)))));
             this.btnEditarUser.OnHoverBorderColor = System.Drawing.Color.Black;
             this.btnEditarUser.OnHoverForeColor = System.Drawing.Color.White;
             this.btnEditarUser.OnHoverImage = null;
             this.btnEditarUser.OnPressedColor = System.Drawing.Color.Black;
-            this.btnEditarUser.Size = new System.Drawing.Size(425, 42);
+            this.btnEditarUser.Radius = 4;
+            this.btnEditarUser.Size = new System.Drawing.Size(319, 34);
             this.btnEditarUser.TabIndex = 130;
             this.btnEditarUser.Text = "Editar";
             this.btnEditarUser.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -260,32 +256,30 @@ namespace SistemasContables.Views
             this.txtContraUser.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(151)))), ((int)(((byte)(230)))));
             this.txtContraUser.FocusedForeColor = System.Drawing.SystemColors.ControlText;
             this.txtContraUser.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.txtContraUser.Location = new System.Drawing.Point(128, 343);
-            this.txtContraUser.Margin = new System.Windows.Forms.Padding(4);
+            this.txtContraUser.Location = new System.Drawing.Point(96, 279);
             this.txtContraUser.Name = "txtContraUser";
-            this.txtContraUser.PasswordChar = '\0';
+            this.txtContraUser.PasswordChar = '*';
             this.txtContraUser.Radius = 5;
-            this.txtContraUser.Size = new System.Drawing.Size(425, 46);
+            this.txtContraUser.Size = new System.Drawing.Size(319, 37);
             this.txtContraUser.TabIndex = 132;
             // 
             // label3
             // 
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(123, 301);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(92, 245);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(232, 28);
+            this.label3.Size = new System.Drawing.Size(174, 23);
             this.label3.TabIndex = 131;
             this.label3.Text = "Contraseña";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // AgregarUsuario
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(685, 652);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(514, 530);
             this.Controls.Add(this.txtContraUser);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btnEditarUser);
@@ -297,6 +291,7 @@ namespace SistemasContables.Views
             this.Controls.Add(this.comboTipo);
             this.Controls.Add(this.panelTop);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "AgregarUsuario";
             this.Text = "AgregarUsuario";
             this.panelTop.ResumeLayout(false);
@@ -314,7 +309,6 @@ namespace SistemasContables.Views
         private Guna.UI.WinForms.GunaTextBox txtNombreUSer;
         private System.Windows.Forms.Label label14;
         private Guna.UI.WinForms.GunaComboBox comboTipo;
-        private Guna.UI.WinForms.GunaResize gunaResize1;
         private Guna.UI.WinForms.GunaDragControl gunaDragControl1;
         private Guna.UI.WinForms.GunaButton btnGuardarUser;
         private System.Windows.Forms.Label label2;

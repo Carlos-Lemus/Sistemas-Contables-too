@@ -21,10 +21,10 @@ namespace SistemasContables.Views
             InitializeComponent();
             usuarioDao = new UsuarioDAO();
             user = new Usuario();
-            this.user.idUsuario = id;
+            this.user.IdUsuario = id;
             btnEditarUser.Visible = false;
             comboTipo.SelectedItem = "Administrador";
-            this.user.rol = comboTipo.SelectedItem.ToString();            
+            this.user.Rol = comboTipo.SelectedItem.ToString();            
 
             if (isEdit)
             {
@@ -46,16 +46,16 @@ namespace SistemasContables.Views
 
         private void btnEditarUser_Click(object sender, EventArgs e)
         {
-            this.user.nombreUsuario = txtNombreUSer.Text;
-            this.user.password = txtContraUser.Text;
+            this.user.NombreUsuario = txtNombreUSer.Text;
+            this.user.Password = txtContraUser.Text;
             this.usuarioDao.update(this.user);
             this.Close();
         }
 
         private void btnGuardarUser_Click(object sender, EventArgs e)
         {
-            this.user.nombreUsuario = txtNombreUSer.Text;
-            this.user.password = txtContraUser.Text;
+            this.user.NombreUsuario = txtNombreUSer.Text;
+            this.user.Password = txtContraUser.Text;
 
             this.usuarioDao.insert(this.user);
 
@@ -64,7 +64,7 @@ namespace SistemasContables.Views
 
         private void comboTipo_SelectedIndexChanged(object sender, EventArgs e)
         {
-            this.user.rol = comboTipo.SelectedItem.ToString();
+            this.user.Rol = comboTipo.SelectedItem.ToString();
         }
     }
 }

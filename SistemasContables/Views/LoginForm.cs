@@ -1,4 +1,7 @@
-﻿using System;
+﻿using SistemasContables.DataBase;
+using SistemasContables.Models;
+using SistemasContables.Utilitys;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,10 +15,14 @@ namespace SistemasContables.Views
 {
     public partial class LoginForm : Form
     {
-        
+        private UsuarioDAO usuarioDAO;
+
         public LoginForm()
         {
             InitializeComponent();
+
+            usuarioDAO = new UsuarioDAO();
+
         }
 
         // cierra el programa
@@ -40,11 +47,25 @@ namespace SistemasContables.Views
 
             if(isValidNombre && isValidPassword)
             {
-                this.Visible = false;
-                using(MainForm mainForm = new MainForm())
+
+                string ePassword = Encrypt.GetSHA256(password);
+                
+                Usuario user = usuarioDAO.verifyUser(nombre, ePassword);
+
+                if(user  != null)
                 {
-                    mainForm.ShowDialog();
+                    this.Visible = false;
+                    using (MainForm mainForm = new MainForm(user.Rol))
+                    {
+                        mainForm.ShowDialog();
+                    }
+
+                    lblErrorLogin.Visible = false;
+                } else
+                {
+                    lblErrorLogin.Visible = true;
                 }
+
             }
 
 

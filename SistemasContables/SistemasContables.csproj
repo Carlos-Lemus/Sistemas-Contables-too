@@ -126,6 +126,7 @@
     <Compile Include="Models\Partida.cs" />
     <Compile Include="Models\Usuario.cs" />
     <Compile Include="openFileDialogCatalogo\ShowDialog.cs" />
+    <Compile Include="Utilitys\Encrypt.cs" />
     <Compile Include="Views\AgregarLibroDiarioForm.cs">
       <SubType>Form</SubType>
     </Compile>
