@@ -32,5 +32,10 @@ namespace SistemasContables.DataBase
         protected const string NIVEL = "nivel";
         protected const string NOMBRE_CUENTA = "nombreCuenta";
         protected const string TIPO_SALDO = "tipoSaldo";
+
+        protected const string TABLE_USUARIOS = "Usuarios";
+        protected const string ID_USUARIO = "idUsuario";
+        protected const string NOMBRE_USUARIO = "nombre";
+        protected const string ROL_USUARIO = "rol";
     }
 }

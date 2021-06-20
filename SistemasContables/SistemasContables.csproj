@@ -119,10 +119,12 @@
     <Compile Include="DataBase\LibroDiarioDAO.cs" />
     <Compile Include="DataBase\LibroMayorDAO.cs" />
     <Compile Include="DataBase\PartidasDAO.cs" />
+    <Compile Include="DataBase\UsuarioDAO.cs" />
     <Compile Include="Models\Cuenta.cs" />
     <Compile Include="Models\CuentaPartida.cs" />
     <Compile Include="Models\LibroDiario.cs" />
     <Compile Include="Models\Partida.cs" />
+    <Compile Include="Models\Usuario.cs" />
     <Compile Include="openFileDialogCatalogo\ShowDialog.cs" />
     <Compile Include="Views\AgregarLibroDiarioForm.cs">
       <SubType>Form</SubType>
