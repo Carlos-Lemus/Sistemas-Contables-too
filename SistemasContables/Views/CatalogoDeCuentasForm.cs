@@ -16,7 +16,7 @@ namespace SistemasContables.Views
 {
     public partial class CatalogoDeCuentasForm : Form
     {
-        private CuentasDAO cuentasDao;
+        private CuentasController cuentaController;
         private List<Cuenta> listaCuentas;
 
         private List<Cuenta> listaCuentasAdd = new List<Cuenta>();
@@ -29,18 +29,17 @@ namespace SistemasContables.Views
         {
             InitializeComponent();
 
-            cuentasDao = new CuentasDAO();
+            cuentaController = new CuentasController();
             cargarTablaCatalogo();
         }
 
         private void textCodigoCuenta_Enter(object sender, EventArgs e)
         {
             /*
-            GunaTextBox textb = (GunaTextBox)sender;
-            if (textb.Text == textb.Tag.ToString())
+            if(textCodigoCuenta.Text == "Codigo")
             {
-                textb.Text = string.Empty;
-                textb.ForeColor = Color.Black;
+                textCodigoCuenta.Text = "";
+                textCodigoCuenta.ForeColor = Color.LightGray;
             }
             */
         }
@@ -60,7 +59,7 @@ namespace SistemasContables.Views
                 int nivel = establecerNivel(Convert.ToInt32(codigoCuenta));
                 string tipo = cbTipoCuenta.SelectedItem.ToString();
 
-                bool add = cuentasDao.agregarCuenta(new Cuenta(0, nombreCuenta, codigoCuenta, nivel, tipo));
+                bool add = cuentaController.agregarCuenta(new Cuenta(0, nombreCuenta, codigoCuenta, nivel, tipo));
                 if (add)
                 {
                     MessageBox.Show(null, "Se agrego la cuenta con exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -97,9 +96,11 @@ namespace SistemasContables.Views
                 listaCuentas.Clear();
             }
 
-            listaCuentas = cuentasDao.getList();
-            
-            foreach(Cuenta cuenta in listaCuentas)
+            listaCuentas = cuentaController.getList();
+            //listaCuentas = cuentaController.listaNivelTipo(3, "PATRIMONIO");
+            //listaCuentas = cuentaController.listaNivel(2);
+
+            foreach (Cuenta cuenta in listaCuentas)
             {
                 tableCatalogoDeCuentas.Rows.Add(cuenta.Codigo, cuenta.Nombre, cuenta.Nivel, cuenta.TipoSaldo);
             }
@@ -131,7 +132,7 @@ namespace SistemasContables.Views
                     valor++;
                 }
 
-                bool add = cuentasDao.agregarListaDeCuentas(listaCuentasAdd);
+                bool add = cuentaController.agregarListaDeCuentas(listaCuentasAdd);
                 if (add)
                 {
                     MessageBox.Show(null, "Se cargo el catalogo con exito", MessageBoxButtons.OK, MessageBoxIcon.Information);

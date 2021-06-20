@@ -34,14 +34,9 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelTabla = new System.Windows.Forms.Panel();
             this.tableLibroDiario = new Guna.UI.WinForms.GunaDataGridView();
-            this.btnExportar = new FontAwesome.Sharp.IconButton();
-            this.btnAgregar = new FontAwesome.Sharp.IconButton();
-            this.btnModificar = new FontAwesome.Sharp.IconButton();
-            this.btnEliminar = new FontAwesome.Sharp.IconButton();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.lblTitulo = new System.Windows.Forms.Label();
             this.lblPeriodo = new System.Windows.Forms.Label();
-            this.btnAjusteIva = new FontAwesome.Sharp.IconButton();
             this.lblDebe = new System.Windows.Forms.Label();
             this.lblHaber = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -51,11 +46,18 @@
             this.gunaElipse3 = new Guna.UI.WinForms.GunaElipse(this.components);
             this.gunaElipse4 = new Guna.UI.WinForms.GunaElipse(this.components);
             this.gunaElipse5 = new Guna.UI.WinForms.GunaElipse(this.components);
+            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.btnExportar = new FontAwesome.Sharp.IconButton();
+            this.btnAgregar = new FontAwesome.Sharp.IconButton();
+            this.btnEliminar = new FontAwesome.Sharp.IconButton();
+            this.btnAjusteIva = new FontAwesome.Sharp.IconButton();
             this.ColumnFecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnDetalle = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnDebe = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnHaber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnEdit = new System.Windows.Forms.DataGridViewImageColumn();
+            this.ColumnSelect = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.panelTabla.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tableLibroDiario)).BeginInit();
             this.flowLayoutPanel1.SuspendLayout();
@@ -97,7 +99,9 @@
             this.ColumnCodigo,
             this.ColumnDetalle,
             this.ColumnDebe,
-            this.ColumnHaber});
+            this.ColumnHaber,
+            this.ColumnEdit,
+            this.ColumnSelect});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.5F);
@@ -114,7 +118,6 @@
             this.tableLibroDiario.RowHeadersVisible = false;
             this.tableLibroDiario.RowHeadersWidth = 40;
             this.tableLibroDiario.RowTemplate.Height = 40;
-            this.tableLibroDiario.RowTemplate.ReadOnly = true;
             this.tableLibroDiario.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.tableLibroDiario.Size = new System.Drawing.Size(800, 380);
             this.tableLibroDiario.TabIndex = 3;
@@ -140,116 +143,18 @@
             this.tableLibroDiario.ThemeStyle.RowsStyle.Height = 40;
             this.tableLibroDiario.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.tableLibroDiario.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            // 
-            // btnExportar
-            // 
-            this.btnExportar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(58)))), ((int)(((byte)(71)))));
-            this.btnExportar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnExportar.FlatAppearance.BorderSize = 0;
-            this.btnExportar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExportar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExportar.ForeColor = System.Drawing.Color.White;
-            this.btnExportar.IconChar = FontAwesome.Sharp.IconChar.FilePdf;
-            this.btnExportar.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(69)))), ((int)(((byte)(96)))));
-            this.btnExportar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnExportar.IconSize = 40;
-            this.btnExportar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExportar.Location = new System.Drawing.Point(73, 164);
-            this.btnExportar.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
-            this.btnExportar.MinimumSize = new System.Drawing.Size(140, 50);
-            this.btnExportar.Name = "btnExportar";
-            this.btnExportar.Size = new System.Drawing.Size(140, 50);
-            this.btnExportar.TabIndex = 6;
-            this.btnExportar.Text = "Exportar";
-            this.btnExportar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnExportar.UseVisualStyleBackColor = false;
-            this.btnExportar.Click += new System.EventHandler(this.btnExportar_Click);
-            // 
-            // btnAgregar
-            // 
-            this.btnAgregar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAgregar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
-            this.btnAgregar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAgregar.FlatAppearance.BorderSize = 0;
-            this.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregar.ForeColor = System.Drawing.Color.White;
-            this.btnAgregar.IconChar = FontAwesome.Sharp.IconChar.PlusCircle;
-            this.btnAgregar.IconColor = System.Drawing.Color.White;
-            this.btnAgregar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnAgregar.IconSize = 40;
-            this.btnAgregar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAgregar.Location = new System.Drawing.Point(299, 3);
-            this.btnAgregar.MinimumSize = new System.Drawing.Size(140, 50);
-            this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(140, 50);
-            this.btnAgregar.TabIndex = 15;
-            this.btnAgregar.Text = "Agregar";
-            this.btnAgregar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnAgregar.UseVisualStyleBackColor = false;
-            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
-            // 
-            // btnModificar
-            // 
-            this.btnModificar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnModificar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(156)))), ((int)(((byte)(18)))));
-            this.btnModificar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnModificar.FlatAppearance.BorderSize = 0;
-            this.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModificar.ForeColor = System.Drawing.Color.White;
-            this.btnModificar.IconChar = FontAwesome.Sharp.IconChar.Edit;
-            this.btnModificar.IconColor = System.Drawing.Color.White;
-            this.btnModificar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnModificar.IconSize = 40;
-            this.btnModificar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnModificar.Location = new System.Drawing.Point(153, 3);
-            this.btnModificar.MinimumSize = new System.Drawing.Size(140, 50);
-            this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(140, 50);
-            this.btnModificar.TabIndex = 14;
-            this.btnModificar.Text = "Modificar";
-            this.btnModificar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnModificar.UseVisualStyleBackColor = false;
-            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
-            // 
-            // btnEliminar
-            // 
-            this.btnEliminar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnEliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(69)))), ((int)(((byte)(96)))));
-            this.btnEliminar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEliminar.FlatAppearance.BorderSize = 0;
-            this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminar.ForeColor = System.Drawing.Color.White;
-            this.btnEliminar.IconChar = FontAwesome.Sharp.IconChar.TrashAlt;
-            this.btnEliminar.IconColor = System.Drawing.Color.White;
-            this.btnEliminar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnEliminar.IconSize = 40;
-            this.btnEliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEliminar.Location = new System.Drawing.Point(7, 3);
-            this.btnEliminar.MinimumSize = new System.Drawing.Size(140, 50);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(140, 50);
-            this.btnEliminar.TabIndex = 13;
-            this.btnEliminar.Text = "Eliminar";
-            this.btnEliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnEliminar.UseVisualStyleBackColor = false;
-            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            this.tableLibroDiario.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tableLibroDiario_CellClick);
+            this.tableLibroDiario.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.tableLibroDiario_CellPainting);
             // 
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.flowLayoutPanel1.Controls.Add(this.btnAgregar);
-            this.flowLayoutPanel1.Controls.Add(this.btnModificar);
             this.flowLayoutPanel1.Controls.Add(this.btnEliminar);
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(431, 164);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(575, 164);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(442, 59);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(298, 59);
             this.flowLayoutPanel1.TabIndex = 7;
             // 
             // lblTitulo
@@ -275,31 +180,6 @@
             this.lblPeriodo.TabIndex = 9;
             this.lblPeriodo.Text = "texto periodo";
             this.lblPeriodo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // btnAjusteIva
-            // 
-            this.btnAjusteIva.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnAjusteIva.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
-            this.btnAjusteIva.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAjusteIva.FlatAppearance.BorderSize = 0;
-            this.btnAjusteIva.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAjusteIva.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAjusteIva.ForeColor = System.Drawing.Color.White;
-            this.btnAjusteIva.IconChar = FontAwesome.Sharp.IconChar.Calculator;
-            this.btnAjusteIva.IconColor = System.Drawing.Color.White;
-            this.btnAjusteIva.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnAjusteIva.IconSize = 40;
-            this.btnAjusteIva.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAjusteIva.Location = new System.Drawing.Point(73, 637);
-            this.btnAjusteIva.Margin = new System.Windows.Forms.Padding(3, 25, 3, 3);
-            this.btnAjusteIva.MinimumSize = new System.Drawing.Size(140, 50);
-            this.btnAjusteIva.Name = "btnAjusteIva";
-            this.btnAjusteIva.Size = new System.Drawing.Size(222, 50);
-            this.btnAjusteIva.TabIndex = 16;
-            this.btnAjusteIva.Text = "Calcular ajuste IVA";
-            this.btnAjusteIva.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnAjusteIva.UseVisualStyleBackColor = false;
-            this.btnAjusteIva.Click += new System.EventHandler(this.btnAjusteIva_Click);
             // 
             // lblDebe
             // 
@@ -357,7 +237,6 @@
             // gunaElipse2
             // 
             this.gunaElipse2.Radius = 10;
-            this.gunaElipse2.TargetControl = this.btnModificar;
             // 
             // gunaElipse3
             // 
@@ -374,35 +253,163 @@
             this.gunaElipse5.Radius = 10;
             this.gunaElipse5.TargetControl = this.btnAjusteIva;
             // 
+            // dataGridViewImageColumn1
+            // 
+            this.dataGridViewImageColumn1.FillWeight = 25F;
+            this.dataGridViewImageColumn1.HeaderText = "";
+            this.dataGridViewImageColumn1.Image = global::SistemasContables.Properties.Resources.edit;
+            this.dataGridViewImageColumn1.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
+            this.dataGridViewImageColumn1.Width = 40;
+            // 
+            // btnExportar
+            // 
+            this.btnExportar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(58)))), ((int)(((byte)(71)))));
+            this.btnExportar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnExportar.FlatAppearance.BorderSize = 0;
+            this.btnExportar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExportar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExportar.ForeColor = System.Drawing.Color.White;
+            this.btnExportar.IconChar = FontAwesome.Sharp.IconChar.FilePdf;
+            this.btnExportar.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(69)))), ((int)(((byte)(96)))));
+            this.btnExportar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnExportar.IconSize = 40;
+            this.btnExportar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnExportar.Location = new System.Drawing.Point(73, 164);
+            this.btnExportar.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
+            this.btnExportar.MinimumSize = new System.Drawing.Size(140, 50);
+            this.btnExportar.Name = "btnExportar";
+            this.btnExportar.Size = new System.Drawing.Size(140, 50);
+            this.btnExportar.TabIndex = 6;
+            this.btnExportar.Text = "Exportar";
+            this.btnExportar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnExportar.UseVisualStyleBackColor = false;
+            this.btnExportar.Click += new System.EventHandler(this.btnExportar_Click);
+            // 
+            // btnAgregar
+            // 
+            this.btnAgregar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAgregar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
+            this.btnAgregar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAgregar.FlatAppearance.BorderSize = 0;
+            this.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAgregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregar.ForeColor = System.Drawing.Color.White;
+            this.btnAgregar.IconChar = FontAwesome.Sharp.IconChar.PlusCircle;
+            this.btnAgregar.IconColor = System.Drawing.Color.White;
+            this.btnAgregar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnAgregar.IconSize = 40;
+            this.btnAgregar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAgregar.Location = new System.Drawing.Point(155, 3);
+            this.btnAgregar.MinimumSize = new System.Drawing.Size(140, 50);
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.Size = new System.Drawing.Size(140, 50);
+            this.btnAgregar.TabIndex = 15;
+            this.btnAgregar.Text = "Agregar";
+            this.btnAgregar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnAgregar.UseVisualStyleBackColor = false;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnEliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(69)))), ((int)(((byte)(96)))));
+            this.btnEliminar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEliminar.FlatAppearance.BorderSize = 0;
+            this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminar.ForeColor = System.Drawing.Color.White;
+            this.btnEliminar.IconChar = FontAwesome.Sharp.IconChar.TrashAlt;
+            this.btnEliminar.IconColor = System.Drawing.Color.White;
+            this.btnEliminar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnEliminar.IconSize = 40;
+            this.btnEliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEliminar.Location = new System.Drawing.Point(9, 3);
+            this.btnEliminar.MinimumSize = new System.Drawing.Size(140, 50);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(140, 50);
+            this.btnEliminar.TabIndex = 13;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            // 
+            // btnAjusteIva
+            // 
+            this.btnAjusteIva.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnAjusteIva.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
+            this.btnAjusteIva.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAjusteIva.FlatAppearance.BorderSize = 0;
+            this.btnAjusteIva.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAjusteIva.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAjusteIva.ForeColor = System.Drawing.Color.White;
+            this.btnAjusteIva.IconChar = FontAwesome.Sharp.IconChar.Calculator;
+            this.btnAjusteIva.IconColor = System.Drawing.Color.White;
+            this.btnAjusteIva.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnAjusteIva.IconSize = 40;
+            this.btnAjusteIva.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAjusteIva.Location = new System.Drawing.Point(73, 637);
+            this.btnAjusteIva.Margin = new System.Windows.Forms.Padding(3, 25, 3, 3);
+            this.btnAjusteIva.MinimumSize = new System.Drawing.Size(140, 50);
+            this.btnAjusteIva.Name = "btnAjusteIva";
+            this.btnAjusteIva.Size = new System.Drawing.Size(222, 50);
+            this.btnAjusteIva.TabIndex = 16;
+            this.btnAjusteIva.Text = "Calcular ajuste IVA";
+            this.btnAjusteIva.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnAjusteIva.UseVisualStyleBackColor = false;
+            this.btnAjusteIva.Click += new System.EventHandler(this.btnAjusteIva_Click);
+            // 
             // ColumnFecha
             // 
             this.ColumnFecha.FillWeight = 60F;
             this.ColumnFecha.HeaderText = "Fecha";
             this.ColumnFecha.Name = "ColumnFecha";
+            this.ColumnFecha.ReadOnly = true;
             // 
             // ColumnCodigo
             // 
             this.ColumnCodigo.FillWeight = 60F;
             this.ColumnCodigo.HeaderText = "Codigo";
             this.ColumnCodigo.Name = "ColumnCodigo";
+            this.ColumnCodigo.ReadOnly = true;
             // 
             // ColumnDetalle
             // 
-            this.ColumnDetalle.FillWeight = 220F;
+            this.ColumnDetalle.FillWeight = 170F;
             this.ColumnDetalle.HeaderText = "Detalle";
             this.ColumnDetalle.Name = "ColumnDetalle";
+            this.ColumnDetalle.ReadOnly = true;
             // 
             // ColumnDebe
             // 
             this.ColumnDebe.FillWeight = 80F;
             this.ColumnDebe.HeaderText = "Debe";
             this.ColumnDebe.Name = "ColumnDebe";
+            this.ColumnDebe.ReadOnly = true;
             // 
             // ColumnHaber
             // 
             this.ColumnHaber.FillWeight = 80F;
             this.ColumnHaber.HeaderText = "Haber";
             this.ColumnHaber.Name = "ColumnHaber";
+            this.ColumnHaber.ReadOnly = true;
+            // 
+            // ColumnEdit
+            // 
+            this.ColumnEdit.FillWeight = 25F;
+            this.ColumnEdit.HeaderText = "";
+            this.ColumnEdit.Image = global::SistemasContables.Properties.Resources.edit;
+            this.ColumnEdit.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.ColumnEdit.Name = "ColumnEdit";
+            this.ColumnEdit.ReadOnly = true;
+            // 
+            // ColumnSelect
+            // 
+            this.ColumnSelect.FillWeight = 25F;
+            this.ColumnSelect.HeaderText = "";
+            this.ColumnSelect.Name = "ColumnSelect";
             // 
             // LibroDiarioForm
             // 
@@ -435,7 +442,6 @@
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private FontAwesome.Sharp.IconButton btnExportar;
         private FontAwesome.Sharp.IconButton btnAgregar;
-        private FontAwesome.Sharp.IconButton btnModificar;
         private FontAwesome.Sharp.IconButton btnEliminar;
         private System.Windows.Forms.Label lblTitulo;
         private System.Windows.Forms.Label lblPeriodo;
@@ -450,10 +456,13 @@
         private Guna.UI.WinForms.GunaElipse gunaElipse3;
         private Guna.UI.WinForms.GunaElipse gunaElipse4;
         private Guna.UI.WinForms.GunaElipse gunaElipse5;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnFecha;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnCodigo;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnDetalle;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnDebe;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnHaber;
+        private System.Windows.Forms.DataGridViewImageColumn ColumnEdit;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn ColumnSelect;
     }
 }

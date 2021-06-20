@@ -182,6 +182,13 @@ namespace SistemasContables
             openFormInPane(new CatalogoDeCuentasForm());
         }
 
+        private void btnUsuarios_Click(object sender, EventArgs e)
+        {
+            currentNameForm = "usuarios";
+            activaButton(this.btnCatalogo);
+            openFormInPane(new UsuariosForm());
+        }
+
         // el metodo elimina el libro diario
         private void btnDeleteLibroDiario_Click(object sender, EventArgs e)
         {
@@ -369,6 +376,12 @@ namespace SistemasContables
                 case "balance_general":
                     openFormInPane(new BalanceGeneralForm(libroDiario));
                     break;
+                case "catalogo_de_cuentas":
+                    openFormInPane(new CatalogoDeCuentasForm());
+                    break;
+                case "usuarios":
+                    openFormInPane(new UsuariosForm());
+                    break;
             }
 
         }
@@ -396,5 +409,6 @@ namespace SistemasContables
             // inverto el orden de la lista
             listaYears.Reverse();
         }
+
     }
 }
