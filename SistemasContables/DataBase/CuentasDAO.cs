@@ -137,5 +137,110 @@ namespace SistemasContables.DataBase
             return lista;
         }
 
+        public List<Cuenta> listaNivelTipo(int nivel, string tipo)
+        {
+            try
+            {
+                conn = Conexion.Conn;
+
+                conn.Open();
+
+                using (SQLiteCommand command = new SQLiteCommand())
+                {
+                    string sql = $"SELECT * FROM {TABLE_CUENTA} WHERE ({NIVEL} = @{NIVEL}) AND ({TIPO_SALDO} = @{TIPO_SALDO})";
+
+                    command.CommandText = sql;
+                    command.Connection = Conexion.Conn;
+                    command.Parameters.AddWithValue($"@{NIVEL}", nivel);
+                    command.Parameters.AddWithValue($"@{TIPO_SALDO}", tipo);
+
+                    using (SQLiteDataReader result = command.ExecuteReader())
+                    {
+                        if (result.HasRows)
+                        {
+
+                            if (lista.Count > 0)
+                            {
+                                lista.Clear();
+                            }
+
+                            while (result.Read())
+                            {
+                                Cuenta cuenta = new Cuenta();
+
+                                cuenta.IdCuenta = Convert.ToInt32(result[ID_CUENTA]);
+                                cuenta.Codigo = result[CODIGO].ToString();
+                                cuenta.Nivel = Convert.ToInt32(result[NIVEL]);
+                                cuenta.Nombre = result[NOMBRE_CUENTA].ToString();
+                                cuenta.TipoSaldo = result[TIPO_SALDO].ToString();
+
+                                lista.Add(cuenta);
+                            }
+                        }
+                    }
+
+                }
+                conn.Close();
+
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return lista;
+        }
+
+        public List<Cuenta> listaNivel(int nivel)
+        {
+            try
+            {
+                conn = Conexion.Conn;
+
+                conn.Open();
+
+                using (SQLiteCommand command = new SQLiteCommand())
+                {
+                    string sql = $"SELECT * FROM {TABLE_CUENTA} WHERE ({NIVEL} = @{NIVEL})";
+
+                    command.CommandText = sql;
+                    command.Connection = Conexion.Conn;
+                    command.Parameters.AddWithValue($"@{NIVEL}", nivel);
+
+                    using (SQLiteDataReader result = command.ExecuteReader())
+                    {
+                        if (result.HasRows)
+                        {
+
+                            if (lista.Count > 0)
+                            {
+                                lista.Clear();
+                            }
+
+                            while (result.Read())
+                            {
+                                Cuenta cuenta = new Cuenta();
+
+                                cuenta.IdCuenta = Convert.ToInt32(result[ID_CUENTA]);
+                                cuenta.Codigo = result[CODIGO].ToString();
+                                cuenta.Nivel = Convert.ToInt32(result[NIVEL]);
+                                cuenta.Nombre = result[NOMBRE_CUENTA].ToString();
+                                cuenta.TipoSaldo = result[TIPO_SALDO].ToString();
+
+                                lista.Add(cuenta);
+                            }
+                        }
+                    }
+
+                }
+                conn.Close();
+
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return lista;
+        }
+
     }
 }

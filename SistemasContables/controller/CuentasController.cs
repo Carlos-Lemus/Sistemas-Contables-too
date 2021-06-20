@@ -12,6 +12,7 @@ namespace SistemasContables
     {
         private CuentasDAO cuentasDAO;
         private List<Cuenta> lista;
+        private bool estado = false;
 
         public CuentasController()
         {
@@ -25,5 +26,30 @@ namespace SistemasContables
             return this.lista;
         }
 
+        public bool agregarCuenta(Cuenta cuenta)
+        {
+            this.estado = this.cuentasDAO.agregarCuenta(cuenta);
+            return this.estado;
+        }
+
+        public bool agregarListaDeCuentas(List<Cuenta> listCuentas)
+        {
+            this.estado = this.cuentasDAO.agregarListaDeCuentas(listCuentas);
+            return this.estado;
+        }
+
+        public List<Cuenta> listaNivelTipo(int nivel, string tipo)
+        {
+            this.lista = this.cuentasDAO.listaNivelTipo(nivel, tipo);
+
+            return this.lista;
+        }
+
+        public List<Cuenta> listaNivel(int nivel)
+        {
+            this.lista = this.cuentasDAO.listaNivel(nivel);
+
+            return this.lista;
+        }
     }
 }
