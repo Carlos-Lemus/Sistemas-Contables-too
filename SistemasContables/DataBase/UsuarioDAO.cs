@@ -46,9 +46,9 @@ namespace SistemasContables.DataBase
                             {
                                 Usuario user = new Usuario();
 
-                                user.IdUsuario = Convert.ToInt32(result[ID_USUARIO].ToString());
-                                user.NombreUsuario = result[NOMBRE_USUARIO].ToString();
-                                user.Rol = result[ROL_USUARIO].ToString();                                
+                                user.idUsuario = Convert.ToInt32(result[ID_USUARIO].ToString());
+                                user.nombreUsuario = result[NOMBRE_USUARIO].ToString();
+                                user.rol = result[ROL_USUARIO].ToString();                                
 
                                 listaUsers.Add(user);
                             }
@@ -66,6 +66,102 @@ namespace SistemasContables.DataBase
             }
 
             return listaUsers;
+        }
+
+        public bool insert(Usuario user)
+        {
+            try
+            {
+                conn = Conexion.Conn;
+
+                conn.Open();
+
+                using (SQLiteCommand command = new SQLiteCommand())
+                {
+                    string sql = $"INSERT INTO {TABLE_USUARIOS} ({ID_USUARIO}, {NOMBRE_USUARIO}, {ROL_USUARIO}, {PASSWORD_USUARIO}) VALUES(NULL, @{NOMBRE_USUARIO}, @{ROL_USUARIO}, @{PASSWORD_USUARIO})";                    
+
+                    command.CommandText = sql;
+                    command.Connection = Conexion.Conn;
+                    command.Parameters.AddWithValue($"@{NOMBRE_USUARIO}", user.nombreUsuario);
+                    command.Parameters.AddWithValue($"@{ROL_USUARIO}", user.rol);                    
+                    command.Parameters.AddWithValue($"@{PASSWORD_USUARIO}", user.password);                    
+                    command.ExecuteNonQuery();
+
+                    conn.Close();
+
+                    return true;
+
+                }
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                return false;
+            }
+        }
+
+        public bool update(Usuario user)
+        {
+            try
+            {
+                conn = Conexion.Conn;
+
+                conn.Open();
+
+                using (SQLiteCommand command = new SQLiteCommand())
+                {
+                    string sql = $"UPDATE {TABLE_USUARIOS} SET {NOMBRE_USUARIO} = @{NOMBRE_USUARIO}, {ROL_USUARIO} = @{ROL_USUARIO}, {PASSWORD_USUARIO} = @{PASSWORD_USUARIO} WHERE {ID_USUARIO} = @{ID_USUARIO};";                    
+                    //, 
+                    command.CommandText = sql;
+                    command.Connection = Conexion.Conn;
+                    command.Parameters.AddWithValue($"@{NOMBRE_USUARIO}", user.nombreUsuario);
+                    command.Parameters.AddWithValue($"@{ROL_USUARIO}", user.rol);
+                    command.Parameters.AddWithValue($"@{PASSWORD_USUARIO}", user.password);
+                    command.Parameters.AddWithValue($"@{ID_USUARIO}", user.idUsuario);                   
+                    command.ExecuteNonQuery();
+
+                    conn.Close();
+
+                    return true;
+
+                }
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                return false;
+            }
+        }
+
+        public bool delete(int idUsuario)
+        {
+            try
+            {
+                conn = Conexion.Conn;
+
+                conn.Open();               
+
+                using (SQLiteCommand command = new SQLiteCommand())
+                {
+                    string sql = $"DELETE FROM {TABLE_USUARIOS} WHERE {ID_USUARIO} = {idUsuario};";
+
+                    command.CommandText = sql;
+                    command.Connection = Conexion.Conn;                    
+                    command.ExecuteNonQuery();
+
+                    conn.Close();
+
+                    return true;
+                }
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                return false;
+            }
         }
     }
 }

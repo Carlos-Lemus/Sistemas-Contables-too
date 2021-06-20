@@ -8,46 +8,9 @@ namespace SistemasContables.Models
 {
     public class Usuario
     {
-        private int idUsuario { get; set; }
-        private string nombreUsuario { get; set; }
-        private string rol { get; set; }
-    
-        public int IdUsuario
-        {
-            get
-            {
-                return this.idUsuario;
-            }
-
-            set
-            {
-                this.idUsuario = value;
-            }
-        }
-
-        public string NombreUsuario
-        {
-            get
-            {
-                return this.nombreUsuario;
-            }
-            set
-            {
-                this.nombreUsuario = value;
-            }
-        }
-
-        public string Rol
-        {
-            get
-            {
-                return this.rol;
-            }
-            set
-            {
-                this.rol = value;
-            }
-        }
-
+        public int idUsuario { get; set; }
+        public string nombreUsuario { get; set; }
+        public string rol { get; set; }
+        public string password{ get; set; }
     }
 }
