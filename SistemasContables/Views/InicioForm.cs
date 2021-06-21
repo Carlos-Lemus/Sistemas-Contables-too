@@ -22,15 +22,12 @@ namespace SistemasContables.Views
         private string nivel3;
 
         private ReportesController reporteDeventasControler;
-        private LibroDiariosController libroDiarioController;
 
         public InicioForm(int idLibroDiario, LibroDiariosController libroDiarioController)
         {
             InitializeComponent();
 
             reporteDeventasControler = new ReportesController();
-
-            this.libroDiarioController = libroDiarioController;
 
             lblCajaChica.Text = "$ " + libroDiarioController.getCajaChicaOrBanco(idLibroDiario, "caja_chica");
             lblBanco.Text = "$ " + libroDiarioController.getCajaChicaOrBanco(idLibroDiario, "banco");

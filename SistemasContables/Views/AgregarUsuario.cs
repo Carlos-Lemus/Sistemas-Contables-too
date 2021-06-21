@@ -14,7 +14,7 @@ namespace SistemasContables.Views
 {    
     public partial class AgregarUsuario : Form
     {
-        Usuario user;
+        private Usuario user;
         private UsuarioDAO usuarioDao;
         public AgregarUsuario(bool isEdit, int id = 0)
         {

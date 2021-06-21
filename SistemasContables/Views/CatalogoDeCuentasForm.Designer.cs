@@ -34,6 +34,13 @@ namespace SistemasContables.Views
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tableCatalogoDeCuentas = new Guna.UI.WinForms.GunaDataGridView();
+            this.ColumnIdCuenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cuenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nivel = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnEdit = new System.Windows.Forms.DataGridViewImageColumn();
+            this.ColumnSelect = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.lblTitulo = new System.Windows.Forms.Label();
             this.textCodigoCuenta = new Guna.UI.WinForms.GunaTextBox();
             this.textNombreCuenta = new Guna.UI.WinForms.GunaTextBox();
@@ -51,13 +58,6 @@ namespace SistemasContables.Views
             this.label4 = new System.Windows.Forms.Label();
             this.btnEliminar = new FontAwesome.Sharp.IconButton();
             this.gunaElipse3 = new Guna.UI.WinForms.GunaElipse(this.components);
-            this.ColumnIdCuenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cuenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nivel = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnEdit = new System.Windows.Forms.DataGridViewImageColumn();
-            this.ColumnSelect = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.tableCatalogoDeCuentas)).BeginInit();
             this.SuspendLayout();
             // 
@@ -135,6 +135,59 @@ namespace SistemasContables.Views
             this.tableCatalogoDeCuentas.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             this.tableCatalogoDeCuentas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tableCatalogoDeCuentas_CellClick);
             // 
+            // ColumnIdCuenta
+            // 
+            this.ColumnIdCuenta.FillWeight = 50F;
+            this.ColumnIdCuenta.HeaderText = "Id Cuenta";
+            this.ColumnIdCuenta.Name = "ColumnIdCuenta";
+            this.ColumnIdCuenta.ReadOnly = true;
+            // 
+            // Codigo
+            // 
+            this.Codigo.FillWeight = 50F;
+            this.Codigo.HeaderText = "Codigo";
+            this.Codigo.MinimumWidth = 6;
+            this.Codigo.Name = "Codigo";
+            this.Codigo.ReadOnly = true;
+            // 
+            // Cuenta
+            // 
+            this.Cuenta.FillWeight = 150F;
+            this.Cuenta.HeaderText = "Cuenta";
+            this.Cuenta.MinimumWidth = 6;
+            this.Cuenta.Name = "Cuenta";
+            this.Cuenta.ReadOnly = true;
+            // 
+            // Nivel
+            // 
+            this.Nivel.FillWeight = 25F;
+            this.Nivel.HeaderText = "Nivel";
+            this.Nivel.MinimumWidth = 6;
+            this.Nivel.Name = "Nivel";
+            this.Nivel.ReadOnly = true;
+            // 
+            // Tipo
+            // 
+            this.Tipo.HeaderText = "Tipo de Saldo";
+            this.Tipo.MinimumWidth = 6;
+            this.Tipo.Name = "Tipo";
+            this.Tipo.ReadOnly = true;
+            // 
+            // ColumnEdit
+            // 
+            this.ColumnEdit.FillWeight = 25F;
+            this.ColumnEdit.HeaderText = "";
+            this.ColumnEdit.Image = global::SistemasContables.Properties.Resources.edit;
+            this.ColumnEdit.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.ColumnEdit.Name = "ColumnEdit";
+            this.ColumnEdit.ReadOnly = true;
+            // 
+            // ColumnSelect
+            // 
+            this.ColumnSelect.FillWeight = 25F;
+            this.ColumnSelect.HeaderText = "";
+            this.ColumnSelect.Name = "ColumnSelect";
+            // 
             // lblTitulo
             // 
             this.lblTitulo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -164,7 +217,6 @@ namespace SistemasContables.Views
             this.textCodigoCuenta.Radius = 5;
             this.textCodigoCuenta.Size = new System.Drawing.Size(164, 37);
             this.textCodigoCuenta.TabIndex = 0;
-            this.textCodigoCuenta.Enter += new System.EventHandler(this.textCodigoCuenta_Enter);
             this.textCodigoCuenta.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textCodigoCuenta_KeyPress);
             // 
             // textNombreCuenta
@@ -398,59 +450,6 @@ namespace SistemasContables.Views
             // gunaElipse3
             // 
             this.gunaElipse3.TargetControl = this.btnEliminar;
-            // 
-            // ColumnIdCuenta
-            // 
-            this.ColumnIdCuenta.FillWeight = 50F;
-            this.ColumnIdCuenta.HeaderText = "Id Cuenta";
-            this.ColumnIdCuenta.Name = "ColumnIdCuenta";
-            this.ColumnIdCuenta.ReadOnly = true;
-            // 
-            // Codigo
-            // 
-            this.Codigo.FillWeight = 50F;
-            this.Codigo.HeaderText = "Codigo";
-            this.Codigo.MinimumWidth = 6;
-            this.Codigo.Name = "Codigo";
-            this.Codigo.ReadOnly = true;
-            // 
-            // Cuenta
-            // 
-            this.Cuenta.FillWeight = 150F;
-            this.Cuenta.HeaderText = "Cuenta";
-            this.Cuenta.MinimumWidth = 6;
-            this.Cuenta.Name = "Cuenta";
-            this.Cuenta.ReadOnly = true;
-            // 
-            // Nivel
-            // 
-            this.Nivel.FillWeight = 25F;
-            this.Nivel.HeaderText = "Nivel";
-            this.Nivel.MinimumWidth = 6;
-            this.Nivel.Name = "Nivel";
-            this.Nivel.ReadOnly = true;
-            // 
-            // Tipo
-            // 
-            this.Tipo.HeaderText = "Tipo de Saldo";
-            this.Tipo.MinimumWidth = 6;
-            this.Tipo.Name = "Tipo";
-            this.Tipo.ReadOnly = true;
-            // 
-            // ColumnEdit
-            // 
-            this.ColumnEdit.FillWeight = 25F;
-            this.ColumnEdit.HeaderText = "";
-            this.ColumnEdit.Image = global::SistemasContables.Properties.Resources.edit;
-            this.ColumnEdit.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.ColumnEdit.Name = "ColumnEdit";
-            this.ColumnEdit.ReadOnly = true;
-            // 
-            // ColumnSelect
-            // 
-            this.ColumnSelect.FillWeight = 25F;
-            this.ColumnSelect.HeaderText = "";
-            this.ColumnSelect.Name = "ColumnSelect";
             // 
             // CatalogoDeCuentasForm
             // 

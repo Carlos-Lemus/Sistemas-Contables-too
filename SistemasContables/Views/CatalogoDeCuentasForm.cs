@@ -25,8 +25,8 @@ namespace SistemasContables.Views
         private bool isEdit = false;
 
         //Variables auxiliares para establecer nivel y tipo de cuenta
-        int nivelAux = 0;
-        string tipoCuentaAux = "";
+        private int nivelAux = 0;
+        private string tipoCuentaAux = "";
 
         public CatalogoDeCuentasForm()
         {
@@ -36,16 +36,6 @@ namespace SistemasContables.Views
             cargarTablaCatalogo();
         }
 
-        private void textCodigoCuenta_Enter(object sender, EventArgs e)
-        {
-            /*
-            if(textCodigoCuenta.Text == "Codigo")
-            {
-                textCodigoCuenta.Text = "";
-                textCodigoCuenta.ForeColor = Color.LightGray;
-            }
-            */
-        }
 
         private void btnAgregarCuenta_Click(object sender, EventArgs e)
         {
