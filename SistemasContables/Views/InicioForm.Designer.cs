@@ -53,11 +53,11 @@
             this.label6 = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.lblCapital = new System.Windows.Forms.Label();
+            this.lblCajaChica = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.lblActivos = new System.Windows.Forms.Label();
+            this.lblBanco = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
@@ -273,7 +273,7 @@
             this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(132)))), ((int)(((byte)(227)))));
-            this.panel2.Controls.Add(this.lblCapital);
+            this.panel2.Controls.Add(this.lblCajaChica);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.pictureBox2);
             this.panel2.Location = new System.Drawing.Point(293, 3);
@@ -283,16 +283,16 @@
             this.panel2.Size = new System.Drawing.Size(280, 130);
             this.panel2.TabIndex = 16;
             // 
-            // lblCapital
+            // lblCajaChica
             // 
-            this.lblCapital.AutoSize = true;
-            this.lblCapital.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCapital.ForeColor = System.Drawing.Color.White;
-            this.lblCapital.Location = new System.Drawing.Point(128, 79);
-            this.lblCapital.Name = "lblCapital";
-            this.lblCapital.Size = new System.Drawing.Size(34, 20);
-            this.lblCapital.TabIndex = 2;
-            this.lblCapital.Text = "$ 0";
+            this.lblCajaChica.AutoSize = true;
+            this.lblCajaChica.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCajaChica.ForeColor = System.Drawing.Color.White;
+            this.lblCajaChica.Location = new System.Drawing.Point(128, 79);
+            this.lblCajaChica.Name = "lblCajaChica";
+            this.lblCajaChica.Size = new System.Drawing.Size(34, 20);
+            this.lblCajaChica.TabIndex = 2;
+            this.lblCajaChica.Text = "$ 0";
             // 
             // label4
             // 
@@ -301,9 +301,9 @@
             this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(129, 25);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(125, 24);
+            this.label4.Size = new System.Drawing.Size(107, 24);
             this.label4.TabIndex = 1;
-            this.label4.Text = "Total Capital";
+            this.label4.Text = "Caja chica";
             // 
             // pictureBox2
             // 
@@ -320,7 +320,7 @@
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(160)))), ((int)(((byte)(133)))));
-            this.panel1.Controls.Add(this.lblActivos);
+            this.panel1.Controls.Add(this.lblBanco);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Location = new System.Drawing.Point(5, 3);
@@ -330,16 +330,16 @@
             this.panel1.Size = new System.Drawing.Size(280, 130);
             this.panel1.TabIndex = 15;
             // 
-            // lblActivos
+            // lblBanco
             // 
-            this.lblActivos.AutoSize = true;
-            this.lblActivos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblActivos.ForeColor = System.Drawing.Color.White;
-            this.lblActivos.Location = new System.Drawing.Point(128, 79);
-            this.lblActivos.Name = "lblActivos";
-            this.lblActivos.Size = new System.Drawing.Size(34, 20);
-            this.lblActivos.TabIndex = 2;
-            this.lblActivos.Text = "$ 0";
+            this.lblBanco.AutoSize = true;
+            this.lblBanco.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBanco.ForeColor = System.Drawing.Color.White;
+            this.lblBanco.Location = new System.Drawing.Point(128, 79);
+            this.lblBanco.Name = "lblBanco";
+            this.lblBanco.Size = new System.Drawing.Size(34, 20);
+            this.lblBanco.TabIndex = 2;
+            this.lblBanco.Text = "$ 0";
             // 
             // label1
             // 
@@ -348,9 +348,9 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(128, 25);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(129, 24);
+            this.label1.Size = new System.Drawing.Size(149, 24);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Total Activos";
+            this.label1.Text = "Efectivo Banco";
             // 
             // pictureBox1
             // 
@@ -568,11 +568,11 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label lblCapital;
+        private System.Windows.Forms.Label lblCajaChica;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label lblActivos;
+        private System.Windows.Forms.Label lblBanco;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;

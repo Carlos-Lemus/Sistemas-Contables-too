@@ -25,7 +25,7 @@ namespace SistemasContables.Views
 
         private int numeroPartidas;
         private int idLibroDiario;
-        private string accion;
+
         private Paragraph title;
         private Paragraph periodo;
 
@@ -62,9 +62,7 @@ namespace SistemasContables.Views
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            accion = "ingresar";
-
-            using(AgregarPartidaForm agregarPartidaForm = new AgregarPartidaForm(this.partidasController, idLibroDiario, numeroPartidas, accion))
+            using(AgregarPartidaForm agregarPartidaForm = new AgregarPartidaForm(this.partidasController, idLibroDiario, numeroPartidas, false))
             {
                 this.Parent.Parent.Parent.Visible = false;
                 agregarPartidaForm.ShowDialog();
@@ -87,10 +85,7 @@ namespace SistemasContables.Views
                 string[] partidaString = celdaPartida.Split(' ');
                 int numeroPartida = Convert.ToInt32(partidaString[2]);
 
-
-                accion = "editar";
-
-                using (AgregarPartidaForm agregarPartidaForm = new AgregarPartidaForm(this.partidasController, idLibroDiario, numeroPartida, accion))
+                using (AgregarPartidaForm agregarPartidaForm = new AgregarPartidaForm(this.partidasController, idLibroDiario, numeroPartida, true))
                 {
                     this.Parent.Parent.Parent.Visible = false;
                     agregarPartidaForm.ShowDialog();

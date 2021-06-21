@@ -10,6 +10,8 @@ namespace SistemasContables.Models
     {
         private int idLibroDiario;
         private string periodo;
+        private double cajaChica;
+        private double banco;
 
         public int IdLibroDiario
         {
@@ -34,5 +36,30 @@ namespace SistemasContables.Models
                 this.periodo = value;
             }
         }
+
+        public double CajaChica
+        {
+            get
+            {
+                return this.cajaChica;
+            }
+            set
+            {
+                this.cajaChica = value;
+            }
+        }
+
+        public double Banco
+        {
+            get
+            {
+                return this.banco;
+            }
+            set
+            {
+                this.banco = value;
+            }
+        }
+
     }
 }

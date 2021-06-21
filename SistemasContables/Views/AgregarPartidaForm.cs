@@ -20,8 +20,9 @@ namespace SistemasContables.Views
         private CuentasController cuentaController;
         private PartidasController partidasController;
         private CuentaPartidaController cuentaPartidaController;
+        private LibroDiariosController libroDiariosController;
         private List<Cuenta> listaCuenta;
-        List<CuentaPartida> listaCuentasPartida;
+        private List<CuentaPartida> listaCuentasPartida;
         private Partida partida;
 
         private int PosicionFormX;
@@ -32,7 +33,7 @@ namespace SistemasContables.Views
         private int libroDiario;
         private int numeroPartida;        
 
-        public AgregarPartidaForm(PartidasController partidasController, int libroDiario, int numeroPartida, string accion)
+        public AgregarPartidaForm(PartidasController partidasController, int libroDiario, int numeroPartida, bool isEdit)
         {
             InitializeComponent();
 
@@ -45,7 +46,7 @@ namespace SistemasContables.Views
             fecha = FormatoFecha();
             this.numeroPartida = numeroPartida;
 
-            VerificarAccion(accion);
+            VerificarAccion(isEdit);
 
             this.lblPartida.Text += this.numeroPartida;
 
@@ -104,29 +105,30 @@ namespace SistemasContables.Views
                 partida.IdLibro = this.libroDiario;
                 partida.N_Partida = this.numeroPartida;
 
-                LlenarCuentasPartida(ref partida);
-
-                bool existeAjusteIVA = partidasController.VerificarAjusteIVA(libroDiario);
-
-                if (existeAjusteIVA)
+                if(LlenarCuentasPartida(ref partida))
                 {
-                    partidasController.delete(numeroPartida-1, libroDiario);
-                    partida.N_Partida = numeroPartida-1;
-                }
+                    bool existeAjusteIVA = partidasController.VerificarAjusteIVA(libroDiario);
 
-                bool resultado = partidasController.insert(partida);
+                    if (existeAjusteIVA)
+                    {
+                        partidasController.delete(numeroPartida - 1, libroDiario);
+                        partida.N_Partida = numeroPartida - 1;
+                    }
+
+                    bool resultado = partidasController.insert(partida);
+
+                    if (resultado)
+                    {
+                        MessageBox.Show("Se ingreso la partida correctamente", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("No se pudo ingresar la partida", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+
+                    this.Close();
+                }
                 
-                if(resultado)
-                {
-                    MessageBox.Show("Se ingreso la partida correctamente", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                else
-                {
-                    MessageBox.Show("No se pudo ingresar la partida", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-
-
-                this.Close();
             }
             else
             {
@@ -150,14 +152,16 @@ namespace SistemasContables.Views
                     partida.IdLibro = this.libroDiario;
                     partida.N_Partida = this.numeroPartida;
 
-                    LlenarCuentasPartida(ref partida);
-
-                    if (partidasController.update(partida))
+                    if(LlenarCuentasPartida(ref partida))
                     {
-                        MessageBox.Show("Se ha modificado la partida correctamente", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        if (partidasController.update(partida))
+                        {
+                            MessageBox.Show("Se ha modificado la partida correctamente", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+
+                        this.Close();
                     }
 
-                    this.Close();
                 }
                 else
                 {
@@ -325,9 +329,9 @@ namespace SistemasContables.Views
         }
 
         // verifica si la accion del formulario es ingresar o editar una partida
-        private void VerificarAccion(string accion)
+        private void VerificarAccion(bool isEdit)
         {
-            if (accion == "ingresar")
+            if (!isEdit)
             {
                 btnEditarPartida.Visible = false;
 
@@ -337,7 +341,7 @@ namespace SistemasContables.Views
 
                 tablePartidas.Rows.Add(fecha, "", "Partida No " + numeroPartida, "", "");
             }
-            else if (accion == "editar")
+            else
             {
                 btnAgregarPartida.Visible = false;
 
@@ -361,12 +365,7 @@ namespace SistemasContables.Views
                 setDatePicker();
 
             }
-            else
-            {
-                MessageBox.Show("Ha ocurrido un error en la accion del formulario", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-                this.Close();
-            }
         }
 
         // evalua el iva y el debito y credito fiscal para insertar la respectiva fila
@@ -399,10 +398,18 @@ namespace SistemasContables.Views
         }
 
         // el metodo llena las cuentas de la partida
-        private void LlenarCuentasPartida(ref Partida partida)
+        private bool LlenarCuentasPartida(ref Partida partida)
         {
 
             partida.ListaCuentasPartida = new List<CuentaPartida>();
+
+            libroDiariosController = new LibroDiariosController();
+            double totalCajaChica = libroDiariosController.getCajaChicaOrBanco(libroDiario, "caja_chica");
+            double totalBanco = libroDiariosController.getCajaChicaOrBanco(libroDiario, "banco");
+
+            double totalCajaChicaAux = libroDiariosController.getCajaChicaOrBanco(libroDiario, "caja_chica");
+            double totalBancoAux = libroDiariosController.getCajaChicaOrBanco(libroDiario, "banco");
+
 
             for (int i = 1; i < tablePartidas.Rows.Count; i++)
             {
@@ -413,9 +420,59 @@ namespace SistemasContables.Views
                 cuentaPartida.Debe = Convert.ToDouble(tablePartidas.Rows[i].Cells[3].Value);
                 cuentaPartida.Haber = Convert.ToDouble(tablePartidas.Rows[i].Cells[4].Value);
 
+                if (cuentaPartida.Nombre == "Caja Chica")
+                {
+                    totalCajaChicaAux += cuentaPartida.Debe;
+                    totalCajaChicaAux -= cuentaPartida.Haber;
+                }
+                if (cuentaPartida.Nombre == "Efectivo en Bancos")
+                {
+                    totalBancoAux += cuentaPartida.Debe;
+                    totalBancoAux -= cuentaPartida.Haber;
+                }             
+
                 partida.ListaCuentasPartida.Add(cuentaPartida);
             }
 
+            if(totalCajaChicaAux < 0)
+            {
+                DialogResult res = MessageBox.Show("No cuentas con suficiente saldo ¿Deseas reintegrar en la Caja Chica?", "Advertencia", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                if (res == DialogResult.OK)
+                {
+                    using(ReintegrarSaldoForm reintegrarSaldoForm = new ReintegrarSaldoForm(false,libroDiario, libroDiariosController, totalCajaChica))
+                    {
+                        reintegrarSaldoForm.ShowDialog();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("No cuentas con el suficiente saldo", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+
+                return false;
+            }
+
+            if (totalBancoAux < 0)
+            {
+                DialogResult res = MessageBox.Show("¿No cuentas con suficiente saldo ¿Deseas reintegrar en el Banco?", "Advertencia", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                if (res == DialogResult.OK)
+                {
+                    using (ReintegrarSaldoForm reintegrarSaldoForm = new ReintegrarSaldoForm(true, libroDiario, libroDiariosController, totalBanco))
+                    {
+                        reintegrarSaldoForm.ShowDialog();
+                    }
+                } else
+                {
+                    MessageBox.Show("No cuentas con el suficiente saldo", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+
+                return false;
+            }
+
+            libroDiariosController.updateCajaChica(libroDiario, totalCajaChicaAux);
+            libroDiariosController.updateBanco(libroDiario, totalBancoAux);
+
+            return true;
         }
 
         // el metodo llena el combobox de cuenta

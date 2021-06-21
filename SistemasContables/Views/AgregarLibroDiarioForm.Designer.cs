@@ -36,14 +36,20 @@
             this.gunaDragPanelTop = new Guna.UI.WinForms.GunaDragControl(this.components);
             this.gunaDraglblTitulo = new Guna.UI.WinForms.GunaDragControl(this.components);
             this.gunaElipse1 = new Guna.UI.WinForms.GunaElipse(this.components);
+            this.btnAgregarLibro = new FontAwesome.Sharp.IconButton();
             this.gunaElipse2 = new Guna.UI.WinForms.GunaElipse(this.components);
+            this.btnCancel = new FontAwesome.Sharp.IconButton();
             this.label16 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
-            this.btnCancel = new FontAwesome.Sharp.IconButton();
             this.lblNumLibro = new System.Windows.Forms.Label();
-            this.btnAgregarLibro = new FontAwesome.Sharp.IconButton();
             this.dpDesde = new Guna.UI.WinForms.GunaDateTimePicker();
             this.dpHasta = new Guna.UI.WinForms.GunaDateTimePicker();
+            this.txtCajaChica = new Guna.UI.WinForms.GunaTextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtBanco = new Guna.UI.WinForms.GunaTextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.lblErrorCajaChica = new System.Windows.Forms.Label();
+            this.lblErrorBanco = new System.Windows.Forms.Label();
             this.panelTop.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -122,34 +128,34 @@
             this.gunaElipse1.Radius = 10;
             this.gunaElipse1.TargetControl = this.btnAgregarLibro;
             // 
+            // btnAgregarLibro
+            // 
+            this.btnAgregarLibro.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAgregarLibro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
+            this.btnAgregarLibro.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAgregarLibro.FlatAppearance.BorderSize = 0;
+            this.btnAgregarLibro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAgregarLibro.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregarLibro.ForeColor = System.Drawing.Color.White;
+            this.btnAgregarLibro.IconChar = FontAwesome.Sharp.IconChar.Check;
+            this.btnAgregarLibro.IconColor = System.Drawing.Color.White;
+            this.btnAgregarLibro.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnAgregarLibro.IconSize = 40;
+            this.btnAgregarLibro.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAgregarLibro.Location = new System.Drawing.Point(203, 542);
+            this.btnAgregarLibro.MaximumSize = new System.Drawing.Size(150, 50);
+            this.btnAgregarLibro.Name = "btnAgregarLibro";
+            this.btnAgregarLibro.Size = new System.Drawing.Size(136, 50);
+            this.btnAgregarLibro.TabIndex = 85;
+            this.btnAgregarLibro.Text = "Nuevo";
+            this.btnAgregarLibro.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnAgregarLibro.UseVisualStyleBackColor = false;
+            this.btnAgregarLibro.Click += new System.EventHandler(this.btnAgregarLibro_Click);
+            // 
             // gunaElipse2
             // 
             this.gunaElipse2.Radius = 10;
             this.gunaElipse2.TargetControl = this.btnCancel;
-            // 
-            // label16
-            // 
-            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.ForeColor = System.Drawing.Color.Black;
-            this.label16.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label16.Location = new System.Drawing.Point(35, 168);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(304, 23);
-            this.label16.TabIndex = 87;
-            this.label16.Text = "Desde";
-            this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label15
-            // 
-            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.ForeColor = System.Drawing.Color.Black;
-            this.label15.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label15.Location = new System.Drawing.Point(35, 294);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(304, 23);
-            this.label15.TabIndex = 89;
-            this.label15.Text = "Hasta";
-            this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // btnCancel
             // 
@@ -165,7 +171,7 @@
             this.btnCancel.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnCancel.IconSize = 40;
             this.btnCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCancel.Location = new System.Drawing.Point(39, 424);
+            this.btnCancel.Location = new System.Drawing.Point(39, 542);
             this.btnCancel.MaximumSize = new System.Drawing.Size(150, 50);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(132, 50);
@@ -174,6 +180,30 @@
             this.btnCancel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
+            // label16
+            // 
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.ForeColor = System.Drawing.Color.Black;
+            this.label16.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label16.Location = new System.Drawing.Point(35, 125);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(304, 23);
+            this.label16.TabIndex = 87;
+            this.label16.Text = "Desde";
+            this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label15
+            // 
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.ForeColor = System.Drawing.Color.Black;
+            this.label15.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label15.Location = new System.Drawing.Point(35, 217);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(304, 23);
+            this.label15.TabIndex = 89;
+            this.label15.Text = "Hasta";
+            this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lblNumLibro
             // 
@@ -188,30 +218,6 @@
             this.lblNumLibro.Text = "Libro Diario No ";
             this.lblNumLibro.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // btnAgregarLibro
-            // 
-            this.btnAgregarLibro.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAgregarLibro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
-            this.btnAgregarLibro.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAgregarLibro.FlatAppearance.BorderSize = 0;
-            this.btnAgregarLibro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAgregarLibro.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregarLibro.ForeColor = System.Drawing.Color.White;
-            this.btnAgregarLibro.IconChar = FontAwesome.Sharp.IconChar.Check;
-            this.btnAgregarLibro.IconColor = System.Drawing.Color.White;
-            this.btnAgregarLibro.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnAgregarLibro.IconSize = 40;
-            this.btnAgregarLibro.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAgregarLibro.Location = new System.Drawing.Point(203, 424);
-            this.btnAgregarLibro.MaximumSize = new System.Drawing.Size(150, 50);
-            this.btnAgregarLibro.Name = "btnAgregarLibro";
-            this.btnAgregarLibro.Size = new System.Drawing.Size(136, 50);
-            this.btnAgregarLibro.TabIndex = 85;
-            this.btnAgregarLibro.Text = "Nuevo";
-            this.btnAgregarLibro.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnAgregarLibro.UseVisualStyleBackColor = false;
-            this.btnAgregarLibro.Click += new System.EventHandler(this.btnAgregarLibro_Click);
-            // 
             // dpDesde
             // 
             this.dpDesde.BackColor = System.Drawing.Color.Transparent;
@@ -222,7 +228,7 @@
             this.dpDesde.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(132)))), ((int)(((byte)(227)))));
             this.dpDesde.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dpDesde.ForeColor = System.Drawing.Color.Black;
-            this.dpDesde.Location = new System.Drawing.Point(35, 209);
+            this.dpDesde.Location = new System.Drawing.Point(35, 166);
             this.dpDesde.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.dpDesde.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.dpDesde.Name = "dpDesde";
@@ -246,7 +252,7 @@
             this.dpHasta.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(132)))), ((int)(((byte)(227)))));
             this.dpHasta.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dpHasta.ForeColor = System.Drawing.Color.Black;
-            this.dpHasta.Location = new System.Drawing.Point(35, 336);
+            this.dpHasta.Location = new System.Drawing.Point(35, 259);
             this.dpHasta.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.dpHasta.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.dpHasta.Name = "dpHasta";
@@ -260,12 +266,100 @@
             this.dpHasta.Text = "domingo, 6 de diciembre de 2020";
             this.dpHasta.Value = new System.DateTime(2020, 12, 6, 18, 27, 36, 583);
             // 
+            // txtCajaChica
+            // 
+            this.txtCajaChica.BackColor = System.Drawing.Color.Transparent;
+            this.txtCajaChica.BaseColor = System.Drawing.Color.White;
+            this.txtCajaChica.BorderColor = System.Drawing.Color.Silver;
+            this.txtCajaChica.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtCajaChica.FocusedBaseColor = System.Drawing.Color.White;
+            this.txtCajaChica.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(151)))), ((int)(((byte)(230)))));
+            this.txtCajaChica.FocusedForeColor = System.Drawing.SystemColors.ControlText;
+            this.txtCajaChica.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.txtCajaChica.Location = new System.Drawing.Point(35, 347);
+            this.txtCajaChica.Name = "txtCajaChica";
+            this.txtCajaChica.PasswordChar = '\0';
+            this.txtCajaChica.Radius = 5;
+            this.txtCajaChica.Size = new System.Drawing.Size(304, 35);
+            this.txtCajaChica.TabIndex = 126;
+            this.txtCajaChica.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCajaChica_KeyPress);
+            // 
+            // label1
+            // 
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(35, 321);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(304, 23);
+            this.label1.TabIndex = 125;
+            this.label1.Text = "Monto caja chica ($)";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // txtBanco
+            // 
+            this.txtBanco.BackColor = System.Drawing.Color.Transparent;
+            this.txtBanco.BaseColor = System.Drawing.Color.White;
+            this.txtBanco.BorderColor = System.Drawing.Color.Silver;
+            this.txtBanco.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtBanco.FocusedBaseColor = System.Drawing.Color.White;
+            this.txtBanco.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(151)))), ((int)(((byte)(230)))));
+            this.txtBanco.FocusedForeColor = System.Drawing.SystemColors.ControlText;
+            this.txtBanco.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.txtBanco.Location = new System.Drawing.Point(35, 451);
+            this.txtBanco.Name = "txtBanco";
+            this.txtBanco.PasswordChar = '\0';
+            this.txtBanco.Radius = 5;
+            this.txtBanco.Size = new System.Drawing.Size(304, 35);
+            this.txtBanco.TabIndex = 128;
+            this.txtBanco.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBanco_KeyPress);
+            // 
+            // label2
+            // 
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Black;
+            this.label2.Location = new System.Drawing.Point(35, 426);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(304, 22);
+            this.label2.TabIndex = 127;
+            this.label2.Text = "Monto banco ($)";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lblErrorCajaChica
+            // 
+            this.lblErrorCajaChica.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblErrorCajaChica.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(76)))), ((int)(((byte)(60)))));
+            this.lblErrorCajaChica.Location = new System.Drawing.Point(35, 385);
+            this.lblErrorCajaChica.Name = "lblErrorCajaChica";
+            this.lblErrorCajaChica.Size = new System.Drawing.Size(304, 29);
+            this.lblErrorCajaChica.TabIndex = 129;
+            this.lblErrorCajaChica.Text = "La caja chica es obligatoria";
+            this.lblErrorCajaChica.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblErrorCajaChica.Visible = false;
+            // 
+            // lblErrorBanco
+            // 
+            this.lblErrorBanco.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblErrorBanco.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(76)))), ((int)(((byte)(60)))));
+            this.lblErrorBanco.Location = new System.Drawing.Point(35, 489);
+            this.lblErrorBanco.Name = "lblErrorBanco";
+            this.lblErrorBanco.Size = new System.Drawing.Size(304, 29);
+            this.lblErrorBanco.TabIndex = 130;
+            this.lblErrorBanco.Text = "El monto de banco es obligatorio";
+            this.lblErrorBanco.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblErrorBanco.Visible = false;
+            // 
             // AgregarLibroDiarioForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(390, 514);
+            this.ClientSize = new System.Drawing.Size(390, 615);
+            this.Controls.Add(this.lblErrorBanco);
+            this.Controls.Add(this.lblErrorCajaChica);
+            this.Controls.Add(this.txtBanco);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.txtCajaChica);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnAgregarLibro);
             this.Controls.Add(this.dpHasta);
             this.Controls.Add(this.btnCancel);
@@ -275,8 +369,6 @@
             this.Controls.Add(this.lblNumLibro);
             this.Controls.Add(this.label16);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.MaximumSize = new System.Drawing.Size(390, 514);
-            this.MinimumSize = new System.Drawing.Size(390, 514);
             this.Name = "AgregarLibroDiarioForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AgregarLibroDiarioForm";
@@ -301,5 +393,11 @@
         private FontAwesome.Sharp.IconButton btnCancel;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label16;
+        private Guna.UI.WinForms.GunaTextBox txtCajaChica;
+        private System.Windows.Forms.Label label1;
+        private Guna.UI.WinForms.GunaTextBox txtBanco;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblErrorCajaChica;
+        private System.Windows.Forms.Label lblErrorBanco;
     }
 }

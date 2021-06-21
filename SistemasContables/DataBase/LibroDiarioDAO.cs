@@ -18,7 +18,7 @@ namespace SistemasContables.DataBase
             lista = new List<LibroDiario>();
         }
 
-        public bool insert(string periodo)
+        public bool insert(LibroDiario libroDiario)
         {
             try
             {
@@ -28,10 +28,12 @@ namespace SistemasContables.DataBase
 
                 using (SQLiteCommand command = new SQLiteCommand())
                 {
-                    string sql = $"INSERT INTO {TABLE_LIBRO_DIARIO}(periodo) VALUES(@periodo)";
+                    string sql = $"INSERT INTO {TABLE_LIBRO_DIARIO}({PERIODO}, {CAJA_CHICA}, {BANCO}) VALUES(@{PERIODO}, @{CAJA_CHICA}, @{BANCO});";
                     command.CommandText = sql;
                     command.Connection = Conexion.Conn;
-                    command.Parameters.AddWithValue("@periodo", periodo);
+                    command.Parameters.AddWithValue($"@{PERIODO}", libroDiario.Periodo);
+                    command.Parameters.AddWithValue($"@{CAJA_CHICA}", libroDiario.CajaChica);
+                    command.Parameters.AddWithValue($"@{BANCO}", libroDiario.Banco);
                     command.ExecuteNonQuery();
 
                 }
@@ -78,6 +80,8 @@ namespace SistemasContables.DataBase
 
                                 libroDiario.IdLibroDiario = Convert.ToInt32(result[ID_LIBRO_DIARIO].ToString());
                                 libroDiario.Periodo = result[PERIODO].ToString();
+                                libroDiario.CajaChica = Convert.ToDouble(result[CAJA_CHICA].ToString());
+                                libroDiario.Banco = Convert.ToDouble(result[BANCO].ToString());
 
                                 lista.Add(libroDiario);
                             }
@@ -164,6 +168,128 @@ namespace SistemasContables.DataBase
                 command.ExecuteNonQuery();
             }
 
+        }
+
+        public bool updateCajaChica(int idLibroDiario, double cajaChica)
+        {
+            try
+            {
+                conn = Conexion.Conn;
+
+                conn.Open();
+
+                using (SQLiteCommand command = new SQLiteCommand())
+                {
+                    string sql = $"UPDATE {TABLE_LIBRO_DIARIO} SET {CAJA_CHICA} = @{CAJA_CHICA} WHERE {ID_LIBRO_DIARIO} = @{ID_LIBRO_DIARIO};";
+
+                    command.Connection = Conexion.Conn;
+                    command.CommandText = sql;
+                    command.Parameters.AddWithValue($"@{ID_LIBRO_DIARIO}", idLibroDiario);
+                    command.Parameters.AddWithValue($"@{CAJA_CHICA}", cajaChica);
+                    command.ExecuteNonQuery();
+
+                    conn.Close();
+
+                    return true;
+
+                }
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                return false;
+            }
+        }
+
+        public double getCajaChicaOrBanco(int idLibroDiario, string tipo)
+        {
+            double total = 0;
+
+            try
+            {
+                conn = Conexion.Conn;
+
+                conn.Open();
+
+                using (SQLiteCommand command = new SQLiteCommand())
+                {
+                    string sql = "";
+                    string campo = "";
+                    
+                    if(tipo == "caja_chica")
+                    {
+                        sql = $"SELECT {CAJA_CHICA} FROM {TABLE_LIBRO_DIARIO} WHERE {ID_LIBRO_DIARIO} = @{ID_LIBRO_DIARIO}; ";
+                        campo = CAJA_CHICA;
+                    }
+
+                    if (tipo == "banco")
+                    {
+                        sql = $"SELECT {BANCO} FROM {TABLE_LIBRO_DIARIO} WHERE {ID_LIBRO_DIARIO} = @{ID_LIBRO_DIARIO}; ";
+                        campo = BANCO;
+                    }
+
+
+
+                    command.CommandText = sql;
+                    command.Connection = Conexion.Conn;
+                    command.Parameters.AddWithValue($"@{ID_LIBRO_DIARIO}", idLibroDiario);
+
+                    using (SQLiteDataReader result = command.ExecuteReader())
+                    {
+
+                        if (result.HasRows)
+                        {
+                            while (result.Read())
+                            {
+                                total = Convert.ToDouble(result[campo].ToString());
+                            }
+                        }
+                    }
+
+                    conn.Close();
+                }
+
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            return total;
+
+        }
+
+        public bool updateBanco(int idLibroDiario, double banco)
+        {
+            try
+            {
+                conn = Conexion.Conn;
+
+                conn.Open();
+
+                using (SQLiteCommand command = new SQLiteCommand())
+                {
+                    string sql = $"UPDATE {TABLE_LIBRO_DIARIO} SET {BANCO} = @{BANCO} WHERE {ID_LIBRO_DIARIO} = @{ID_LIBRO_DIARIO};";
+
+                    command.Connection = Conexion.Conn;
+                    command.CommandText = sql;
+                    command.Parameters.AddWithValue($"@{ID_LIBRO_DIARIO}", idLibroDiario);
+                    command.Parameters.AddWithValue($"@{BANCO}", banco);
+                    command.ExecuteNonQuery();
+
+                    conn.Close();
+
+                    return true;
+
+                }
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show(exception.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                return false;
+            }
         }
 
         public double total(string cuentaCalcular, int idLibroDiario)

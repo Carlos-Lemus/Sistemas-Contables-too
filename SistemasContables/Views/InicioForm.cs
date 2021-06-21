@@ -20,7 +20,7 @@ namespace SistemasContables.Views
         private LibroDiariosController libroDiarioController;
         List<LibroDiario> listaLibroDiario;
 
-        public InicioForm(LibroDiariosController libroDiarioController, List<LibroDiario> listaLibroDiario, List<int> listaYears)
+        public InicioForm(LibroDiariosController libroDiarioController, int idLibroDiario, List<LibroDiario> listaLibroDiario, List<int> listaYears)
         {
             InitializeComponent();
 
@@ -28,8 +28,11 @@ namespace SistemasContables.Views
 
             this.listaLibroDiario = listaLibroDiario;
 
-            llenarCbFilterYear(listaYears);
-            totalLibrosDiarios(listaLibroDiario);
+            lblCajaChica.Text = "$ " + libroDiarioController.getCajaChicaOrBanco(idLibroDiario, "caja_chica");
+            lblBanco.Text = "$ " + libroDiarioController.getCajaChicaOrBanco(idLibroDiario, "banco");
+
+            // llenarCbFilterYear(listaYears);
+            // totalLibrosDiarios(listaLibroDiario);
         }
 
         // el metodo filtra los datos de las graficas cada vez que se cambia de año
@@ -116,8 +119,8 @@ namespace SistemasContables.Views
                 }
 
 
-                lblActivos.Text = redondear(totalActivos);
-                lblCapital.Text = redondear(totalCapital);
+                lblBanco.Text = redondear(totalActivos);
+                lblCajaChica.Text = redondear(totalCapital);
                 lblPasivos.Text = redondear(totalPasivos);
                 lblIngresos.Text = redondear(totalIngresos);
                 lblCostos.Text = redondear(totalCostos);
@@ -171,8 +174,8 @@ namespace SistemasContables.Views
                     }
                 }
 
-                lblActivos.Text = redondear(totalActivos);
-                lblCapital.Text = redondear(totalCapital);
+                lblBanco.Text = redondear(totalActivos);
+                lblCajaChica.Text = redondear(totalCapital);
                 lblPasivos.Text = redondear(totalPasivos);
                 lblIngresos.Text = redondear(totalIngresos);
                 lblCostos.Text = redondear(totalCostos);

@@ -14,6 +14,8 @@ namespace SistemasContables.DataBase
         protected const string TABLE_LIBRO_DIARIO = "librodiario";
         protected const string ID_LIBRO_DIARIO = "n_libro";
         protected const string PERIODO = "periodo";
+        protected const string CAJA_CHICA = "caja_chica";
+        protected const string BANCO = "banco";
 
         protected const string TABLE_PARTIDA = "partida";
         protected const string ID_PARTIDA = "idPartida";

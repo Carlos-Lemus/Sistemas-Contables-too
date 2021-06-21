@@ -59,7 +59,7 @@ namespace SistemasContables
             llenarListaYears();
 
             activaButton(this.btnInicio);
-            openFormInPane(new InicioForm(libroDiarioController, listaLibroDiario, listaYears));
+            openFormInPane(new InicioForm(libroDiarioController, libroDiario.IdLibroDiario, listaLibroDiario, listaYears));
 
             if(rol != "Administrador")
             {
@@ -137,7 +137,7 @@ namespace SistemasContables
         {
             currentNameForm = "inicio";
             activaButton(this.btnInicio);
-            openFormInPane(new InicioForm(libroDiarioController, listaLibroDiario, listaYears));
+            openFormInPane(new InicioForm(libroDiarioController, libroDiario.IdLibroDiario, listaLibroDiario, listaYears));
         }
 
         // abre el form del libro diario en el panel de contenido
@@ -237,10 +237,7 @@ namespace SistemasContables
 
                 updateDataLibroDiario();
 
-                if (currentNameForm != "inicio")
-                {
-                    recargarForm();
-                }
+                recargarForm();
 
             }
         }
@@ -253,11 +250,8 @@ namespace SistemasContables
                 indexLibroDiario++;
 
                 updateDataLibroDiario();
-
-                if (currentNameForm != "inicio")
-                {
-                    recargarForm();
-                }
+                
+                recargarForm();
 
             }
         }
@@ -371,7 +365,7 @@ namespace SistemasContables
             switch(currentNameForm)
             {
                 case "inicio":
-                    openFormInPane(new InicioForm(libroDiarioController, listaLibroDiario, listaYears));
+                    openFormInPane(new InicioForm(libroDiarioController, libroDiario.IdLibroDiario, listaLibroDiario, listaYears));
                     break;
                 case "libro_diario":
                     openFormInPane(new LibroDiarioForm(libroDiario));

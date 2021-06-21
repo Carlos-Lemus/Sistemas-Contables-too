@@ -18,9 +18,9 @@ namespace SistemasContables.controller
             this.libroDiarioDAO = new LibroDiarioDAO();
         }
 
-        public bool insert(string periodo)
+        public bool insert(LibroDiario libroDiario)
         {
-            return libroDiarioDAO.insert(periodo);
+            return libroDiarioDAO.insert(libroDiario);
         }
 
         public List<LibroDiario> getList()
@@ -37,5 +37,22 @@ namespace SistemasContables.controller
         {
             return libroDiarioDAO.total(cuentaCalcular, idLibroDiario);
         }
+
+        public bool updateCajaChica(int idLibroDiario, double monto)
+        {
+            return libroDiarioDAO.updateCajaChica(idLibroDiario, monto);
+        }
+
+
+        public bool updateBanco(int idLibroDiario, double monto)
+        {
+            return libroDiarioDAO.updateBanco(idLibroDiario, monto);
+        }
+
+        public double getCajaChicaOrBanco(int idLibroDiario, string tipo)
+        {
+            return libroDiarioDAO.getCajaChicaOrBanco(idLibroDiario, tipo);
+        }
+
     }
 }
