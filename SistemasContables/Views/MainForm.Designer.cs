@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Guna.UI.Animation.Animation animation3 = new Guna.UI.Animation.Animation();
+            Guna.UI.Animation.Animation animation1 = new Guna.UI.Animation.Animation();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.panelNavegacion = new System.Windows.Forms.Panel();
             this.btnLogout = new FontAwesome.Sharp.IconButton();
@@ -38,7 +38,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnBalanceGeneral = new FontAwesome.Sharp.IconButton();
             this.btnEstadoDeResultados = new FontAwesome.Sharp.IconButton();
-            this.btnBalanceDeComprobacion = new FontAwesome.Sharp.IconButton();
+            this.btnReporteDeVentas = new FontAwesome.Sharp.IconButton();
             this.btnLibroMayor = new FontAwesome.Sharp.IconButton();
             this.btnLibroDiario = new FontAwesome.Sharp.IconButton();
             this.btnInicio = new FontAwesome.Sharp.IconButton();
@@ -81,7 +81,7 @@
             this.panelNavegacion.Controls.Add(this.panel2);
             this.panelNavegacion.Controls.Add(this.btnBalanceGeneral);
             this.panelNavegacion.Controls.Add(this.btnEstadoDeResultados);
-            this.panelNavegacion.Controls.Add(this.btnBalanceDeComprobacion);
+            this.panelNavegacion.Controls.Add(this.btnReporteDeVentas);
             this.panelNavegacion.Controls.Add(this.btnLibroMayor);
             this.panelNavegacion.Controls.Add(this.btnLibroDiario);
             this.panelNavegacion.Controls.Add(this.btnInicio);
@@ -227,30 +227,30 @@
             this.btnEstadoDeResultados.UseVisualStyleBackColor = true;
             this.btnEstadoDeResultados.Click += new System.EventHandler(this.btnEstadoDeResultados_Click);
             // 
-            // btnBalanceDeComprobacion
+            // btnReporteDeVentas
             // 
-            this.btnBalanceDeComprobacion.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.AnimacionPanelNavegacion.SetDecoration(this.btnBalanceDeComprobacion, Guna.UI.Animation.DecorationType.None);
-            this.btnBalanceDeComprobacion.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnBalanceDeComprobacion.FlatAppearance.BorderSize = 0;
-            this.btnBalanceDeComprobacion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBalanceDeComprobacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBalanceDeComprobacion.ForeColor = System.Drawing.Color.White;
-            this.btnBalanceDeComprobacion.IconChar = FontAwesome.Sharp.IconChar.BalanceScale;
-            this.btnBalanceDeComprobacion.IconColor = System.Drawing.Color.White;
-            this.btnBalanceDeComprobacion.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnBalanceDeComprobacion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBalanceDeComprobacion.Location = new System.Drawing.Point(0, 319);
-            this.btnBalanceDeComprobacion.MinimumSize = new System.Drawing.Size(250, 60);
-            this.btnBalanceDeComprobacion.Name = "btnBalanceDeComprobacion";
-            this.btnBalanceDeComprobacion.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.btnBalanceDeComprobacion.Size = new System.Drawing.Size(252, 60);
-            this.btnBalanceDeComprobacion.TabIndex = 19;
-            this.btnBalanceDeComprobacion.Text = "Balance de comprobacion";
-            this.btnBalanceDeComprobacion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBalanceDeComprobacion.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnBalanceDeComprobacion.UseVisualStyleBackColor = true;
-            this.btnBalanceDeComprobacion.Click += new System.EventHandler(this.btnBalanceDeComprobacion_Click);
+            this.btnReporteDeVentas.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.AnimacionPanelNavegacion.SetDecoration(this.btnReporteDeVentas, Guna.UI.Animation.DecorationType.None);
+            this.btnReporteDeVentas.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnReporteDeVentas.FlatAppearance.BorderSize = 0;
+            this.btnReporteDeVentas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReporteDeVentas.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReporteDeVentas.ForeColor = System.Drawing.Color.White;
+            this.btnReporteDeVentas.IconChar = FontAwesome.Sharp.IconChar.BalanceScale;
+            this.btnReporteDeVentas.IconColor = System.Drawing.Color.White;
+            this.btnReporteDeVentas.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnReporteDeVentas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnReporteDeVentas.Location = new System.Drawing.Point(0, 319);
+            this.btnReporteDeVentas.MinimumSize = new System.Drawing.Size(250, 60);
+            this.btnReporteDeVentas.Name = "btnReporteDeVentas";
+            this.btnReporteDeVentas.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.btnReporteDeVentas.Size = new System.Drawing.Size(252, 60);
+            this.btnReporteDeVentas.TabIndex = 19;
+            this.btnReporteDeVentas.Text = "Reporte de Ventas";
+            this.btnReporteDeVentas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnReporteDeVentas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnReporteDeVentas.UseVisualStyleBackColor = true;
+            this.btnReporteDeVentas.Click += new System.EventHandler(this.btnBalanceDeComprobacion_Click);
             // 
             // btnLibroMayor
             // 
@@ -624,22 +624,22 @@
             // 
             this.AnimacionPanelNavegacion.AnimationType = Guna.UI.Animation.AnimationType.HorizSlide;
             this.AnimacionPanelNavegacion.Cursor = null;
-            animation3.AnimateOnlyDifferences = true;
-            animation3.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.BlindCoeff")));
-            animation3.LeafCoeff = 0F;
-            animation3.MaxTime = 1F;
-            animation3.MinTime = 0F;
-            animation3.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.MosaicCoeff")));
-            animation3.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation3.MosaicShift")));
-            animation3.MosaicSize = 0;
-            animation3.Padding = new System.Windows.Forms.Padding(0);
-            animation3.RotateCoeff = 0F;
-            animation3.RotateLimit = 0F;
-            animation3.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.ScaleCoeff")));
-            animation3.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.SlideCoeff")));
-            animation3.TimeCoeff = 0F;
-            animation3.TransparencyCoeff = 0F;
-            this.AnimacionPanelNavegacion.DefaultAnimation = animation3;
+            animation1.AnimateOnlyDifferences = true;
+            animation1.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.BlindCoeff")));
+            animation1.LeafCoeff = 0F;
+            animation1.MaxTime = 1F;
+            animation1.MinTime = 0F;
+            animation1.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicCoeff")));
+            animation1.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicShift")));
+            animation1.MosaicSize = 0;
+            animation1.Padding = new System.Windows.Forms.Padding(0);
+            animation1.RotateCoeff = 0F;
+            animation1.RotateLimit = 0F;
+            animation1.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.ScaleCoeff")));
+            animation1.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.SlideCoeff")));
+            animation1.TimeCoeff = 0F;
+            animation1.TransparencyCoeff = 0F;
+            this.AnimacionPanelNavegacion.DefaultAnimation = animation1;
             // 
             // gunaResize
             // 
@@ -673,7 +673,7 @@
         private System.Windows.Forms.Panel panelNavegacion;
         private FontAwesome.Sharp.IconButton btnBalanceGeneral;
         private FontAwesome.Sharp.IconButton btnEstadoDeResultados;
-        private FontAwesome.Sharp.IconButton btnBalanceDeComprobacion;
+        private FontAwesome.Sharp.IconButton btnReporteDeVentas;
         private FontAwesome.Sharp.IconButton btnLibroMayor;
         private FontAwesome.Sharp.IconButton btnLibroDiario;
         private FontAwesome.Sharp.IconButton btnInicio;

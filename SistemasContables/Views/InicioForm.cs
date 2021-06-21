@@ -49,7 +49,6 @@ namespace SistemasContables.Views
                 clearGraficos();
                 totalLibrosDiarios(listaLibroDiario);
             }
-
         }
 
         // el metodo retorna un formato #.00 a los decimales de un string
