@@ -101,15 +101,13 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="controller\BalanceComprobacionController.cs" />
     <Compile Include="controller\BalanceGeneralController.cs" />
     <Compile Include="controller\CuentaPartidaController.cs" />
     <Compile Include="controller\CuentasController.cs" />
     <Compile Include="controller\EstadoDeResultadosController.cs" />
     <Compile Include="controller\LibroDiariosController.cs" />
-    <Compile Include="controller\LibroMayorController.cs" />
     <Compile Include="controller\PartidasController.cs" />
-    <Compile Include="DataBase\BalanceComprobacionDAO.cs" />
+    <Compile Include="controller\ReportesController.cs" />
     <Compile Include="DataBase\BalanceGeneralDAO.cs" />
     <Compile Include="DataBase\Conexion.cs" />
     <Compile Include="DataBase\CuentaPartidaDAO.cs" />
@@ -117,8 +115,8 @@
     <Compile Include="DataBase\DAO.cs" />
     <Compile Include="DataBase\EstadoDeResultadosDAO.cs" />
     <Compile Include="DataBase\LibroDiarioDAO.cs" />
-    <Compile Include="DataBase\LibroMayorDAO.cs" />
     <Compile Include="DataBase\PartidasDAO.cs" />
+    <Compile Include="DataBase\ReportesDAO.cs" />
     <Compile Include="DataBase\UsuarioDAO.cs" />
     <Compile Include="Models\Cuenta.cs" />
     <Compile Include="Models\CuentaPartida.cs" />
@@ -144,12 +142,6 @@
     <Compile Include="Views\AgregarUsuario.Designer.cs">
       <DependentUpon>AgregarUsuario.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\BalanceDeComprobacionForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Views\BalanceDeComprobacionForm.Designer.cs">
-      <DependentUpon>BalanceDeComprobacionForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="Views\BalanceGeneralForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -162,12 +154,6 @@
     <Compile Include="Views\CatalogoDeCuentasForm.Designer.cs">
       <DependentUpon>CatalogoDeCuentasForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\EstadoDeResultadosForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Views\EstadoDeResultadosForm.Designer.cs">
-      <DependentUpon>EstadoDeResultadosForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="Views\InicioForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -179,12 +165,6 @@
     </Compile>
     <Compile Include="Views\LibroDiarioForm.Designer.cs">
       <DependentUpon>LibroDiarioForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Views\LibroMayorForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Views\LibroMayorForm.Designer.cs">
-      <DependentUpon>LibroMayorForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\LoginForm.cs">
       <SubType>Form</SubType>
@@ -206,6 +186,12 @@
     <Compile Include="Views\ReintegrarSaldoForm.Designer.cs">
       <DependentUpon>ReintegrarSaldoForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\ReporteDeVentasForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\ReporteDeVentasForm.Designer.cs">
+      <DependentUpon>ReporteDeVentasForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\UsuariosForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -221,26 +207,17 @@
     <EmbeddedResource Include="Views\AgregarUsuario.resx">
       <DependentUpon>AgregarUsuario.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\BalanceDeComprobacionForm.resx">
-      <DependentUpon>BalanceDeComprobacionForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Views\BalanceGeneralForm.resx">
       <DependentUpon>BalanceGeneralForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\CatalogoDeCuentasForm.resx">
       <DependentUpon>CatalogoDeCuentasForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\EstadoDeResultadosForm.resx">
-      <DependentUpon>EstadoDeResultadosForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Views\InicioForm.resx">
       <DependentUpon>InicioForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\LibroDiarioForm.resx">
       <DependentUpon>LibroDiarioForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\LibroMayorForm.resx">
-      <DependentUpon>LibroMayorForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
@@ -260,6 +237,9 @@
     </Compile>
     <EmbeddedResource Include="Views\ReintegrarSaldoForm.resx">
       <DependentUpon>ReintegrarSaldoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\ReporteDeVentasForm.resx">
+      <DependentUpon>ReporteDeVentasForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\UsuariosForm.resx">
       <DependentUpon>UsuariosForm.cs</DependentUpon>

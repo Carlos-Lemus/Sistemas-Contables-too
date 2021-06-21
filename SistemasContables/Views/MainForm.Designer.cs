@@ -37,9 +37,7 @@
             this.btnCatalogo = new FontAwesome.Sharp.IconButton();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnBalanceGeneral = new FontAwesome.Sharp.IconButton();
-            this.btnEstadoDeResultados = new FontAwesome.Sharp.IconButton();
             this.btnReporteDeVentas = new FontAwesome.Sharp.IconButton();
-            this.btnLibroMayor = new FontAwesome.Sharp.IconButton();
             this.btnLibroDiario = new FontAwesome.Sharp.IconButton();
             this.btnInicio = new FontAwesome.Sharp.IconButton();
             this.btnMenu = new FontAwesome.Sharp.IconButton();
@@ -80,9 +78,7 @@
             this.panelNavegacion.Controls.Add(this.btnCatalogo);
             this.panelNavegacion.Controls.Add(this.panel2);
             this.panelNavegacion.Controls.Add(this.btnBalanceGeneral);
-            this.panelNavegacion.Controls.Add(this.btnEstadoDeResultados);
             this.panelNavegacion.Controls.Add(this.btnReporteDeVentas);
-            this.panelNavegacion.Controls.Add(this.btnLibroMayor);
             this.panelNavegacion.Controls.Add(this.btnLibroDiario);
             this.panelNavegacion.Controls.Add(this.btnInicio);
             this.panelNavegacion.Controls.Add(this.btnMenu);
@@ -132,7 +128,7 @@
             this.btnUsuarios.IconColor = System.Drawing.Color.White;
             this.btnUsuarios.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnUsuarios.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUsuarios.Location = new System.Drawing.Point(0, 559);
+            this.btnUsuarios.Location = new System.Drawing.Point(0, 439);
             this.btnUsuarios.MinimumSize = new System.Drawing.Size(250, 60);
             this.btnUsuarios.Name = "btnUsuarios";
             this.btnUsuarios.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
@@ -157,7 +153,7 @@
             this.btnCatalogo.IconColor = System.Drawing.Color.White;
             this.btnCatalogo.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnCatalogo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCatalogo.Location = new System.Drawing.Point(0, 499);
+            this.btnCatalogo.Location = new System.Drawing.Point(0, 379);
             this.btnCatalogo.MinimumSize = new System.Drawing.Size(250, 60);
             this.btnCatalogo.Name = "btnCatalogo";
             this.btnCatalogo.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
@@ -190,7 +186,7 @@
             this.btnBalanceGeneral.IconColor = System.Drawing.Color.White;
             this.btnBalanceGeneral.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnBalanceGeneral.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBalanceGeneral.Location = new System.Drawing.Point(0, 439);
+            this.btnBalanceGeneral.Location = new System.Drawing.Point(0, 319);
             this.btnBalanceGeneral.MinimumSize = new System.Drawing.Size(250, 60);
             this.btnBalanceGeneral.Name = "btnBalanceGeneral";
             this.btnBalanceGeneral.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
@@ -201,31 +197,6 @@
             this.btnBalanceGeneral.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnBalanceGeneral.UseVisualStyleBackColor = true;
             this.btnBalanceGeneral.Click += new System.EventHandler(this.btnBalanceGeneral_Click);
-            // 
-            // btnEstadoDeResultados
-            // 
-            this.btnEstadoDeResultados.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.AnimacionPanelNavegacion.SetDecoration(this.btnEstadoDeResultados, Guna.UI.Animation.DecorationType.None);
-            this.btnEstadoDeResultados.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnEstadoDeResultados.FlatAppearance.BorderSize = 0;
-            this.btnEstadoDeResultados.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEstadoDeResultados.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEstadoDeResultados.ForeColor = System.Drawing.Color.White;
-            this.btnEstadoDeResultados.IconChar = FontAwesome.Sharp.IconChar.Landmark;
-            this.btnEstadoDeResultados.IconColor = System.Drawing.Color.White;
-            this.btnEstadoDeResultados.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnEstadoDeResultados.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEstadoDeResultados.Location = new System.Drawing.Point(0, 379);
-            this.btnEstadoDeResultados.MinimumSize = new System.Drawing.Size(250, 60);
-            this.btnEstadoDeResultados.Name = "btnEstadoDeResultados";
-            this.btnEstadoDeResultados.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.btnEstadoDeResultados.Size = new System.Drawing.Size(252, 60);
-            this.btnEstadoDeResultados.TabIndex = 20;
-            this.btnEstadoDeResultados.Text = "Estado de resultados";
-            this.btnEstadoDeResultados.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEstadoDeResultados.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnEstadoDeResultados.UseVisualStyleBackColor = true;
-            this.btnEstadoDeResultados.Click += new System.EventHandler(this.btnEstadoDeResultados_Click);
             // 
             // btnReporteDeVentas
             // 
@@ -240,7 +211,7 @@
             this.btnReporteDeVentas.IconColor = System.Drawing.Color.White;
             this.btnReporteDeVentas.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnReporteDeVentas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReporteDeVentas.Location = new System.Drawing.Point(0, 319);
+            this.btnReporteDeVentas.Location = new System.Drawing.Point(0, 259);
             this.btnReporteDeVentas.MinimumSize = new System.Drawing.Size(250, 60);
             this.btnReporteDeVentas.Name = "btnReporteDeVentas";
             this.btnReporteDeVentas.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
@@ -250,32 +221,7 @@
             this.btnReporteDeVentas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnReporteDeVentas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnReporteDeVentas.UseVisualStyleBackColor = true;
-            this.btnReporteDeVentas.Click += new System.EventHandler(this.btnBalanceDeComprobacion_Click);
-            // 
-            // btnLibroMayor
-            // 
-            this.btnLibroMayor.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.AnimacionPanelNavegacion.SetDecoration(this.btnLibroMayor, Guna.UI.Animation.DecorationType.None);
-            this.btnLibroMayor.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnLibroMayor.FlatAppearance.BorderSize = 0;
-            this.btnLibroMayor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLibroMayor.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLibroMayor.ForeColor = System.Drawing.Color.White;
-            this.btnLibroMayor.IconChar = FontAwesome.Sharp.IconChar.BookOpen;
-            this.btnLibroMayor.IconColor = System.Drawing.Color.White;
-            this.btnLibroMayor.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnLibroMayor.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLibroMayor.Location = new System.Drawing.Point(0, 259);
-            this.btnLibroMayor.MinimumSize = new System.Drawing.Size(250, 60);
-            this.btnLibroMayor.Name = "btnLibroMayor";
-            this.btnLibroMayor.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.btnLibroMayor.Size = new System.Drawing.Size(252, 60);
-            this.btnLibroMayor.TabIndex = 18;
-            this.btnLibroMayor.Text = "Libro Mayor";
-            this.btnLibroMayor.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLibroMayor.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnLibroMayor.UseVisualStyleBackColor = true;
-            this.btnLibroMayor.Click += new System.EventHandler(this.btnLibroMayor_Click);
+            this.btnReporteDeVentas.Click += new System.EventHandler(this.btnReporteDeVentas_Click);
             // 
             // btnLibroDiario
             // 
@@ -672,9 +618,7 @@
         #endregion
         private System.Windows.Forms.Panel panelNavegacion;
         private FontAwesome.Sharp.IconButton btnBalanceGeneral;
-        private FontAwesome.Sharp.IconButton btnEstadoDeResultados;
         private FontAwesome.Sharp.IconButton btnReporteDeVentas;
-        private FontAwesome.Sharp.IconButton btnLibroMayor;
         private FontAwesome.Sharp.IconButton btnLibroDiario;
         private FontAwesome.Sharp.IconButton btnInicio;
         private FontAwesome.Sharp.IconButton btnMenu;

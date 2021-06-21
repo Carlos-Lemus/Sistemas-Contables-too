@@ -22,7 +22,6 @@ namespace SistemasContables
         private LibroDiario libroDiario;
         private LibroDiario voidLibroDiario;
         private List<LibroDiario> listaLibroDiario;
-        private List<int> listaYears;
         private LibroDiariosController libroDiarioController;
         private IconButton btnCurrent;
         private Panel leftPanelBtn;
@@ -47,7 +46,6 @@ namespace SistemasContables
             panelNavegacion.Controls.Add(leftPanelBtn);
 
             libroDiarioController = new LibroDiariosController();
-            listaYears = new List<int>();
             listaLibroDiario = libroDiarioController.getList();
             voidLibroDiario = new LibroDiario();
             voidLibroDiario.IdLibroDiario = -1;
@@ -56,10 +54,9 @@ namespace SistemasContables
             indexLibroDiario = listaLibroDiario.Count - 1;
 
             updateDataLibroDiario();
-            llenarListaYears();
 
             activaButton(this.btnInicio);
-            openFormInPane(new InicioForm(libroDiarioController, libroDiario.IdLibroDiario, listaLibroDiario, listaYears));
+            openFormInPane(new InicioForm(libroDiario.IdLibroDiario, libroDiarioController));
 
             if(rol != "Administrador")
             {
@@ -137,7 +134,7 @@ namespace SistemasContables
         {
             currentNameForm = "inicio";
             activaButton(this.btnInicio);
-            openFormInPane(new InicioForm(libroDiarioController, libroDiario.IdLibroDiario, listaLibroDiario, listaYears));
+            openFormInPane(new InicioForm(libroDiario.IdLibroDiario, libroDiarioController));
         }
 
         // abre el form del libro diario en el panel de contenido
@@ -147,32 +144,16 @@ namespace SistemasContables
             activaButton(this.btnLibroDiario);
             openFormInPane(new LibroDiarioForm(libroDiario));
         }
-
-        // abre el form del libro mayor en el panel de contenido
-        private void btnLibroMayor_Click(object sender, EventArgs e)
-        {
-            currentNameForm = "libro_mayor";
-            activaButton(this.btnLibroMayor);
-            openFormInPane(new LibroMayorForm(libroDiario));
-        }
-
-        // abre el form de balance de comprobacion en el panel de contenido
-        private void btnBalanceDeComprobacion_Click(object sender, EventArgs e)
+        
+        // abre el form de reporte de ventas en el panel de contenido
+        private void btnReporteDeVentas_Click(object sender, EventArgs e)
         {
             currentNameForm = "reporte_de_ventas";
             activaButton(this.btnReporteDeVentas);
             openFormInPane(new ReporteDeVentasForm(libroDiario));
         }
 
-        // abre el form de estado de resultados en el panel de contenido
-        private void btnEstadoDeResultados_Click(object sender, EventArgs e)
-        {
-            currentNameForm = "estado_resultados";
-            activaButton(this.btnEstadoDeResultados);
-
-            openFormInPane(new EstadoDeResultadosForm(libroDiario));
-        }
-
+        
         // abre el form de balance general en el panel de contenido
         private void btnBalanceGeneral_Click(object sender, EventArgs e)
         {
@@ -223,7 +204,6 @@ namespace SistemasContables
                 indexLibroDiario = listaLibroDiario.Count - 1;
 
                 updateDataLibroDiario();
-                llenarListaYears();
                 recargarForm();
             }
         }
@@ -270,7 +250,6 @@ namespace SistemasContables
                 indexLibroDiario = listaLibroDiario.Count - 1;
 
                 updateDataLibroDiario();
-                llenarListaYears();
                 recargarForm();
 
             }
@@ -364,20 +343,15 @@ namespace SistemasContables
         {
             switch(currentNameForm)
             {
+            
                 case "inicio":
-                    openFormInPane(new InicioForm(libroDiarioController, libroDiario.IdLibroDiario, listaLibroDiario, listaYears));
+                    openFormInPane(new InicioForm(libroDiario.IdLibroDiario, libroDiarioController));
                     break;
                 case "libro_diario":
                     openFormInPane(new LibroDiarioForm(libroDiario));
                     break;
-                case "libro_mayor":
-                    openFormInPane(new LibroMayorForm(libroDiario));
-                    break;
-                case "balance_comprobacion":
-                    openFormInPane(new BalanceDeComprobacionForm(libroDiario));
-                    break;
-                case "estado_resultados":
-                    openFormInPane(new EstadoDeResultadosForm(libroDiario));
+                case "reporte_de_ventas":
+                    openFormInPane(new ReporteDeVentasForm(libroDiario));
                     break;
                 case "balance_general":
                     openFormInPane(new BalanceGeneralForm(libroDiario));
@@ -390,30 +364,6 @@ namespace SistemasContables
                     break;
             }
 
-        }
-
-        // el metodo llena las lista de años necesario para la informacion de inicio
-        private void llenarListaYears()
-        {
-            if(listaYears.Count > 0)
-            {
-                listaYears.Clear();
-            }
-
-            foreach(LibroDiario libroDiario in listaLibroDiario)
-            {
-                string[] periodoTokens = libroDiario.Periodo.Split(' ');
-
-                int year = Convert.ToInt32(periodoTokens[5]);
-
-                listaYears.Add(year);
-            }
-
-            // obtengo unicamente los años no duplicados
-            listaYears = listaYears.Distinct().ToList();
-
-            // inverto el orden de la lista
-            listaYears.Reverse();
         }
 
     }
