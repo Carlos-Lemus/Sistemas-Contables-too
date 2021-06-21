@@ -159,9 +159,9 @@ namespace SistemasContables
         // abre el form de balance de comprobacion en el panel de contenido
         private void btnBalanceDeComprobacion_Click(object sender, EventArgs e)
         {
-            currentNameForm = "balance_comprobacion";
-            activaButton(this.btnBalanceDeComprobacion);
-            openFormInPane(new BalanceDeComprobacionForm(libroDiario));
+            currentNameForm = "reporte_de_ventas";
+            activaButton(this.btnReporteDeVentas);
+            openFormInPane(new ReporteDeVentasForm(libroDiario));
         }
 
         // abre el form de estado de resultados en el panel de contenido
