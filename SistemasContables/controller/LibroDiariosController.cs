@@ -33,11 +33,6 @@ namespace SistemasContables.controller
             return libroDiarioDAO.delete(idLibroDiario);
         }
 
-        public double total(string cuentaCalcular, int idLibroDiario)
-        {
-            return libroDiarioDAO.total(cuentaCalcular, idLibroDiario);
-        }
-
         public bool updateCajaChica(int idLibroDiario, double monto)
         {
             return libroDiarioDAO.updateCajaChica(idLibroDiario, monto);
